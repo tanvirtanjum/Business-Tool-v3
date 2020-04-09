@@ -176,7 +176,7 @@ else
 ?>
 
 <script>
-    let saveFile = () => {
+    let saveFile1 = () => {
     	
         // Get the data from each element on the form.
     	const name = document.getElementById('txtName');

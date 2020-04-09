@@ -4,6 +4,7 @@ include '../Page Controllers/takenoteController.php';
 <html>
 	<head> 
 		<title> Take Note</title>
+		<script src="../Page Controllers/javascript/noteJS.js"></script>
 		<link rel="stylesheet" type="text/css" href="CSS/takenote.css">
 	</head>
 	
@@ -49,7 +50,7 @@ include '../Page Controllers/takenoteController.php';
 					
 						<tr>
 							<td>
-								<textarea name="noteTA" class="noteTA" placeholder="Write here..."><?php echo $downtext; ?></textarea>
+								<textarea id="noteTA" name="noteTA" class="noteTA" placeholder="Write here..."><?php echo $downtext; ?></textarea>
 							</td> 
 						</tr>
 					</table>
@@ -63,7 +64,7 @@ include '../Page Controllers/takenoteController.php';
 						<td class="col2"></td>
 						<td> <input type="submit" class="btn" name="deleteBTN" value="DELETE"> </td>
 						<td class="col2"></td>
-						<td> <input type="submit" class="btn" name="printBTN" value="PRINT"> </td>
+						<td> <input type="submit" class="btn" name="printBTN" value="PRINT" onclick='saveFile()'> </td>
 					</tr>
 				</table>
 			</form>
