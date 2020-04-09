@@ -253,6 +253,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 				$insertion=true;
 				$pass = rand(1234,9999);
 				$idpass = "USER ID. ".$eidTF."\nPASSWPRD: ".$pass."";
+				echo "<script>var msg=$idpass;</script>";
 				insertLogin($eidTF, $design, $pass);
 				insertEmployee($eidTF, $enameTF, $design, $salTF, $mobTF, $uid);
 			}
