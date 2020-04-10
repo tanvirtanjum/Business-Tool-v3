@@ -4,13 +4,13 @@ let saveFile = () =>
 	
 	if(data != "")
 	{
-		var con =confirm("Procced?");
+		var con = confirm("Procced?");
 		
 		if(con == true)
 		{
 			alert("You can rename the file but make sure the file extention is .txt.\nYou can change the downloading destination as well.");
 			const textToBLOB = new Blob([data], { type: 'text/plain' });
-			var sFileName ="*";
+			var sFileName = "*";
 			var name = document.getElementById("noteIDTF").value
 			if(name != "")
 			{
