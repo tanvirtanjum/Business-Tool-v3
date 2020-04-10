@@ -5,6 +5,7 @@ include '../Page Controllers/settingsController.php';
 <html>
 	<head>
 		<title> Change Password </title>
+		<script src="../Page Controllers/javascript/settingsJS.js"></script>
 		<link rel="stylesheet" type="text/css" href="CSS/settings.css">
 	</head>
 	<body class="body">
