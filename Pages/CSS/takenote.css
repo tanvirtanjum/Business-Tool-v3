@@ -1,7 +1,7 @@
 .floatRightTop 
 { 
 	padding-top: 1%;
-	width:35%;
+	width:40%;
 	float: right; 
 	margin-bottom: auto;
 }
@@ -204,7 +204,7 @@ input[type="submit"].btn:hover
 
 .noteTA
 {
-	width:850px;
+	width:825px;
 	height:450px;
 	resize: none;
 	
