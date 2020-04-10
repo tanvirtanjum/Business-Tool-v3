@@ -14,7 +14,7 @@ include '../Page Controllers/takenoteController.php';
 				<div class="floatRightTop">
 					<table name="download&logout">
 						<tr>
-							<td><input type="text" class="tf" name="noteIDTF" placeholder="Note ID" value="<?php echo $noteID; ?>"> </td>
+							<td><input type="text" class="tf" name="noteIDTF" id="noteIDTF" placeholder="Note ID" value="<?php echo $noteID; ?>"> </td>
 							<td><span style="color:red;"><?php echo $idErr; ?></span></td>
 							<td><input type="submit" class="downloadbtn" name="downloadBTN" value="Download"></td>
 							<td style="width:50%;"></td>
