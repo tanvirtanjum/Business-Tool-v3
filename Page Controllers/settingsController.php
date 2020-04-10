@@ -50,7 +50,17 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 		{
 			$oldpassPF =$_POST["oldpassPF"];
 			$data=getLogin($uid,$oldpassPF);
-			if($oldpassPF != $data[0]['PASS']) 
+			if($data != null)
+			{
+				if($oldpassPF != $data[0]['PASS']) 
+				{
+					$msg1 = '<span>Fill Correctly.</span>';
+					$oldpassPF ="";
+					$haserror=true;
+				}
+			}
+			
+			else
 			{
 				$msg1 = '<span>Fill Correctly.</span>';
 				$oldpassPF ="";
