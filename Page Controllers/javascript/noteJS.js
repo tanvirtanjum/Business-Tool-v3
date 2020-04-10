@@ -4,9 +4,8 @@ let saveFile = () =>
 	
 	if(data != "")
 	{
-		// Convert the text to BLOB.
 		const textToBLOB = new Blob([data], { type: 'text/plain' });
-		var sFileName ="*";	   // The file to save the data.
+		var sFileName ="*";
 		var name = document.getElementById("noteIDTF").value
 		if(name != "")
 		{
@@ -35,6 +34,6 @@ let saveFile = () =>
 	
 	else
 	{
-		alert("Empty Text can not be saved.");
+		alert("Empty Text can not be saved.\nDownload a note from Database or write someting and then try to PRINT.");
 	}
 }
