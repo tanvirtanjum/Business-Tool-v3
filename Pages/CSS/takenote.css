@@ -9,14 +9,14 @@
 .floatLeftDown 
 { 
 	padding-top: 1%;
-	width: 60%; 
+	width: 55%; 
 	float: left; 
 	margin-bottom: auto;
 }
 
 .container 
 { 
-	overflow: hidden; 
+	overflow: hidden;
 	margin-top: auto;
 	margin-bottom: auto;
 	margin-left: auto;
@@ -72,7 +72,7 @@
 .scrollit /*add table scrolling */
 {
     overflow:scroll;
-    height:400px;
+    height:450px;
 }
 
 .tf
@@ -204,15 +204,20 @@ input[type="submit"].btn:hover
 
 .noteTA
 {
-	width:880px;
+	width:850px;
 	height:450px;
 	resize: none;
 	
-	border: 2px solid #008CBA;
+	border: 2px solid black;
 	
 	font-family: "Times-New Roman";
-	font-size: 18px;
+	font-size: 15px;
 	
 	text-align:justify;
 	
 }
+.noteTA:hover
+{
+    border: 2px solid #008CBA;
+}
+
