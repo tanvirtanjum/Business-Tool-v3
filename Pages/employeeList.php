@@ -98,7 +98,7 @@ include '../Page Controllers/employeeListController.php';
 					<tr>
 						<td> <input type="submit" class="btn" name="refreshBTN" value="REFRESH"> </td>
 						<td class="col2"></td>
-						<td> <input type="submit" class="btn" name="insertBTN" value="INSERT" onclick= 'showPASS("ID PASS")' <?php if($srchvalid){echo "disabled";} ?>> </td> 
+						<td> <input type="submit" class="btn" name="insertBTN" value="INSERT" onclick= 'showPASS("<?php echo $idpass; ?>")' <?php if($srchvalid){echo "disabled";} ?>> </td> 
 						<td class="col2"></td>
 						<td> <input type="submit" class="btn" name="updateBTN" value="UPDATE" <?php if(!$srchvalid){echo "disabled";} ?>> </td>
 						<td class="col2"></td>
