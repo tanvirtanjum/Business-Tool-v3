@@ -12,6 +12,7 @@ let saveFile = () =>
 			const textToBLOB = new Blob([data], { type: 'text/plain' });
 			var sFileName = "*";
 			var name = document.getElementById("noteIDTF").value
+			
 			if(name != "")
 			{
 				var sFileName =name;
@@ -25,10 +26,13 @@ let saveFile = () =>
 			let newLink = document.createElement("a");
 			newLink.download = sFileName;
 
-			if (window.webkitURL != null) {
+			if (window.webkitURL != null) 
+			{
 				newLink.href = window.webkitURL.createObjectURL(textToBLOB);
 			}
-			else {
+			
+			else 
+			{
 				newLink.href = window.URL.createObjectURL(textToBLOB);
 				newLink.style.display = "none";
 				document.body.appendChild(newLink);
