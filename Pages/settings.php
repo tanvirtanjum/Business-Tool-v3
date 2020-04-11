@@ -39,7 +39,7 @@ include '../Page Controllers/settingsController.php';
 					<tr>
 						<td colspan="3" align="center"  valign="middle" style="height: 50px;"> 
 							<input type="submit" class="proceed" name="ProceedBTN" value="Proceed"> 
-							<input type="submit" class="proceed" name="gohomebtn" value="Home">
+							<input type="submit" class="home" name="gohomebtn" value="Home">
 						</td>
 					</tr>
 
