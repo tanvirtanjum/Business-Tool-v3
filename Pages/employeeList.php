@@ -17,11 +17,11 @@ include '../Page Controllers/employeeListController.php';
 						<tr>
 							<td><input type="text" class="srchtf" name="srchEmpTF" placeholder="Search by Employee ID." value="<?php echo "$srchEmpTF";?>"></td>
 							<td> <span style="color:red; font-size:15px;"> <?php echo"$srchEmpTFerror";?> </span> </td>
-							<td><input type="submit" class="srchbtn" name="srchBTN" value="Search"></td>
+							<td><button class="srchbtn" name="srchBTN"> Search </button> </td>
 							<td style="width:50%;"></td>
-							<td><input type="submit" class="srchbtn" name="gohomebtn" value="Home"></td>
+							<td><button class="srchbtn" name="gohomebtn"> Home </button> </td>
 							<td class="col"></td>
-							<td><input type="submit" class="logoutbtn" name="logoutBTN" value="Logout"></td>
+							<td><button class="logoutbtn" name="logoutBTN"> Logout </button> </td>
 						</tr>
 					</table>
 					<div class="scrollit">
@@ -96,13 +96,13 @@ include '../Page Controllers/employeeListController.php';
 				
 				<table name="buttons" class="btnTB">
 					<tr>
-						<td> <input type="submit" class="btn" name="refreshBTN" value="REFRESH"> </td>
+						<td> <button class="btn" name="refreshBTN"> REFRESH </button> </td>
 						<td class="col2"></td>
-						<td> <input type="submit" class="btn" name="insertBTN" value="INSERT" onclick= 'showPASS("<?php echo $idpass; ?>")' <?php if($srchvalid){echo "disabled";} ?>> </td> 
+						<td> <button class="btn" name="insertBTN" onclick= 'showPASS("<?php echo $idpass; ?>")' <?php if($srchvalid){echo "disabled";} ?>> INSERT </button> </td> 
 						<td class="col2"></td>
-						<td> <input type="submit" class="btn" name="updateBTN" value="UPDATE" <?php if(!$srchvalid){echo "disabled";} ?>> </td>
+						<td> <button class="btn" name="updateBTN" <?php if(!$srchvalid){echo "disabled";} ?>> UPDATE </button> </td>
 						<td class="col2"></td>
-						<td> <input type="submit" class="btn" name="deleteBTN" value="DELETE" <?php if(!$srchvalid){echo "disabled";} ?>> </td>
+						<td> <button class="btn" name="deleteBTN" <?php if(!$srchvalid){echo "disabled";} ?>> DELETE </button> </td>
 					</tr>
 				</table>
 			</form>

@@ -175,7 +175,7 @@ option
 	transition-duration: 0.4s;
     cursor: pointer;
 }
-input[type="submit"].srchbtn:hover
+.srchbtn:hover
 {
 	background-color: #008CBA; 
     color: white; 
@@ -196,7 +196,7 @@ input[type="submit"].srchbtn:hover
 	transition-duration: 0.4s;
     cursor: pointer;
 }
-input[type="submit"].logoutbtn:hover
+.logoutbtn:hover
 {
 	background-color: red; 
     color: white; 
@@ -217,7 +217,7 @@ input[type="submit"].logoutbtn:hover
 	transition-duration: 0.4s;
     cursor: pointer;
 }
-input[type="submit"].btn:hover
+.btn:hover
 {
 	background-color: #008CBA; 
     color: white; 

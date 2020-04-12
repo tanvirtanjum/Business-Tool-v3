@@ -7,7 +7,7 @@ function showPASS(idpass)
 		
 		else
 		{
-			alert("Message Not Loaded.");
+			alert("Something Went Wrong.");
 		}
 		
 }

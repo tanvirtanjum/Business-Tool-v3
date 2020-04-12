@@ -82,8 +82,8 @@ input[type="submit"].logout:hover
 	padding: 5px 5px 5px 5px;
 	border: 2px solid #ccc;
 	border-radius: 12px;
-	font-family: "Consolas";
-	font-size: 15px;
+	font-family: "Bradley Hand", cursive;
+	font-size: 14px;
 	
 	transition-duration: 0.4s;
 }
