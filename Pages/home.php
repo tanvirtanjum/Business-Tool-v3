@@ -2,6 +2,7 @@
 include '../Page Controllers/homeController.php';
 ?>
 
+<!DOCTYPE html>
 <html>
 	<head>
 		<title> Home </title>
@@ -41,7 +42,11 @@ include '../Page Controllers/homeController.php';
 					</tr>
 					
 					<tr>
-						<td align="center" align="bottom" colspan="11" style="height:250;"> <input type="submit" class="logout" name="logoutBTN" value="Logout"> </td>
+						<td colspan="11" style="height:150px"></td>
+					</tr>
+					
+					<tr>
+						<td align="center" align="bottom" colspan="11"> <input type="submit" class="logout" name="logoutBTN" value="Logout"> </td>
 					</tr>
 				</table>
 			</form>

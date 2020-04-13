@@ -468,6 +468,7 @@ else
 }	
 ?>
 
+<!DOCTYPE html>
 <html>
 	<head> 
 		<title> Product List</title>

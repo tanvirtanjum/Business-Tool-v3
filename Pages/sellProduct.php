@@ -166,6 +166,8 @@ else
 	header("Location:index.php");
 }	
 ?>
+
+<!DOCTYPE html>
 <html>
 	<head> 
 		<title> Sell Product </title>

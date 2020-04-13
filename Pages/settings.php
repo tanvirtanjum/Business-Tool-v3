@@ -2,6 +2,7 @@
 include '../Page Controllers/settingsController.php';
 ?>
 
+<!DOCTYPE html>
 <html>
 	<head>
 		<title> Change Password </title>

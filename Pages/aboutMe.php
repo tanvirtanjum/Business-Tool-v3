@@ -2,6 +2,7 @@
 include '../Page Controllers/aboutMeController.php';
 ?>
 
+<!DOCTYPE html>
 <html>
 	<head>
 		<title> About Me </title>

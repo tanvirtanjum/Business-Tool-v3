@@ -2,10 +2,35 @@
 include '../Page Controllers/employeeListController.php';
 ?>
 
+<!DOCTYPE html>
 <html>
 	<head> 
 		<title> Employee List</title>
-		<script src="../Page Controllers/javascript/employeeListJS.js"></script>
+		<script>
+		function showPASS(idpass) 
+		{
+			if(idpass.length > 0)
+			{
+				alert(idpass);
+			}
+
+			else
+			{
+				alert("Something Went Wrong.");
+			}
+				
+		}
+
+		function clear() 
+		{
+			var rowCount = document.getElementById('tab').rows.length;
+			var i=0;
+			for(i = 0; i<rowCount; i++)
+			{
+				document.getElementById('tab').deleteRow(0);
+			}
+		}
+		</script>
 		<link rel="stylesheet" type="text/css" href="CSS/employeeList.css">
 	</head>
 																						
@@ -98,7 +123,7 @@ include '../Page Controllers/employeeListController.php';
 							<td class="td1"> Added By: </td>
 							<td> <input type="text" class="tf" name="addedbyTF" placeholder="Auto Generated"  value="<?php if($srchvalid==true){echo "$addedbyTF";}else{echo "$uid";} ?>" readonly> </td>
 						</tr>
-					<table>
+					</table>
 				</div>
 				
 				<table name="buttons" class="btnTB">

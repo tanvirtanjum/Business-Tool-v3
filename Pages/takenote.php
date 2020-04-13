@@ -1,6 +1,8 @@
 <?php
 include '../Page Controllers/takenoteController.php';
 ?>
+
+<!DOCTYPE html>
 <html>
 	<head> 
 		<title> Take Note</title>
