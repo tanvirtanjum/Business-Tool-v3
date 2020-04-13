@@ -97,28 +97,6 @@ input[type="text"].srchtf:focus
 	border: 2px solid #008CBA;
 }
 
-.srchByNametf
-{	
-	width:250px;
-	padding: 5px 5px 5px 5px;
-	border: 2px solid #ccc;
-	border-radius: 12px;
-	font-family: "Consolas";
-	font-size: 15px;
-	
-	transition-duration: 0.4s;
-}
-input[type="text"].srchByNametf:hover
-{
-	width:300px;
-	border: 2px solid #008CBA;
-}
-input[type="text"].srchByNametf:focus
-{
-	width:280px;
-	border: 2px solid #008CBA;
-}
-
 .tf
 {	
 	width:275px;
@@ -197,7 +175,7 @@ option
 	transition-duration: 0.4s;
     cursor: pointer;
 }
-.srchbtn:hover
+input[type="submit"].srchbtn:hover
 {
 	background-color: #008CBA; 
     color: white; 
@@ -218,7 +196,7 @@ option
 	transition-duration: 0.4s;
     cursor: pointer;
 }
-.logoutbtn:hover
+input[type="submit"].logoutbtn:hover
 {
 	background-color: red; 
     color: white; 
@@ -239,7 +217,7 @@ option
 	transition-duration: 0.4s;
     cursor: pointer;
 }
-.btn:hover
+input[type="submit"].btn:hover
 {
 	background-color: #008CBA; 
     color: white; 

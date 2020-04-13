@@ -2,35 +2,10 @@
 include '../Page Controllers/employeeListController.php';
 ?>
 
-<!DOCTYPE html>
 <html>
 	<head> 
 		<title> Employee List</title>
-		<script>
-		function showPASS(idpass) 
-		{
-			if(idpass.length > 0)
-			{
-				alert(idpass);
-			}
-
-			else
-			{
-				alert("Something Went Wrong.");
-			}
-				
-		}
-
-		function clear() 
-		{
-			var rowCount = document.getElementById('tab').rows.length;
-			var i=0;
-			for(i = 0; i<rowCount; i++)
-			{
-				document.getElementById('tab').deleteRow(0);
-			}
-		}
-		</script>
+		<script src="../Page Controllers/javascript/employeeListJS.js"></script>
 		<link rel="stylesheet" type="text/css" href="CSS/employeeList.css">
 	</head>
 																						
@@ -42,13 +17,11 @@ include '../Page Controllers/employeeListController.php';
 						<tr>
 							<td><input type="text" class="srchtf" name="srchEmpTF" placeholder="Search by Employee ID." value="<?php echo "$srchEmpTF";?>"></td>
 							<td> <span style="color:red; font-size:15px;"> <?php echo"$srchEmpTFerror";?> </span> </td>
-							<td><button class="srchbtn" name="srchBTN"> Search </button> </td>
-							<td style="width:40%;"></td>
-							<td><input type="text" class="srchByNametf" name="srchByNameTF" id="srchByNameTF" placeholder="Load Table by Employee Name"  onclick='clear()'></td>
-							<td style="width:25%;"></td>
-							<td><button class="srchbtn" name="gohomebtn"> Home </button> </td>
+							<td><input type="submit" class="srchbtn" name="srchBTN" value="Search"></td>
+							<td style="width:50%;"></td>
+							<td><input type="submit" class="srchbtn" name="gohomebtn" value="Home"></td>
 							<td class="col"></td>
-							<td><button class="logoutbtn" name="logoutBTN"> Logout </button> </td>
+							<td><input type="submit" class="logoutbtn" name="logoutBTN" value="Logout"></td>
 						</tr>
 					</table>
 					<div class="scrollit">
@@ -65,7 +38,7 @@ include '../Page Controllers/employeeListController.php';
 								</tr>
 							</thead>
 							
-							<tbody id="tab">
+							<tbody>
 								<?php
 									showTable();
 								?>
@@ -123,18 +96,18 @@ include '../Page Controllers/employeeListController.php';
 							<td class="td1"> Added By: </td>
 							<td> <input type="text" class="tf" name="addedbyTF" placeholder="Auto Generated"  value="<?php if($srchvalid==true){echo "$addedbyTF";}else{echo "$uid";} ?>" readonly> </td>
 						</tr>
-					</table>
+					<table>
 				</div>
 				
 				<table name="buttons" class="btnTB">
 					<tr>
-						<td> <button class="btn" name="refreshBTN"> REFRESH </button> </td>
+						<td> <input type="submit" class="btn" name="refreshBTN" value="REFRESH"> </td>
 						<td class="col2"></td>
-						<td> <button class="btn" name="insertBTN" onclick= 'showPASS("<?php echo $idpass; ?>")' <?php if($srchvalid){echo "disabled";} ?>> INSERT </button> </td> 
+						<td> <input type="submit" class="btn" name="insertBTN" value="INSERT" onclick= 'showPASS("<?php echo $idpass;?>")' <?php if($srchvalid){echo "disabled";} ?>> </td> 
 						<td class="col2"></td>
-						<td> <button class="btn" name="updateBTN" <?php if(!$srchvalid){echo "disabled";} ?>> UPDATE </button> </td>
+						<td> <input type="submit" class="btn" name="updateBTN" value="UPDATE" <?php if(!$srchvalid){echo "disabled";} ?>> </td>
 						<td class="col2"></td>
-						<td> <button class="btn" name="deleteBTN" <?php if(!$srchvalid){echo "disabled";} ?>> DELETE </button> </td>
+						<td> <input type="submit" class="btn" name="deleteBTN" value="DELETE" <?php if(!$srchvalid){echo "disabled";} ?>> </td>
 					</tr>
 				</table>
 			</form>
