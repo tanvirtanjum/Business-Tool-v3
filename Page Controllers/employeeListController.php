@@ -20,43 +20,44 @@ function showTable()
 	}
 }
 
+$uid = $_COOKIE['uid'];
+$sid = $_COOKIE['sid'];
+
+$srchEmpTF="";
+$srchEmpTFerror="";
+
+$eidTF="";
+$eidTFerror="";
+$enameTF="";
+$enameTFerror="";
+$design="";
+$o1= false;
+$o2= false;
+$o3= false;
+$o4= false;
+$designerror="";
+
+$salTF="";
+$salTFerror="";
+
+$mobTF="";
+$mobTFerror="";
+
+$addedbyTF="";
+
+$jdTF="";
+
+$msg = "";
+$msg1="";
+
+$insertError=false;
+$insertion=false;
+$idpass="";
+
+$srchvalid= false;
+
 if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 {
-	$uid = $_COOKIE['uid'];
-	$sid = $_COOKIE['sid'];
-	
-	$srchEmpTF="";
-	$srchEmpTFerror="";
-	
-	$eidTF="";
-	$eidTFerror="";
-	$enameTF="";
-	$enameTFerror="";
-	$design="";
-	$o1= false;
-	$o2= false;
-	$o3= false;
-	$o4= false;
-	$designerror="";
-	
-	$salTF="";
-	$salTFerror="";
-	
-	$mobTF="";
-	$mobTFerror="";
-	
-	$addedbyTF="";
-	
-	$jdTF="";
-	
-	$msg = "";
-	$msg1="";
-	
-	$insertError=false;
-	$insertion=false;
-	$idpass="";
-	
-	$srchvalid= false;
 	
 	if(isset($_POST["logoutBTN"]))
 	{
@@ -119,14 +120,6 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 			}
 			
 		}
-	}
-	
-	if(isset($_POST["deleteBTN"]))
-	{
-	}
-	
-	if(isset($_POST["updateBTN"]))
-	{
 	}
 	
 	if(isset($_POST["insertBTN"]))
@@ -271,6 +264,14 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 		{
 			$access=false;
 		}
+	}
+	
+	if(isset($_POST["deleteBTN"]))
+	{
+	}
+	
+	if(isset($_POST["updateBTN"]))
+	{
 	}
 	
 	if(isset($_POST["refreshBTN"]))
