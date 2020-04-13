@@ -18,7 +18,9 @@ include '../Page Controllers/employeeListController.php';
 							<td><input type="text" class="srchtf" name="srchEmpTF" placeholder="Search by Employee ID." value="<?php echo "$srchEmpTF";?>"></td>
 							<td> <span style="color:red; font-size:15px;"> <?php echo"$srchEmpTFerror";?> </span> </td>
 							<td><input type="submit" class="srchbtn" name="srchBTN" value="Search"></td>
-							<td style="width:50%;"></td>
+							<td style="width:30%;"></td>
+							<td><input type="text" class="srchbynametf" name="srchEmpByNameTF" id="srchEmpByNameTF" placeholder="Load Table by Employee Name" onclick="clear()"></td>
+							<td style="width:30%;"></td>
 							<td><input type="submit" class="srchbtn" name="gohomebtn" value="Home"></td>
 							<td class="col"></td>
 							<td><input type="submit" class="logoutbtn" name="logoutBTN" value="Logout"></td>
@@ -38,7 +40,7 @@ include '../Page Controllers/employeeListController.php';
 								</tr>
 							</thead>
 							
-							<tbody>
+							<tbody id='tab'>
 								<?php
 									showTable();
 								?>

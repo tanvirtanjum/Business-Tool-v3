@@ -97,6 +97,28 @@ input[type="text"].srchtf:focus
 	border: 2px solid #008CBA;
 }
 
+.srchbynametf
+{	
+	width:100px;
+	padding: 5px 5px 5px 5px;
+	border: 2px solid #ccc;
+	border-radius: 12px;
+	font-family: "Consolas";
+	font-size: 15px;
+	
+	transition-duration: 0.4s;
+}
+input[type="text"].srchbynametf:hover
+{
+	width:245px;
+	border: 2px solid #008CBA;
+}
+input[type="text"].srchbynametf:focus
+{
+	width:245px;
+	border: 2px solid #008CBA;
+}
+
 .tf
 {	
 	width:275px;
