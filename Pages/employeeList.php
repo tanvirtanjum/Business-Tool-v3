@@ -18,7 +18,9 @@ include '../Page Controllers/employeeListController.php';
 							<td><input type="text" class="srchtf" name="srchEmpTF" placeholder="Search by Employee ID." value="<?php echo "$srchEmpTF";?>"></td>
 							<td> <span style="color:red; font-size:15px;"> <?php echo"$srchEmpTFerror";?> </span> </td>
 							<td><button class="srchbtn" name="srchBTN"> Search </button> </td>
-							<td style="width:50%;"></td>
+							<td style="width:40%;"></td>
+							<td><input type="text" class="srchByNametf" name="srchByNameTF" id="srchByNameTF" placeholder="Load Table by Employee Name"  onclick='clear()'></td>
+							<td style="width:25%;"></td>
 							<td><button class="srchbtn" name="gohomebtn"> Home </button> </td>
 							<td class="col"></td>
 							<td><button class="logoutbtn" name="logoutBTN"> Logout </button> </td>
@@ -26,18 +28,23 @@ include '../Page Controllers/employeeListController.php';
 					</table>
 					<div class="scrollit">
 						<table name="empTable" id="empTable">
-							<tr>
-								<th>ID.</th>
-								<th>Name</th>
-								<th>Designation ID.</th>
-								<th>Salary</th>
-								<th>Mobile No</th>
-								<th>Join Date</th>
-								<th>Added By</th>	
-							</tr>
-							<?php
-								showTable();
-							?>
+							<thead>
+								<tr>
+									<th>ID.</th>
+									<th>Name</th>
+									<th>Designation ID.</th>
+									<th>Salary</th>
+									<th>Mobile No</th>
+									<th>Join Date</th>
+									<th>Added By</th>	
+								</tr>
+							</thead>
+							
+							<tbody id="tab">
+								<?php
+									showTable();
+								?>
+							</tbody>
 						</table>
 					</div>
 				</div>
