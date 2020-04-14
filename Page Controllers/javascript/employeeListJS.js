@@ -1,15 +1,14 @@
-function showPASS(idpass) 
+function showPASS(id,pass) 
 {
-	if(idpass.length > 0)
+	var con = confirm("Procced?");
+		
+	if(con == true)
 	{
-		alert(idpass);
+		alert("User ID: "+id+"\nPassword: "+pass+"");	
 	}
 	
 	else
-	{
-		alert("Something Went Wrong.");
-	}
-		
+	{}
 }
 
 function clear() 

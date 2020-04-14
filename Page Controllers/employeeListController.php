@@ -52,7 +52,7 @@ $msg1="";
 
 $insertError=false;
 $insertion=false;
-$idpass="";
+$pass = "";
 
 $srchvalid= false;
 
@@ -246,9 +246,8 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 			
 			if(!$insertError)
 			{
-				$insertion=true;
 				$pass = rand(1234,9999);
-				$idpass = "USER ID. $eidTF \nPASSWPRD: $pass";
+				$insertion=true;
 				//echo "<script>var msg=$idpass;</script>";
 				insertLogin($eidTF, $design, md5($pass));
 				insertEmployee($eidTF, $enameTF, $design, $salTF, $mobTF, $uid);

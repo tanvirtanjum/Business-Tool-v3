@@ -52,7 +52,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 			$data=getLogin($uid,md5($oldpassPF));
 			if($data != null)
 			{
-				if($oldpassPF != ($data[0]['PASS']))
+				if(md5($oldpassPF) != $data[0]['PASS'])
 				{
 					$msg1 = '<span>Fill Correctly.</span>';
 					$oldpassPF ="";

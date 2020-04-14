@@ -105,7 +105,7 @@ include '../Page Controllers/employeeListController.php';
 					<tr>
 						<td> <button class="btn" name="refreshBTN"> REFRESH </button> </td>
 						<td class="col2"></td>
-						<td> <button class="btn" name="insertBTN" onclick='showPASS("<?php echo $idpass;?>")' <?php if($srchvalid){echo "disabled";} ?>> INSERT </button> </td> 
+						<td> <button class="btn" name="insertBTN" onclick='showPASS("<?php echo $eidTF;?>","<?php echo $pass;?>")' <?php if($srchvalid){echo "disabled";} ?>> INSERT </button> </td> 
 						<td class="col2"></td>
 						<td> <button class="btn" name="updateBTN" <?php if(!$srchvalid){echo "disabled";} ?>> UPDATE </button> </td>
 						<td class="col2"></td>
