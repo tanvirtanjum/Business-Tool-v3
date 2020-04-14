@@ -10,7 +10,7 @@ include '../Page Controllers/aboutMeController.php';
 	</head>
 	<body class="body">
 		<div class="form">
-			<form method="post" action="">
+			<form autocomplete="off" method="post" action="">
 				<table>
 					<tr align="right" valign="middle" style="height: 40px;">
 						<td> <p class="text"> ID: </p> </td>

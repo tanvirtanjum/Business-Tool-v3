@@ -9,13 +9,13 @@ function showTable()
 	foreach($table as $data)
 	{
 		echo "<tr>";
-		echo "<td>".$data["EmpID"]."</td>";
+		echo "<td align='middle'>".$data["EmpID"]."</td>";
 		echo "<td>".$data["E_NAME"]."</td>";
-		echo "<td>".$data["DID"]."</td>";
-		echo "<td>".$data["SAL"]."</td>";
-		echo "<td>".$data["E_MOB"]."</td>";
-		echo "<td>".$data["JOIN_DATE"]."</td>";
-		echo "<td>".$data["ADDED_BY"]."</td>";
+		echo "<td align='middle'>".$data["DID"]."</td>";
+		echo "<td align='middle'>".$data["SAL"]."</td>";
+		echo "<td align='middle'>".$data["E_MOB"]."</td>";
+		echo "<td align='middle'>".$data["JOIN_DATE"]."</td>";
+		echo "<td align='middle'>".$data["ADDED_BY"]."</td>";
 		echo "</tr>";		
 	}
 }
@@ -55,6 +55,8 @@ $insertion=false;
 $idpass="";
 
 $srchvalid= false;
+
+$updateError=false;
 
 if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 {
@@ -212,7 +214,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 			{
 				
 				$salTF =$_POST["salTF"];
-				if(!is_numeric($salTF)) 
+				if(!is_numeric($salTF) || $salTF < 0) 
 				{
 					$msg = '<span> Not valid</span>';
 					$insertError=true;
@@ -248,7 +250,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 				$pass = rand(1234,9999);
 				$idpass = "USER ID. $eidTF \nPASSWPRD: $pass";
 				//echo "<script>var msg=$idpass;</script>";
-				insertLogin($eidTF, $design, $pass);
+				insertLogin($eidTF, $design, md5($pass));
 				insertEmployee($eidTF, $enameTF, $design, $salTF, $mobTF, $uid);
 			}
 			
@@ -272,6 +274,123 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 	
 	if(isset($_POST["updateBTN"]))
 	{
+		$updateError=false;
+		
+		if($sid == '1')
+		{
+			if(empty($_POST["eidTF"]))
+			{
+				$eidTFerror="*";
+				$updateError=true;	
+			}
+			
+			else
+			{
+				$eidTF=$_POST["eidTF"];
+			}
+			
+			if(empty($_POST["enameTF"]))
+			{
+				$enameTFerror="*";
+				$updateError=true;
+			}
+			
+			else
+			{
+				$enameTF=$_POST["enameTF"];
+			}
+			
+			if(isset($_POST["design"]))
+			{
+				$design=$_POST["design"];
+				if($design == "4")
+				{
+					$o1=true;
+				}
+				
+				else
+				{
+					$design=$_POST["design"];
+					
+					if($design=="1")
+					{
+						$o2=true;
+					}
+					
+					if($design=="2")
+					{
+						$o3=true;
+					}
+					
+					if($design=="3")
+					{
+						$o4=true;
+					}
+				}			
+			}
+			
+			else
+			{
+				$designerror="*";
+				$updateError=true;
+			}
+			
+			if(empty($_POST["salTF"]))
+			{
+				$salTFerror="*";
+				$updateError=true;
+			}
+			
+			else
+			{
+				
+				$salTF =$_POST["salTF"];
+				if(!is_numeric($salTF) || $salTF < 0) 
+				{
+					$msg = '<span> Not valid</span>';
+					$updateError=true;
+					$salTF ="";
+				} 
+				
+			}
+			
+			if(empty($_POST["mobTF"]))
+			{
+				$mobTFerror="*";
+				$updateError=true;
+			}
+			
+			else
+			{
+				
+				$mobTF =$_POST["mobTF"];
+				 if(!is_numeric($mobTF)) 
+				{
+					$msg1 = '<span> Not valid</span>';
+					$updateError=true;
+					$mobTF="";
+				} 
+					
+			}
+			
+			if(!$updateError)
+			{
+				updateSID($eidTF, $design);
+				updateEmployee($eidTF, $enameTF, $design, $salTF, $mobTF);
+			}
+			
+			else{}
+		}
+		
+		else if($sid=='2' || $sid=='3')
+		{
+			$access=false;
+		}
+		
+		else
+		{
+			$access=false;
+		}
 	}
 	
 	if(isset($_POST["refreshBTN"]))

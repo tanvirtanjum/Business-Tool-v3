@@ -76,4 +76,19 @@ function insertEmployee($EmpID, $name, $did, $sal, $mob, $addedby)
 		throw $e->getMessage();
 	}
 }
+
+function updateEmployee($EmpID, $name, $did, $sal, $mob)
+{
+	try
+	{
+		$query = "UPDATE `employee` SET `E_NAME`= '$name',`DID`= '$did',`SAL`= '$sal',`E_MOB`= '$mob' WHERE `EmpID` = '$EmpID';";
+
+		execute($query);
+	}
+	
+	catch (Exception $e)
+	{
+		throw $e->getMessage();
+	}
+}
 ?>

@@ -58,5 +58,20 @@ function updatePass($NEWPASS,$LID,$PASS)
 		throw $e->getMessage();
 	}	
 }
+
+function updateSID($LID,$SID)
+{
+	$query="UPDATE `log_in` SET `SID` = '".$SID."' WHERE `log_in`.`LID` = '".$LID."';";
+	
+	try
+	{
+		execute($query);
+	}
+	
+	catch(Exception $e)
+	{
+		throw $e->getMessage();
+	}	
+}
  
 ?>

@@ -1,5 +1,6 @@
 .floatRightTop 
 { 
+	/*overflow: scroll;*/
 	padding-top: 1%;
 	width:70%;
 	float: right; 
@@ -8,6 +9,7 @@
 
 .floatLeftDown 
 { 
+	/*overflow: scroll;*/
 	padding-top: 3%;
 	width: 30%; 
 	float: left; 
@@ -47,9 +49,14 @@
 	
 	
 }
-#empTable td, #empTable th 
+#empTable th 
 {
-	border: 1px solid #ddd;
+	border: 2px solid #ddd;
+	padding: 8px;
+}
+#empTable td
+{
+	border: 1px solid BLACK;
 	padding: 8px;
 }
 #empTable tr:nth-child(even)
@@ -110,12 +117,12 @@ input[type="text"].srchtf:focus
 }
 input[type="text"].srchbynametf:hover
 {
-	width:245px;
+	width:240px;
 	border: 2px solid #008CBA;
 }
 input[type="text"].srchbynametf:focus
 {
-	width:245px;
+	width:240px;
 	border: 2px solid #008CBA;
 }
 
@@ -197,7 +204,7 @@ option
 	transition-duration: 0.4s;
     cursor: pointer;
 }
-input[type="submit"].srchbtn:hover
+.srchbtn:hover
 {
 	background-color: #008CBA; 
     color: white; 
@@ -218,7 +225,7 @@ input[type="submit"].srchbtn:hover
 	transition-duration: 0.4s;
     cursor: pointer;
 }
-input[type="submit"].logoutbtn:hover
+.logoutbtn:hover
 {
 	background-color: red; 
     color: white; 
@@ -239,7 +246,7 @@ input[type="submit"].logoutbtn:hover
 	transition-duration: 0.4s;
     cursor: pointer;
 }
-input[type="submit"].btn:hover
+.btn:hover
 {
 	background-color: #008CBA; 
     color: white; 

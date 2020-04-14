@@ -52,7 +52,7 @@ else
 	
 	<body>
 		<div class="container">
-			<form action="" method="post">
+			<form autocomplete="off" action="" method="post">
 				<div class="floatRightTop">
 					<table name="search&logout">
 						<tr>

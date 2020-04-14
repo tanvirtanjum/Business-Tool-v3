@@ -49,10 +49,10 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 		else
 		{
 			$oldpassPF =$_POST["oldpassPF"];
-			$data=getLogin($uid,$oldpassPF);
+			$data=getLogin($uid,md5($oldpassPF));
 			if($data != null)
 			{
-				if($oldpassPF != $data[0]['PASS']) 
+				if($oldpassPF != ($data[0]['PASS']))
 				{
 					$msg1 = '<span>Fill Correctly.</span>';
 					$oldpassPF ="";
@@ -100,7 +100,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 			}
 		}
 		
-		if(strlen($confirmpassPF)>3 && strlen($newpassPF))
+		if(strlen($confirmpassPF)>3 && strlen($newpassPF)>3)
 		{
 			if($newpassPF != $confirmpassPF)
 			{
@@ -111,8 +111,10 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 
 		if(!$haserror)
 		{
-			updatePass($confirmpassPF,$uid,$oldpassPF);
-			header("Location:../index.php");
+			updatePass(md5($confirmpassPF),$uid,md5($oldpassPF));
+			setcookie("uid",$uid,time()-600);
+			setcookie("sid",$sid,time()-600);
+			header("Location:index.php");
 		}		
 	}	
 }

@@ -34,7 +34,7 @@ if(!isset($_COOKIE['uid']) && !isset($_COOKIE['sid']))
 		
 		if(!$has_error)
 		{
-			$result=getLogin($uid,$pass);
+			$result=getLogin($uid,md5($pass));
 			
 			if(sizeof($result) > 0)
 			{

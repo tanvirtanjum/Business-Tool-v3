@@ -11,7 +11,7 @@ include '../Page Controllers/settingsController.php';
 	</head>
 	<body class="body">
 		<div class="form">
-			<form method="post" action="">
+			<form autocomplete="off" method="post" action="">
 				<table>
 					<tr valign="middle" style="height: 40px;">
 						<td align="right"> <p class="text"> Old Password: </p> </td>

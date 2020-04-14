@@ -4,13 +4,12 @@ include '../Page Controllers/learnMoreController.php';
 
 <!DOCTYPE html>
 <html>
+	<head>
+		<title> Learn More </title>
+		<link rel="stylesheet" type="text/css" href="CSS/learnMore.css">
+	</head>	
 	<body>
-		<head>
-			<title> Learn More </title>
-			<link rel="stylesheet" type="text/css" href="CSS/learnMore.css">
-		</head>	
-		
-		<form action="" method="post">
+		<form autocomplete="off" action="" method="post">
 			<table style="width:100%;"  cellpadding="1">
 				<tr>
 					<td align="right"><input type="submit" class="logoutbtn" name="logoutBTN" value="Logout"></td>

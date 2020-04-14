@@ -8,9 +8,9 @@ function showTable($para)
 	foreach($table as $data)
 	{
 		echo "<tr>";
-		echo "<td>".$data["NoteID"]."</td>";
+		echo "<td align='middle'>".$data["NoteID"]."</td>";
 		echo "<td>".$data["NoteName"]."</td>";
-		echo "<td>".$data["OwnerID"]."</td>";
+		echo "<td align='middle'>".$data["OwnerID"]."</td>";
 		echo "</tr>";		
 	}
 }
@@ -164,7 +164,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 		
 		if($updCheck == true)
 		{
-			updateNote($noteID, $notename, $text, $uid);
+			updateNote($noteID, $notename, md5($text), $uid);
 		}
 	}
 }
