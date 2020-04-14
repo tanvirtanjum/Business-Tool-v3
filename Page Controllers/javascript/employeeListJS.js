@@ -4,11 +4,25 @@ function showPASS(id,pass)
 		
 	if(con == true)
 	{
-		alert("User ID: "+id+"\nPassword: "+pass+"");	
+		if(id != "" && pass !="")
+		{
+			alert("User ID: "+id+"\nPassword: "+pass+"");
+			return true;
+		}
+		
+		else
+		{
+			alert("PRESS \"INSERT\" AGAIN TO GET PASSWORD.");
+			return true;
+		}
+			
 	}
 	
 	else
-	{}
+	{
+		alert("Canceled..");
+		return false;
+	}
 }
 
 function clear() 

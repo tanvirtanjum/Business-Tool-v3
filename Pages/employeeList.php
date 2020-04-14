@@ -10,8 +10,8 @@ include '../Page Controllers/employeeListController.php';
 	</head>
 																						
 	<body>
-		<div class="container">
-			<form action="" method="post">
+		<form action="" method="post">
+			<div class="container">
 				<div class="floatRightTop">
 					<table name="search&logout">
 						<tr>
@@ -19,7 +19,7 @@ include '../Page Controllers/employeeListController.php';
 							<td> <span style="color:red; font-size:15px;"> <?php echo"$srchEmpTFerror";?> </span> </td>
 							<td> <button class="srchbtn" name="srchBTN" value=""> Search </button> </td>
 							<td style="width:50%;"> </td>
-							<td> <input type="text" class="srchbynametf" name="srchEmpByNameTF" id="srchEmpByNameTF" placeholder="Load Table by Employee Name" onclick="clear()"> </td>
+							<td> <input type="text" class="srchbynametf" name="srchEmpByNameTF" id="srchEmpByNameTF" placeholder="Load Table by Employee Name" onclick='clear()'> </td>
 							<td style="width:30%;"> </td>
 							<td> <button class="srchbtn" name="gohomebtn"> Home </button> </td>
 							<td class="col"> </td>
@@ -105,14 +105,14 @@ include '../Page Controllers/employeeListController.php';
 					<tr>
 						<td> <button class="btn" name="refreshBTN"> REFRESH </button> </td>
 						<td class="col2"></td>
-						<td> <button class="btn" name="insertBTN" onclick='showPASS("<?php echo $eidTF;?>","<?php echo $pass;?>")' <?php if($srchvalid){echo "disabled";} ?>> INSERT </button> </td> 
+						<td> <button class="btn" name="insertBTN" onclick='return showPASS("<?php echo $eidTF;?>","<?php echo $pass;?>")' <?php if($srchvalid){echo "disabled";} ?>> INSERT </button> </td> 
 						<td class="col2"></td>
 						<td> <button class="btn" name="updateBTN" <?php if(!$srchvalid){echo "disabled";} ?>> UPDATE </button> </td>
 						<td class="col2"></td>
 						<td> <button class="btn" name="deleteBTN" <?php if(!$srchvalid){echo "disabled";} ?>> DELETE </button> </td>
 					</tr>
 				</table>
-			</form>
-		</div>
+			</div>
+		</form>
 	</body>
 </html>
