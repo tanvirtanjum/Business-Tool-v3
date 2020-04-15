@@ -9,7 +9,7 @@ include '../Page Controllers/employeeListController.php';
 		<link rel="stylesheet" type="text/css" href="CSS/employeeList.css">
 	</head>
 																						
-	<body style="background-image: url('Images/employeeList.jpg'); background-repeat: no-repeat; background-size: 100% 100%;">
+	<body style="background-image: url('Images/employeeList.png'); background-repeat: no-repeat; background-size: 100% 100%;">
 		<form action="" method="post">
 			<div class="container">
 				<div class="floatRightTop">

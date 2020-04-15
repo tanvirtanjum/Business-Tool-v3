@@ -10,7 +10,7 @@ include '../Page Controllers/takenoteController.php';
 		<link rel="stylesheet" type="text/css" href="CSS/takenote.css">
 	</head>
 	
-	<body>
+	<body style="background-image: url('Images/takeNote.png'); background-repeat: no-repeat; background-size: 100% 100%;">
 		<div class="container">
 			<form autocomplete="off" action="" method="post">
 				<div class="floatRightTop">
