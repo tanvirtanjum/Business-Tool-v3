@@ -114,3 +114,18 @@ input[type="password"].tf:focus
 	font-style: bold;
 	color: #008CBA;
 }
+
+.link
+{
+	font-family: Comic Sans MS;
+	font-size: 15px;
+	color: #6495ED;
+	text-decoration: none;
+	transition-duration: 0.4s;
+}
+.link:hover
+{
+	font-size: 18px;
+	color: #483D8B;
+	text-decoration: underline;
+}

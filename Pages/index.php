@@ -76,6 +76,11 @@ include '../Page Controllers/indexController.php';
 							<input type="submit" name="Login" value="Login" class="login">
 						</td>
 					</tr>	
+					<tr valign="middle">
+						<td align="center" colspan="2">
+							<a href="recoverPassword.php" target="_blank" class="link"> Forgotten Password? </a>
+						</td>
+					</tr>	
 				</table>
 			</form>	
 		</div>
