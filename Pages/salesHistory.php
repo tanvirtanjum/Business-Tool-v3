@@ -50,7 +50,7 @@ else
 		<link rel="stylesheet" type="text/css" href="CSS/salesHistory.css">
 	</head>
 	
-	<body>
+	<body style="background-image: url('Images/salesHistory.jpg'); background-repeat: no-repeat; background-size: 100% 100%;">
 		<div class="container">
 			<form autocomplete="off" action="" method="post">
 				<div class="floatRightTop">
