@@ -9,7 +9,7 @@ include '../Page Controllers/homeController.php';
 		<link rel="stylesheet" type="text/css" href="CSS/home.css">
 	</head>
 	
-	<body style="background-image: url('Images/home1.gif'); background-repeat: no-repeat; background-position:center top; background-size: 20% 25%;">
+	<body style="background-image: url('Images/home1.gif'); background-repeat: no-repeat; background-position:center top; background-size: 15% 20%;">
 		<div class="form">
 			<form autocomplete="off" action="" method="post">
 				<table>
