@@ -475,7 +475,7 @@ else
 		<link rel="stylesheet" type="text/css" href="CSS/productList.css">
 	</head>
 	
-	<body style="background-image: url('Images/productList.png'); background-repeat: no-repeat; background-size: 100% 100%;">
+	<body style="background-image: url('Images/productList.png'); background-repeat: no-repeat; background-size: cover;">
 		<div class="container">
 			<form autocomplete="off" action="" method="post">
 				<div class="floatRightTop">
@@ -491,17 +491,22 @@ else
 					</table>
 					<div class="scrollit">
 						<table name="prodTable" id="prodTable">
-							<tr>
-								<th>ID.</th>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Quantity</th>
-								<th>Buying Price</th>
-								<th>Selling Price</th>
-								<th>Modified By</th>
-								<th>Adding Date</th>
-							</tr>
+							<thead>
+								<tr>
+									<th>ID.</th>
+									<th>Name</th>
+									<th>Type</th>
+									<th>Quantity</th>
+									<th>Buying Price</th>
+									<th>Selling Price</th>
+									<th>Modified By</th>
+									<th>Adding Date</th>
+								</tr>
+							</thead>
 							
+							<tbody>
+							
+							</tbody>
 						</table>
 					</div>
 				</div>

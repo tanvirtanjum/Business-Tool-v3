@@ -2,15 +2,14 @@
 include '../Page Controllers/employeeListController.php';
 ?>
 
-<!DOCTYPE html>
 <html>
 	<head> 
-		<title> Employee List </title>
-		<script src="../Page Controllers/javascript/employeeListJS.js"> </script>
+		<title> Employee List</title>
+		<script src="../Page Controllers/javascript/employeeListJS.js"></script>
 		<link rel="stylesheet" type="text/css" href="CSS/employeeList.css">
 	</head>
 																						
-	<body style="background-image: url('Images/employeeList.png'); background-repeat: no-repeat; background-size: 100% 100%;">
+	<body style="background-image: url('Images/employeeList.png'); background-repeat: no-repeat; background-size: cover;">
 		<form action="" method="post">
 			<div class="container">
 				<div class="floatRightTop">
@@ -103,19 +102,19 @@ include '../Page Controllers/employeeListController.php';
 							<td> <input type="text" class="tf" name="addedbyTF" placeholder="Auto Generated"  value="<?php if($srchvalid==true){echo "$addedbyTF";}else{echo "$uid";} ?>" readonly> </td>
 						</tr>
 					</table>
+						
+					<table name="buttons" class="btnTB">
+						<tr>
+							<td> <button class="btn" name="refreshBTN"> REFRESH </button> </td>
+							<td class="col2"></td>
+							<td> <button class="btn" name="insertBTN" onclick='return showPASS("<?php echo $eidTF;?>","<?php echo $pass;?>")' <?php if($srchvalid){echo "disabled";} ?>> INSERT </button> </td> 
+							<td class="col2"></td>
+							<td> <button class="btn" name="updateBTN" <?php if(!$srchvalid){echo "disabled";} ?>> UPDATE </button> </td>
+							<td class="col2"></td>
+							<td> <button class="btn" name="deleteBTN" <?php if(!$srchvalid){echo "disabled";} ?>> DELETE </button> </td>
+						</tr>
+					</table>
 				</div>
-				
-				<table name="buttons" class="btnTB">
-					<tr>
-						<td> <button class="btn" name="refreshBTN"> REFRESH </button> </td>
-						<td class="col2"></td>
-						<td> <button class="btn" name="insertBTN" onclick='return showPASS("<?php echo $eidTF;?>","<?php echo $pass;?>")' <?php if($srchvalid){echo "disabled";} ?>> INSERT </button> </td> 
-						<td class="col2"></td>
-						<td> <button class="btn" name="updateBTN" <?php if(!$srchvalid){echo "disabled";} ?>> UPDATE </button> </td>
-						<td class="col2"></td>
-						<td> <button class="btn" name="deleteBTN" <?php if(!$srchvalid){echo "disabled";} ?>> DELETE </button> </td>
-					</tr>
-				</table>
 			</div>
 		</form>
 	</body>
