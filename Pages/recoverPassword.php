@@ -1,6 +1,8 @@
 <?php
 include '../Page Controllers/recoverPasswordController.php';
 ?>
+
+<!DOCTYPE html>
 <html>
 	<head>
 		<title> Recover Password </title>
