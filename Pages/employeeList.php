@@ -115,7 +115,6 @@ include '../Page Controllers/employeeListController.php';
 							<td> <button class="btn" name="deleteBTN" <?php if(!$srchvalid){echo "disabled";} ?>> DELETE </button> </td>
 						</tr>
 					</table>
-
 				</div>
 			</div>
 		</form>

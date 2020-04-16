@@ -35,6 +35,7 @@
 	font-style: bold;
 }
 
+
 #noteTable
 {
 	border-collapse: collapse;
@@ -47,25 +48,34 @@
 	
 	
 }
-#noteTable td, #noteTable th 
+#noteTable th 
 {
-	border: 1px solid #ddd;
+	border: 2px solid #ddd;
 	padding: 8px;
 }
-#noteTable tr:nth-child(even)
+#noteTable td
+{
+	border: 2px solid #000000;
+	padding: 8px;
+}
+#noteTable tr:nth-child(even) 
 {
 	background-color: #f2f2f2;
 }
+#noteTable tr:nth-child(odd) 
+{
+	background-color: #E6E6FA;
+}
 #noteTable tr:hover 
 {
-	background-color: Yellow;
+	background-color: #4682B4;
 }
 #noteTable th 
 {
 	padding-top: 8px;
 	padding-bottom: 8px;
 	text-align: center;
-	background-color: #008CBA;
+	background-color: #2E8B57;
 	color: white;
 }
 
@@ -220,4 +230,3 @@ input[type="submit"].btn:hover
 {
     border: 2px solid #008CBA;
 }
-

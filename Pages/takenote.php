@@ -27,16 +27,23 @@ include '../Page Controllers/takenoteController.php';
 					</table>
 					<div class="scrollit">
 						<table name="noteTable" id="noteTable">
-							<tr>
-								<th>Note ID</th>
-								<th>Note Name</th>
-								<th>Owner ID</th>
-							</tr>
+							<thead>
+								<tr>
+									<th>Note ID</th>
+									<th>Note Name</th>
+									<th>Owner ID</th>
+								</tr>
+							</thead>
 							
+							<tbody id="tab">
 							<?php
 								showTable($uid);
 							?>
+							</tbody>
 						</table>
+					</div>
+					<div align="center">
+						<input type="text" class="tf" name="loadnotebynameTF" id="loadnotebynameTF" placeholder="Load Table By Note Name" onclick="clear()">
 					</div>
 				</div>
 						

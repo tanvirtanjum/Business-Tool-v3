@@ -52,3 +52,13 @@ let saveFile = () =>
 		alert("Empty Text can not be saved.\nDownload a note from Database or write someting and then try to PRINT.");
 	}
 }
+
+function clear() 
+{
+	var rowCount = document.getElementById('tab').rows.length;
+	var i=0;
+	for(i = 0; i<rowCount; i++)
+	{
+		document.getElementById("tab").deleteRow(0);
+	}
+}
