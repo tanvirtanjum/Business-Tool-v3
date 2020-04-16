@@ -38,6 +38,11 @@ include '../Page Controllers/aboutMeController.php';
 					</tr>
 					
 					<tr align="right" valign="middle" style="height: 40px;">
+						<td> <p class="text">E-mail: </p> </td>
+						<td> <input type="text" class="tf" name="mailTF" value="<?php echo "$mail"; ?>"> </td>
+					</tr>
+					
+					<tr align="right" valign="middle" style="height: 40px;">
 						<td> <p class="text"> Join Date:</p> </td>
 						<td> <input type="text" class="tf" name="joindateTF" value="<?php echo "$Jdate"; ?>"> </td>
 					</tr>

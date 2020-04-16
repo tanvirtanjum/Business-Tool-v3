@@ -35,6 +35,7 @@ include '../Page Controllers/employeeListController.php';
 									<th>Design. ID.</th>
 									<th>Salary</th>
 									<th>Mobile No</th>
+									<th>E-mail</th>
 									<th>Join Date</th>
 									<th>Added By</th>	
 								</tr>
@@ -89,6 +90,12 @@ include '../Page Controllers/employeeListController.php';
 						<tr>
 							<td class="td1"> Mobile No.: </td>
 							<td> <input type="number" min="0" class="tf" name="mobTF" value="<?php echo "$mobTF";?>"> </td>
+							<td> <span style="color:red; font-size:15px;"><?php echo $msg1; ?> <?php echo "$mobTFerror"; ?> </span></td>
+						</tr>
+						
+						<tr>
+							<td class="td1"> E-mail: </td>
+							<td> <input type="mail" class="tf" style="text-transform: lowercase;" name="mailTF" value="<?php echo "$mailTF";?>"> </td>
 							<td> <span style="color:red; font-size:15px;"><?php echo $msg1; ?> <?php echo "$mobTFerror"; ?> </span></td>
 						</tr>
 						

@@ -6,6 +6,7 @@ $Name="";
 $Design="";
 $Salary="";
 $Mob="";
+$mail="";
 $Jdate="";
 $Addedby="";
 
@@ -21,6 +22,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 	$Design=$data[0]["DID"];
 	$Salary=$data[0]["SAL"];
 	$Mob=$data[0]["E_MOB"];
+	$mail=$data[0]["E_MAIL"];
 	$Jdate=$data[0]["JOIN_DATE"];
 	$Addedby=$data[0]["ADDED_BY"];
 	

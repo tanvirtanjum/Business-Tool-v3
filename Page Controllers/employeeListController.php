@@ -14,6 +14,7 @@ function showTable()
 		echo "<td align='middle'>".$data["DID"]."</td>";
 		echo "<td align='middle'>".$data["SAL"]."</td>";
 		echo "<td align='middle'>".$data["E_MOB"]."</td>";
+		echo "<td align='middle'>".$data["E_MAIL"]."</td>";
 		echo "<td align='middle'>".$data["JOIN_DATE"]."</td>";
 		echo "<td align='middle'>".$data["ADDED_BY"]."</td>";
 		echo "</tr>";		
@@ -42,6 +43,9 @@ $salTFerror="";
 
 $mobTF="";
 $mobTFerror="";
+
+$mailTF="";
+$mailTFerror="";
 
 $addedbyTF="";
 
@@ -116,7 +120,8 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 					$o4=true;
 				}		
 				$salTF=$srchdata[0]["SAL"];				
-				$mobTF=$srchdata[0]["E_MOB"];	
+				$mobTF=$srchdata[0]["E_MOB"];
+				$mailTF=$srchdata[0]["E_MAIL"];	
 				$jdTF=$srchdata[0]["JOIN_DATE"];
 				$addedbyTF=$srchdata[0]["ADDED_BY"];
 			}
@@ -244,13 +249,27 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 					
 			}
 			
+			if(empty($_POST["mailTF"]))
+			{
+				$mailTFerror="*";
+				$insertError=true;
+				$insertion=false;
+			}
+			
+			else
+			{
+				
+				$mailTF =$_POST["mailTF"];
+					
+			}
+			
 			if(!$insertError)
 			{
 				$pass = rand(1234,9999);
 				$insertion=true;
 				//echo "<script>var msg=$idpass;</script>";
 				insertLogin($eidTF, $design, md5($pass));
-				insertEmployee($eidTF, $enameTF, $design, $salTF, $mobTF, $uid);
+				insertEmployee($eidTF, $enameTF, $design, $salTF, $mobTF, $mailTF, $uid);
 			}
 			
 			else{}
@@ -372,10 +391,23 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 					
 			}
 			
+			if(empty($_POST["mailTF"]))
+			{
+				$mailTFerror="*";
+				$updateError=true;
+			}
+			
+			else
+			{
+				
+				$mailTF =$_POST["mailTF"];
+					
+			}
+			
 			if(!$updateError)
 			{
 				updateSID($eidTF, $design);
-				updateEmployee($eidTF, $enameTF, $design, $salTF, $mobTF);
+				updateEmployee($eidTF, $enameTF, $design, $salTF, $mobTF, $mailTF);
 			}
 			
 			else{}
@@ -416,6 +448,9 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 		
 		$mobTF="";
 		$mobTFerror="";
+		
+		$mailTF="";
+		$mailTFerror="";
 		
 		$addedbyTF="";
 		

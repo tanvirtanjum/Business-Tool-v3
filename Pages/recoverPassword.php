@@ -13,7 +13,7 @@ include '../Page Controllers/recoverPasswordController.php';
 	<body class="body">
 		<div class="form">
 			<form action="" method="post">
-				<h1 align="center"> Recover Password </h1>
+				<h1 align="center"> <span class="blinking">Recover Password</span> </h1>
 				<table align="center" valign="middle">
 					<tr>
 						<td> <span class="text"> User ID. </span> </td>
@@ -22,31 +22,40 @@ include '../Page Controllers/recoverPasswordController.php';
 					
 					<tr>
 						<td> <span class="text"> User Name: </span> </td>
-						<td> <input type="text" name="UNAME" class="tf" style="text-transform: uppercase;" placeholder="Full Name" value="<?php echo $LID; ?>" required> </td>
+						<td> <input type="text" name="UNAME" class="tf" style="text-transform: uppercase;" placeholder="Full Name" value="<?php echo $UNAME; ?>" required> </td>
 					</tr>
 					
 					<tr>
 						<td> <span class="text"> Designation: </span> </td>
-						<td> <input type="text" name="UDEGN" class="tf" style="text-transform: uppercase;" placeholder="Designation(ADMIN/MANAGER/SALESMAN)" value="<?php echo $LID; ?>" required> </td>
+						<td> <input type="text" name="UDEGN" class="tf" style="text-transform: uppercase;" placeholder="Designation(ADMIN/MANAGER/SALESMAN)" value="<?php echo $UDEGN; ?>" required> </td>
 					</tr>
 					
 					<tr>
 						<td> <span class="text"> User Contact No. </span> </td>
-						<td> <input type="number" min="0" name="UCON" class="tf" style="text-transform: uppercase;" placeholder="Official Number" value="<?php echo $LID; ?>" required> </td>
+						<td> <input type="number" min="0" name="UCON" class="tf" placeholder="Official Contact Number" value="<?php echo $UCON; ?>" required> </td>
 					</tr>
 					
 					<tr>
 						<td> <span class="text"> User E-mail: </span> </td>
-						<td> <input type="email" name="UEMAIL" class="tf" style="text-transform: lowercase;" placeholder="Official E-mail" value="<?php echo $LID; ?>" required> </td>
+						<td> <input type="email" name="UEMAIL" class="tf" style="text-transform: lowercase;" placeholder="Official E-mail" value="<?php echo ""; ?>" required> </td>
+					</tr>
+					
+					<tr>
+						<td> <span class="text"> User Salary: </span> </td>
+						<td> <input type="number" min="0" name="USAL" class="tf" placeholder="Salary" value="<?php echo $USAL; ?>" required> </td>
 					</tr>
 	
 					<tr>
 						<td> <span class="text"> NEW PASSWORD: </span> </td>
-						<td> <input type="text" name="PASS" class="tf" placeholder="Generated Temporary Password" value="<?php echo $pass; ?>" readonly> </td>
+						<td> <input type="text" name="PASS" class="tf" placeholder="Generated Temporary Password" value="<?php echo $NEWPASS; ?>" readonly> </td>
 					</tr>
 					
 					<tr>
-						<td colspan="2" align="center"> <button name="send" id="send"> SEND</button> </td>
+						<td colspan="2" align="center"> <span class="info"> <?php echo $info; ?> <span> </td>
+					</tr>
+					
+					<tr>
+						<td colspan="2" align="center"> <button name="send" id="send" class="Request"> Request Recovery </button> </td>
 					</tr>
 				</table>
 			</form>
