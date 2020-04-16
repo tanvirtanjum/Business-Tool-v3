@@ -4,6 +4,9 @@ require_once '../DB Handler/employeeDB.php';
 
 $recover=false;
 $NEWPASS="";
+$A=rand(10,56);
+$B=rand(22,97);
+$RES="";
 $info="";
 $userINFO=null;
 
@@ -12,8 +15,8 @@ $UNAME="";
 $UDEGN="";
 $SID="";
 $UCON="";
+$UEMAIL="";
 $USAL="";
-
 if(isset($_POST['send']))
 {
 	if(!empty($_POST['UID']))
@@ -96,14 +99,43 @@ if(isset($_POST['send']))
 		$recover=false;
 	}
 	
+	if(!empty($_POST['UEMAIL']))
+	{
+		$UEMAIL=$_POST['UEMAIL'];
+		$recover=true;
+	}
+	else
+	{
+		$recover=false;
+	}
+	
+	if(!empty($_POST['RES']))
+	{
+		$RES=$_POST['RES'];
+		$recover=true;
+	}
+	else
+	{
+		$recover=false;
+	}
+	
 	
 	if($recover == true)
 	{				
 		if($LID==$userINFO[0]["EmpID"] && strtoupper($UNAME)==$userINFO[0]["E_NAME"] && $SID==$userINFO[0]["DID"] && $UCON==$userINFO[0]["E_MOB"] && $USAL==$userINFO[0]["SAL"])
 		{
-			$NEWPASS=rand(1111,9999);
-			resetPASS($LID,md5($NEWPASS));
-			$info="Change password on next login and stay secured.";
+			$c = $_POST['C'];
+			if($RES == $c)
+			{
+				$NEWPASS=rand(1111,9999);
+				resetPASS($LID,md5($NEWPASS));
+				$info="Change password on next login and stay secured.";
+			}
+			
+			else
+			{
+				$info="Wrong Answer. Try Again."."$RES"."="."$A"."+"."$B";
+			}
 		}
 		
 		else
