@@ -127,14 +127,16 @@ if(isset($_POST['send']))
 			$c = $_POST['C'];
 			if($RES == $c)
 			{
-				$NEWPASS=rand(1111,9999);
+				$permitted_chars = 'abcdefghijklmnopqrstuvwxyz.*$#_-+';
+				$addChar=substr(str_shuffle($permitted_chars), 0, 3);
+				$NEWPASS="temp".rand(1111,9999).$addChar;
 				resetPASS($LID,md5($NEWPASS));
 				$info="Change password on next login and stay secured.";
 			}
 			
 			else
 			{
-				$info="Wrong Answer. Try Again."."$RES"."="."$A"."+"."$B";
+				$info="Wrong Answer. Try Again.";
 			}
 		}
 		

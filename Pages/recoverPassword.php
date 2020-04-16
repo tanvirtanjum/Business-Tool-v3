@@ -12,7 +12,7 @@ include '../Page Controllers/recoverPasswordController.php';
 	
 	<body class="body">
 		<div class="form">
-			<form action="" method="post">
+			<form autocomplete="off" action="" method="post">
 				<h1 align="center"> <span class="blinking">Recover Password</span> </h1>
 				<table align="center" valign="middle">
 					<tr>
@@ -61,7 +61,7 @@ include '../Page Controllers/recoverPasswordController.php';
 	
 					<tr>
 						<td> <span class="text"> NEW PASSWORD: </span> </td>
-						<td> <input type="text" name="PASS" class="tf" placeholder="Generated Temporary Password" value="<?php echo $NEWPASS; ?>" readonly> </td>
+						<td> <input type="text" name="PASS" class="tf" placeholder="System Generated Temporary Password" value="<?php echo $NEWPASS; ?>" readonly> </td>
 					</tr>
 					
 					<tr>
