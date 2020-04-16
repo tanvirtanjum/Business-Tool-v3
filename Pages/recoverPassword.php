@@ -69,7 +69,7 @@ include '../Page Controllers/recoverPasswordController.php';
 					</tr>
 					
 					<tr>
-						<td colspan="2" align="center"> <button name="send" id="send" class="Request"> Request Recovery </button> </td>
+						<td colspan="2" align="center"> <button name="send" id="send" class="Request" onclick='return confirmation()'> Request Recovery </button> </td>
 					</tr>
 				</table>
 			</form>

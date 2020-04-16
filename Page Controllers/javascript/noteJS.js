@@ -8,6 +8,7 @@ let saveFile = () =>
 		
 		if(con == true)
 		{
+			
 			alert("You can rename the file but make sure the file extention is .txt.\nYou can change the downloading destination as well.");
 			const textToBLOB = new Blob([data], { type: 'text/plain' });
 			var sFileName = "*";
@@ -39,17 +40,20 @@ let saveFile = () =>
 			}
 
 			newLink.click();
+			return true;
 		}
 		
 		else
-		{
+		{	
 			alert("Process Canceled.");
+			return false;
 		}
 	}
 	
 	else
 	{
 		alert("Empty Text can not be saved.\nDownload a note from Database or write someting and then try to PRINT.");
+		return false;
 	}
 }
 

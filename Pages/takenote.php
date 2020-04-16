@@ -73,7 +73,7 @@ include '../Page Controllers/takenoteController.php';
 						<td class="col2"></td>
 						<td> <input type="submit" class="btn" name="deleteBTN" value="DELETE"> </td>
 						<td class="col2"></td>
-						<td> <input type="submit" class="btn" name="printBTN" value="PRINT" onclick='saveFile()'> </td>
+						<td> <input type="submit" class="btn" name="printBTN" value="PRINT" onclick='return saveFile()'> </td>
 					</tr>
 				</table>
 			</form>

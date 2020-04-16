@@ -39,3 +39,11 @@ function showConfirmPass()
 		passTF.type = "password";
 	}
 }
+
+function confirmation() 
+{
+	var con = confirm("System will logout on password change.\nPress 'OK' to proceed.");
+	
+	return con;
+	
+}

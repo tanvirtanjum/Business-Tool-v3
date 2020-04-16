@@ -27,8 +27,10 @@ function showPASS(id,pass)
 
 function clear() 
 {
+	alert("ok");
 	var rowCount = document.getElementById('tab').rows.length;
 	var i=0;
+	
 	for(i = 0; i<rowCount; i++)
 	{
 		document.getElementById('tab').deleteRow(0);
