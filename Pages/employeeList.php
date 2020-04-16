@@ -64,7 +64,7 @@ include '../Page Controllers/employeeListController.php';
 							<td> 
 								<input type="text" class="tf" style="text-transform: uppercase;" name="enameTF" value="<?php echo "$enameTF";?>">
 								<span style="color:red; font-size:15px;"> <?php echo "$enameTFerror";?> </span>
-							</td>
+							</td>	
 						</tr>
 						
 						<tr>
@@ -101,6 +101,11 @@ include '../Page Controllers/employeeListController.php';
 							<td class="td1"> Added By: </td>
 							<td> <input type="text" class="tf" name="addedbyTF" placeholder="Auto Generated"  value="<?php if($srchvalid==true){echo "$addedbyTF";}else{echo "$uid";} ?>" readonly> </td>
 						</tr>
+<<<<<<< .mine
+					</table>
+||||||| .r42
+					<table>
+=======
 					</table>
 						
 					<table name="buttons" class="btnTB">
@@ -114,6 +119,7 @@ include '../Page Controllers/employeeListController.php';
 							<td> <button class="btn" name="deleteBTN" <?php if(!$srchvalid){echo "disabled";} ?>> DELETE </button> </td>
 						</tr>
 					</table>
+>>>>>>> .r45
 				</div>
 			</div>
 		</form>
