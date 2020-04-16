@@ -101,13 +101,9 @@ include '../Page Controllers/employeeListController.php';
 							<td class="td1"> Added By: </td>
 							<td> <input type="text" class="tf" name="addedbyTF" placeholder="Auto Generated"  value="<?php if($srchvalid==true){echo "$addedbyTF";}else{echo "$uid";} ?>" readonly> </td>
 						</tr>
-<<<<<<< .mine
+
 					</table>
-||||||| .r42
-					<table>
-=======
-					</table>
-						
+					
 					<table name="buttons" class="btnTB">
 						<tr>
 							<td> <button class="btn" name="refreshBTN"> REFRESH </button> </td>
@@ -119,7 +115,7 @@ include '../Page Controllers/employeeListController.php';
 							<td> <button class="btn" name="deleteBTN" <?php if(!$srchvalid){echo "disabled";} ?>> DELETE </button> </td>
 						</tr>
 					</table>
->>>>>>> .r45
+
 				</div>
 			</div>
 		</form>
