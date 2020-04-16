@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 15, 2020 at 11:02 AM
+-- Generation Time: Apr 16, 2020 at 05:11 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.1.33
 
@@ -34,6 +34,7 @@ CREATE TABLE `employee` (
   `DID` int(1) NOT NULL,
   `SAL` double(10,2) NOT NULL,
   `E_MOB` varchar(14) NOT NULL,
+  `E_MAIL` varchar(50) NOT NULL,
   `JOIN_DATE` datetime NOT NULL DEFAULT current_timestamp(),
   `ADDED_BY` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -42,13 +43,14 @@ CREATE TABLE `employee` (
 -- Dumping data for table `employee`
 --
 
-INSERT INTO `employee` (`EmpID`, `E_NAME`, `DID`, `SAL`, `E_MOB`, `JOIN_DATE`, `ADDED_BY`) VALUES
-('BT-01AD', 'TANVIR TANJUM SHOURAV', 1, 200000.00, '01515217821', '2020-04-14 22:58:19', 'superuser'),
-('BT-01MG', 'RAHATUL MAKSUD', 2, 100000.00, '01735493564', '2020-04-14 23:01:42', 'BT-01AD'),
-('BT-01SM', 'ANIKA TAHSIN TINA', 3, 50000.00, '01815247877', '2020-04-15 01:38:21', 'BT-01AD'),
-('BT-02AD', 'ZISHAD HOSSAIN LIMON', 1, 170000.00, '01521203725', '2020-04-15 01:47:51', 'BT-01AD'),
-('BT-03AD', 'DEWAN AMOR CHOWDHURY', 1, 170000.00, '01515247821', '2020-04-15 01:57:16', 'BT-02AD'),
-('superuser', 'SUPER USER', 1, 0.00, '00000000000', '2020-03-27 01:25:08', 'superuser');
+INSERT INTO `employee` (`EmpID`, `E_NAME`, `DID`, `SAL`, `E_MOB`, `E_MAIL`, `JOIN_DATE`, `ADDED_BY`) VALUES
+('BT-01AD', 'TANVIR TANJUM SHOURAV', 1, 200000.00, '01515217821', 'tanjumtanvir@gmail.com', '2020-04-14 22:58:19', 'superuser'),
+('BT-01MG', 'RAHATUL MAKSUD', 2, 100000.00, '01735493564', 'ratulmaksud@gmail.com', '2020-04-14 23:01:42', 'BT-01AD'),
+('BT-01SM', 'ANIKA TAHSIN TINA', 3, 50000.00, '01815247877', 'tinatahsin3@gmail.com', '2020-04-15 01:38:21', 'BT-01AD'),
+('BT-02AD', 'ZISHAD HOSSAIN LIMON', 1, 170000.00, '01521203725', 'zishadhossainlimon@gmail.com', '2020-04-15 01:47:51', 'BT-01AD'),
+('BT-02SM', 'SHARABAN TAHURA', 3, 55000.00, '01720014532', 'sh.tahura@gmail.com', '2020-04-16 20:37:32', 'BT-01AD'),
+('BT-03AD', 'DEWAN AMOR CHOWDHURY', 1, 170000.00, '01515247821', 'amorchy@gmail.com', '2020-04-15 01:57:16', 'BT-02AD'),
+('superuser', 'SUPER USER', 1, 0.00, '00000000000', 'super@super.super', '2020-03-27 01:25:08', 'superuser');
 
 -- --------------------------------------------------------
 
@@ -79,9 +81,10 @@ CREATE TABLE `log_in` (
 
 INSERT INTO `log_in` (`LID`, `SID`, `PASS`) VALUES
 ('BT-01AD', 1, '7ba0691b7777b6581397456412a41390'),
-('BT-01MG', 2, '81b073de9370ea873f548e31b8adc081'),
-('BT-01SM', 3, '2a845d4d23b883acb632fefd814e175f'),
+('BT-01MG', 2, 'd20f6cbf98b2efd688d5e33c2920b586'),
+('BT-01SM', 3, 'bd4d08cd70f4be1982372107b3b448ef'),
 ('BT-02AD', 1, '01a5480f5021b4d8f231de3489e61c42'),
+('BT-02SM', 3, '8073bd4ed0fe0c330290c58056a2cd5e'),
 ('BT-03AD', 1, '5da2297bad6924526e48e00dbfc3c27a'),
 ('superuser', 1, '81dc9bdb52d04dc20036dbd8313ed055');
 
@@ -97,6 +100,14 @@ CREATE TABLE `note` (
   `OwnerID` varchar(10) NOT NULL,
   `Text` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `note`
+--
+
+INSERT INTO `note` (`NoteID`, `NoteName`, `OwnerID`, `Text`) VALUES
+(1, 'Contact', 'BT-01AD', 'Abbu: 01552321780\r\nAmmu: 01720017312\r\nVaiya: 01521308969'),
+(2, 'Task', 'BT-01AD', 'Complete javascript validation.\r\n');
 
 -- --------------------------------------------------------
 
@@ -165,6 +176,7 @@ INSERT INTO `status` (`SID`, `DESIGNATION`) VALUES
 ALTER TABLE `employee`
   ADD PRIMARY KEY (`EmpID`),
   ADD UNIQUE KEY `E_MOB` (`E_MOB`),
+  ADD UNIQUE KEY `E_MAIL` (`E_MAIL`),
   ADD KEY `D_ID` (`DID`),
   ADD KEY `ADDED_BY` (`ADDED_BY`);
 
@@ -218,7 +230,7 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT for table `note`
 --
 ALTER TABLE `note`
-  MODIFY `NoteID` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `NoteID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `sales`
