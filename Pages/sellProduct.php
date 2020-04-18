@@ -174,7 +174,7 @@ else
 		<link rel="stylesheet" type="text/css" href="CSS/sellProduct.css">
 	</head>
 	
-	<body style="background-image: url('Images/sellProduct.png'); background-repeat: no-repeat; background-size: cover;">
+	<body style="background-image: url('Images/5.jpg'); background-repeat: no-repeat; background-size: cover;">
 		<div class="container">
 			<form autocomplete="off" action="" method="post">
 				<div class="floatRightTop">
