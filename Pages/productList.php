@@ -6,6 +6,7 @@ include '../Page Controllers/productListController.php';
 <html>
 	<head> 
 		<title> Product List</title>
+		<script src="../Page Controllers/javascript/productListJS.js"></script>
 		<link rel="stylesheet" type="text/css" href="CSS/productList.css">
 	</head>
 	
@@ -17,33 +18,37 @@ include '../Page Controllers/productListController.php';
 						<tr>
 							<td><input type="text" class="srchtf" name="srchProdTF" placeholder="Search By Product ID." value="<?php echo "$srchProdTF";echo"$srchProdTFerror";?>"></td>
 							<td><input type="submit" class="srchbtn" name="srchBTN" value="Search"></td>
-							<td style="width:50%;"></td>
+							<td style="width:30%;"></td>
+							<td> <button class="savebtn" onclick="return savePDF()"> Print Table </button> </td>
+							<td style="width:20%;"></td>
 							<td><input type="submit" class="srchbtn" name="gohomebtn" value="Home"></td>
 							<td class="col"></td>
 							<td><input type="submit" class="logoutbtn" name="logoutBTN" value="Logout"></td>
 						</tr>
 					</table>
 					<div class="scrollit">
-						<table name="prodTable" id="prodTable">
-							<thead>
-								<tr>
-									<th>ID.</th>
-									<th>Name</th>
-									<th>Type</th>
-									<th>Quantity</th>
-									<th>Buying Price</th>
-									<th>Selling Price</th>
-									<th>Modified By</th>
-									<th>Adding Date</th>
-								</tr>
-							</thead>
-							
-							<tbody>
-								<?php
-									showTable();
-								?>
-							</tbody>
-						</table>
+						<div id="printableTable">
+							<table name="prodTable" id="prodTable">
+								<thead>
+									<tr>
+										<th>ID.</th>
+										<th>Name</th>
+										<th>Type</th>
+										<th>Quantity</th>
+										<th>Buying Price</th>
+										<th>Selling Price</th>
+										<th>Modified By</th>
+										<th>Adding Date</th>
+									</tr>
+								</thead>
+								
+								<tbody>
+									<?php
+										showTable();
+									?>
+								</tbody>
+							</table>
+						</div>
 					</div>
 				</div>
 						
