@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 16, 2020 at 05:11 PM
+-- Generation Time: Apr 18, 2020 at 04:42 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.1.33
 
@@ -119,13 +119,20 @@ CREATE TABLE `product` (
   `PID` varchar(15) NOT NULL,
   `P_NAME` varchar(50) NOT NULL,
   `TYPE` varchar(20) NOT NULL,
-  `AVAILABILITY` varchar(15) DEFAULT NULL,
+  `AVAILABILITY` varchar(20) NOT NULL DEFAULT 'AVAILABLE',
   `QUANTITY` int(15) NOT NULL,
   `BUY_PRICE` double(10,2) NOT NULL,
   `SELL_PRICE` double(10,2) NOT NULL,
   `MOD_BY` varchar(15) NOT NULL,
   `Add_PDate` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`PID`, `P_NAME`, `TYPE`, `AVAILABILITY`, `QUANTITY`, `BUY_PRICE`, `SELL_PRICE`, `MOD_BY`, `Add_PDate`) VALUES
+('L-01', 'HP ENVY X360M', 'LAPTOP', 'AVAILABLE', 50, 125000.00, 130000.00, 'BT-01AD', '2020-04-18 20:29:12');
 
 -- --------------------------------------------------------
 

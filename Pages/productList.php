@@ -1,471 +1,5 @@
 <?php
-if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
-{
-	$uid = $_COOKIE['uid'];
-	$sid = $_COOKIE['sid'];
-	
-	$srchProdTF="";
-	$srchProdTFerror="";
-	
-	$pidTF="";
-	$pidTFerror="";
-	$pnameTF="";
-	$pnameTFerror="";
-
-	$design="";
-	$o1= false;
-	$o2= false;
-	$o3= false;
-	$o4= false;
-	$o5= false;
-	$o6= false;
-	$o7= false;
-	$o8= false;
-	$o9= false;
-	$o10= false;
-	$o11= false;
-	$o12= false;
-	$designerror="";
-	$quantTF="";
-	$quantTFerror="";
-	$buyPriceTF="";
-	$buyPriceTFerror="";
-	$sellPriceTF="";
-	$sellPriceTFerror="";
-	
-	if(isset($_POST["logoutBTN"]))
-	{
-		setcookie("uid",$uid,time()-600);
-		setcookie("sid",$sid,time()-600);
-		header("Location:index.php");
-	}
-	
-	if(isset($_POST["gohomebtn"]))
-	{
-		setcookie("uid",$uid,time()+600);
-		setcookie("sid",$sid,time()+600);
-		header("Location:home.php");
-	}
-	
-	if(isset($_POST["srchBTN"]))
-	{
-		if(empty($_POST["srchProdTF"]))
-		{
-			$srchProdTFerror="*Product ID required.";
-		}
-		
-		else
-		{
-			$srchProdTF=$_POST["srchProdTF"];
-		}
-	}
-	
-	if(isset($_POST["insertBTN"]))
-	{
-		if(empty($_POST["pidTF"]))
-		{
-			$pidTFerror="*";
-		}
-		
-		else
-		{
-			$pidTF=$_POST["pidTF"];
-		}
-		
-		if(empty($_POST["pnameTF"]))
-		{
-			$pnameTFerror="*";
-		}
-		
-		else
-		{
-			$pnameTF=$_POST["pnameTF"];
-		}
-		
-		if(isset($_POST["design"]))
-		{
-			$design=$_POST["design"];
-			if($design == "SELECT")
-			{
-				$o1=true;
-				$designerror="*";
-				$design="";
-			}
-			
-			else
-			{
-				$design=$_POST["design"];
-				
-				if($design=="LAPTOP")
-				{
-					$o2=true;
-				}
-				
-				if($design=="MONITOR")
-				{
-					$o3=true;
-				}
-				
-				if($design=="MOUSE")
-				{
-					$o4=true;
-				}
-				
-				if($design=="SPEAKER")
-				{
-					$o5=true;
-				}
-				
-				if($design=="RAM")
-				{
-					$o6=true;
-				}
-				
-				if($design=="ROM")
-				{
-					$o7=true;
-				}
-				
-				if($design=="PROCCESOR")
-				{
-					$o8=true;
-				}
-				
-				if($design=="PORTABLE HDD/SSD")
-				{
-					$o9=true;
-				}
-				
-				if($design=="KEYBOARD")
-				{
-					$o10=true;
-				}
-				
-				if($design=="PRINTER")
-				{
-					$o11=true;
-				}
-				
-				if($design=="SOFTWARE")
-				{
-					$o12=true;
-				}
-			}			
-		}
-		
-		else
-		{
-			$designerror="*";
-		}
-		
-		if(empty($_POST['quantTF']))
-		{
-			$quantTFerror="*";
-		}
-		else
-		{
-			if(is_numeric ($_POST['quantTF'])==true && strpos( $_POST['quantTF'], "." ) == false )
-			{
-				$quantTF=$_POST['quantTF'];
-				$quantTFerror="";
-			}
-			
-			else
-			{
-				$quantTF="";
-				$quantTFerror="Invalid";
-			}
-		}
-		
-		if(empty($_POST['buyPriceTF']))
-		{
-			$buyPriceTFerror="*";
-		}
-		else
-		{
-			if(is_numeric ($_POST['buyPriceTF'])==true && strpos( $_POST['buyPriceTF'], "." ) == false )
-			{
-				$buyPriceTF=$_POST['buyPriceTF'];
-				$buyPriceTFerror="";
-				if($buyPriceTF != 0 && $buyPriceTF >= 1)
-				{
-					$buyPriceTF=$_POST['buyPriceTF'];
-					$buyPriceTFerror="";
-				}
-				
-				else
-				{
-					$buyPriceTF="";
-					$buyPriceTFerror="Invalid";
-				}
-			}
-			
-			else
-			{
-				$buyPriceTF="";
-				$buyPriceTFerror="Invalid";
-			}
-		}
-		
-		if(empty($_POST['sellPriceTF']))
-		{
-			$sellPriceTFerror="*";
-		}
-		else
-		{
-			if(is_numeric ($_POST['sellPriceTF'])==true && strpos( $_POST['sellPriceTF'], "." ) == false )
-			{
-				$sellPriceTF=$_POST['sellPriceTF'];
-				$sellPriceTFerror="";
-				if(!empty($_POST['buyPriceTF']) && $sellPriceTF > $buyPriceTF )
-				{
-					$sellPriceTF=$_POST['sellPriceTF'];
-					$sellPriceTFerror="";
-				}
-				
-				else
-				{
-					$sellPriceTF="";
-					$sellPriceTFerror="Invalid";
-				}
-			}
-			
-			else
-			{
-				$sellPriceTF="";
-				$sellPriceTFerror="Invalid";
-			}
-		}
-	}
-	
-	if(isset($_POST["updateBTN"]))
-	{
-		if(empty($_POST["pidTF"]))
-		{
-			$pidTFerror="*";
-		}
-		
-		else
-		{
-			$pidTF=$_POST["pidTF"];
-		}
-		
-		if(empty($_POST["pnameTF"]))
-		{
-			$pnameTFerror="*";
-		}
-		
-		else
-		{
-			$pnameTF=$_POST["pnameTF"];
-		}
-		
-		if(isset($_POST["design"]))
-		{
-			$design=$_POST["design"];
-			if($design == "SELECT")
-			{
-				$o1=true;
-				$designerror="*";
-				$design="";
-			}
-			
-			else
-			{
-				$design=$_POST["design"];
-				
-				if($design=="LAPTOP")
-				{
-					$o2=true;
-				}
-				
-				if($design=="MONITOR")
-				{
-					$o3=true;
-				}
-				
-				if($design=="MOUSE")
-				{
-					$o4=true;
-				}
-				
-				if($design=="SPEAKER")
-				{
-					$o5=true;
-				}
-				
-				if($design=="RAM")
-				{
-					$o6=true;
-				}
-				
-				if($design=="ROM")
-				{
-					$o7=true;
-				}
-				
-				if($design=="PROCCESOR")
-				{
-					$o8=true;
-				}
-				
-				if($design=="PORTABLE HDD/SSD")
-				{
-					$o9=true;
-				}
-				
-				if($design=="KEYBOARD")
-				{
-					$o10=true;
-				}
-				
-				if($design=="PRINTER")
-				{
-					$o11=true;
-				}
-				
-				if($design=="SOFTWARE")
-				{
-					$o12=true;
-				}
-			}			
-		}
-		
-		else
-		{
-			$designerror="*";
-		}
-		
-		if(empty($_POST['quantTF']))
-		{
-			$quantTFerror="*";
-		}
-		else
-		{
-			if(is_numeric ($_POST['quantTF'])==true && strpos( $_POST['quantTF'], "." ) == false )
-			{
-				$quantTF=$_POST['quantTF'];
-				$quantTFerror="";
-			}
-			
-			else
-			{
-				$quantTF="";
-				$quantTFerror="Invalid";
-			}
-		}
-		
-		if(empty($_POST['buyPriceTF']))
-		{
-			$buyPriceTFerror="*";
-		}
-		else
-		{
-			if(is_numeric ($_POST['buyPriceTF'])==true && strpos( $_POST['buyPriceTF'], "." ) == false )
-			{
-				$buyPriceTF=$_POST['buyPriceTF'];
-				$buyPriceTFerror="";
-				if($buyPriceTF != 0 && $buyPriceTF >= 1)
-				{
-					$buyPriceTF=$_POST['buyPriceTF'];
-					$buyPriceTFerror="";
-				}
-				
-				else
-				{
-					$buyPriceTF="";
-					$buyPriceTFerror="Invalid";
-				}
-			}
-			
-			else
-			{
-				$buyPriceTF="";
-				$buyPriceTFerror="Invalid";
-			}
-		}
-		
-		if(empty($_POST['sellPriceTF']))
-		{
-			$sellPriceTFerror="*";
-		}
-		else
-		{
-			if(is_numeric ($_POST['sellPriceTF'])==true && strpos( $_POST['sellPriceTF'], "." ) == false )
-			{
-				$sellPriceTF=$_POST['sellPriceTF'];
-				$sellPriceTFerror="";
-				if(!empty($_POST['buyPriceTF']) && $sellPriceTF > $buyPriceTF )
-				{
-					$sellPriceTF=$_POST['sellPriceTF'];
-					$sellPriceTFerror="";
-				}
-				
-				else
-				{
-					$sellPriceTF="";
-					$sellPriceTFerror="Invalid";
-				}
-			}
-			
-			else
-			{
-				$sellPriceTF="";
-				$sellPriceTFerror="Invalid";
-			}
-		}
-	}
-	
-	if(isset($_POST["deleteBTN"]))
-	{
-		if(empty($_POST["pidTF"]))
-		{
-			$pidTFerror="*";
-		}
-		
-		else
-		{
-			$pidTF=$_POST["pidTF"];
-		}
-	}
-	
-	if(isset($_POST["refreshBTN"]))
-	{
-		$srchProdTF="";
-		$srchProdTFerror="";
-		
-		$pidTF="";
-		$pidTFerror="";
-		$pnameTF="";
-		$pnameTFerror="";
-
-		$design="";
-		$o1= false;
-		$o2= false;
-		$o3= false;
-		$o4= false;
-		$o5= false;
-		$o6= false;
-		$o7= false;
-		$o8= false;
-		$o9= false;
-		$o10= false;
-		$o11= false;
-		$o12= false;
-		$designerror="";
-		$quantTF="";
-		$quantTFerror="";
-		$buyPriceTF="";
-		$buyPriceTFerror="";
-		$sellPriceTF="";
-		$sellPriceTFerror="";
-	}
-}
-
-else
-{
-	header("Location:index.php");
-}	
+include '../Page Controllers/productListController.php';
 ?>
 
 <!DOCTYPE html>
@@ -505,7 +39,9 @@ else
 							</thead>
 							
 							<tbody>
-							
+								<?php
+									showTable();
+								?>
 							</tbody>
 						</table>
 					</div>
@@ -524,7 +60,7 @@ else
 						<tr>
 							<td class="td1"> Name: </td>
 							<td> 
-								<input type="text" class="tf" name="pnameTF" value="<?php echo "$pnameTF";?>"> 
+								<input type="text" class="tf" style="text-transform: uppercase;" name="pnameTF" value="<?php echo "$pnameTF";?>"> 
 							</td>
 							<td> <span style="color:red; font-size:15px;"> <?php echo "$pnameTFerror";?> </span> </td>
 						</tr>
@@ -532,7 +68,7 @@ else
 						<tr>
 							<td class="td1"> Type: </td>
 							<td> 
-								<select name="design" id="design">
+								<select name="type" id="type">
 								  <option value="SELECT" <?php if($o1 == true) {echo "selected";} ?>>---SELECT---</option>
 								  <option value="LAPTOP" <?php if($o2 == true) {echo "selected";} ?>>1. LAPTOP</option>
 								  <option value="MONITOR" <?php if($o3 == true) {echo "selected";} ?>>2. MONITOR</option>
@@ -547,30 +83,30 @@ else
 								  <option value="SOFTWARE" <?php if($o12 == true) {echo "selected";} ?>>11. SOFTWARE</option>
 								</select>
 							</td>
-							<td> <span style="color:red; font-size:15px;"> <?php echo "$designerror";?> </span> </td>
+							<td> <span style="color:red; font-size:15px;"> <?php echo "$typeerror";?> </span> </td>
 						</tr>
 						
 						<tr>
 							<td class="td1"> Quantity: </td>
-							<td> <input type="text" class="tf" name="quantTF" value="<?php echo "$quantTF"; ?>"> </td>
+							<td> <input type="number" min="0" class="tf" name="quantTF" value="<?php echo "$quantTF"; ?>"> </td>
 							<td> <span style="color:red;font-size:15px;"> <?php echo "$quantTFerror";?> </span></td>
 						</tr>
 						
 						<tr>
 							<td class="td1"> Buying Price: </td>
-							<td> <input type="text" class="tf" name="buyPriceTF" value="<?php echo"$buyPriceTF"; ?>"> </td>
+							<td> <input type="number" min="0" class="tf" name="buyPriceTF" value="<?php echo"$buyPriceTF"; ?>"> </td>
 							<td> <span style="color:red;font-size:15px;"> <?php echo "$buyPriceTFerror";?> </span></td>
 						</tr>
 						
 						<tr>
 							<td class="td1"> Selling Price: </td>
-							<td> <input type="text" class="tf" name="sellPriceTF" value="<?php echo"$sellPriceTF"; ?>"> </td>
+							<td> <input type="number" min="0" class="tf" name="sellPriceTF" value="<?php echo"$sellPriceTF"; ?>"> </td>
 							<td> <span style="color:red;font-size:15px;"> <?php echo "$sellPriceTFerror";?> </span></td>
 						</tr>
 						
 						<tr>
 							<td class="td1"> Modified By: </td>
-							<td> <input type="text" class="tf" name="modbyTF" placeholder="Automatically Generated." value=""> </td>
+							<td> <input type="text" class="tf" name="modbyTF" placeholder="Automatically Generated." value="<?php echo $uid; ?>"> </td>
 						</tr>
 						
 						<tr>
