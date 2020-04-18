@@ -255,3 +255,25 @@ input[type="submit"].btn:hover
     border: 2px solid #5F9EA0;
 	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
+
+.srchbypnametf
+{	
+	width:100px;
+	padding: 5px 5px 5px 5px;
+	border: 2px solid #ccc;
+	border-radius: 12px;
+	font-family: "Consolas";
+	font-size: 15px;
+	
+	transition-duration: 0.4s;
+}
+input[type="text"].srchbypnametf:hover
+{
+	width:240px;
+	border: 2px solid #008CBA;
+}
+input[type="text"].srchbypnametf:focus
+{
+	width:240px;
+	border: 2px solid #008CBA;
+}

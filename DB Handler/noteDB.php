@@ -36,7 +36,7 @@ function uploadNote($NoteName, $OwnerTD, $Text)
 
 function updateNote($NoteID, $NoteName, $Text, $OwnerID)
 {
-	$query = "UPDATE `note` SET `NoteName`='$NoteName',`Text`='$Text' WHERE `NoteID`='$NoteID' AND `OwnerID`='$OwnerID'";;
+	$query = "UPDATE `note` SET `NoteName`='$NoteName',`Text`='$Text' WHERE `NoteID`='$NoteID' AND `OwnerID`='$OwnerID';";
 	
 	try
 	{
@@ -64,6 +64,21 @@ function downloadNote($NID, $OwnerTD)
 		throw $e->getMessage();
 		return $result;
 	}
+}
+
+function deleteNote($NoteID, $OwnerID)
+{
+	$query = "DELETE FROM `note` WHERE `NoteID`='$NoteID' AND `OwnerID`='$OwnerID';";
+	
+	try
+	{
+		execute($query);
+	}
+	
+	catch(Exception $e)
+	{
+		throw $e->getMessage();
+	}	
 }
 
  

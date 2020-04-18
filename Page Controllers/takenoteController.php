@@ -32,6 +32,8 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 	
 	$updCheck = false;
 	
+	$dltCheck = false;
+	
 	if(isset($_POST["logoutBTN"]))
 	{
 		setcookie("uid",$uid,time()-600);
@@ -164,7 +166,38 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 		
 		if($updCheck == true)
 		{
-			updateNote($noteID, $notename, md5($text), $uid);
+			updateNote($noteID, $notename, $text, $uid);
+		}
+	}
+	
+	if(isset($_POST["deleteBTN"]))
+	{	
+		if(empty($_POST["noteIDTF"]))
+		{
+			$idErr = "*";
+			$dltCheck = false;
+		}
+		
+		else
+		{
+			$noteID = $_POST["noteIDTF"];
+			
+			$availability=$srchdata=downloadNote($noteID, $uid);
+			
+			if($availability==null)
+			{
+				$dltCheck = false;
+			}
+			
+			else
+			{
+				$dltCheck = true;
+			}
+		}
+		
+		if($dltCheck == true)
+		{
+			deleteNote($noteID, $uid);
 		}
 	}
 }

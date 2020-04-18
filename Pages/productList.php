@@ -42,13 +42,17 @@ include '../Page Controllers/productListController.php';
 									</tr>
 								</thead>
 								
-								<tbody>
+								<tbody id="tab">
 									<?php
 										showTable();
 									?>
 								</tbody>
 							</table>
 						</div>
+					</div>
+					
+					<div align="center" height="40px">
+						<input type="text" class="srchbypnametf" name="srchEmpByPNameTF" id="srchEmpByPNameTF" placeholder="Load Table by Product Name" onclick='clear()'> </td>
 					</div>
 				</div>
 						
