@@ -35,27 +35,27 @@ include '../Page Controllers/learnMoreController.php';
 					<td>
 						<div class="card">
 							<img src="Images/BT-TeamLeader.jpg" alt="Avatar" style="width:100%">
-							<p> <h4><b>TANVIR TANJUM SHOURAV</b></h4> </p>
-							<p>Team Leader</p> 
-							<p> <span class="devinfomail"> <br> <a href="mailto:tanjumtanvir@gmail.com"> tanjumtanvir@gmail.com </a><span> </p>
+							<p class="devinfoname">TANVIR TANJUM SHOURAV</p>
+							<p class="devinfodesign">Team Leader</p> 
+							<p> <br> <a class="devinfomail" href="mailto:tanjumtanvir@gmail.com"> tanjumtanvir@gmail.com </a> </p>
 						</div>
 					</td>
 					
 					<td>
 						<div class="card">
 							<img src="Images/Designer.jpg" alt="Avatar" style="width:100%">
-							<h4><b>RAHATUL MAKSUD RAHATUL</b></h4> 
-							<p>Designer</p> 
-							<p> <span class="devinfomail"> <br> <a href="mailto:ratulmaksud@gmail.com"> ratulmaksud@gmail.com </a> <span> </p>
+							<p class="devinfoname">RAHATUL MAKSUD RAHATUL</p> 
+							<p class="devinfodesign">Designer</p> 
+							<p> <br> <a class="devinfomail" href="mailto:ratulmaksud@gmail.com"> ratulmaksud@gmail.com </a> </p>
 						</div>
 					</td>
 					
 					<td>
 						<div class="card">
 							<img src="Images/BT-TeamLeader.jpg" alt="Avatar" style="width:100%">
-							<h4><b>ANIKA TAHSIN TINA</b></h4> 
-							<p>Tester</p> 
-							<p> <span class="devinfomail"> <br> <a href="mailto:tinatahsin3@gmail.com"> tinatahsin3@gmail.com </a><span> </p>
+							<p class="devinfoname">ANIKA TAHSIN TINA</[> 
+							<p class="devinfodesign">Tester</p> 
+							<p> <br> <a class="devinfomail" href="mailto:tinatahsin3@gmail.com"> tinatahsin3@gmail.com </a> </p>
 						</div>
 					</td>
 				</tr>
