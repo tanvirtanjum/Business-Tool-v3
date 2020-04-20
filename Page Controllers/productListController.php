@@ -53,8 +53,10 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 	$buyPriceTFerror="";
 	$sellPriceTF="";
 	$sellPriceTFerror="";
+	$addby=$uid;
+	$adddate="";
 	
-	$insertERR=true;
+	$insertERR=false;
 	
 	if(isset($_POST["logoutBTN"]))
 	{
@@ -80,6 +82,67 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 		else
 		{
 			$srchProdTF=$_POST["srchProdTF"];
+			$srcID=loadProduct($srchProdTF);
+			
+			if($srcID != null)
+			{
+				$pidTF=$srcID[0]["PID"];
+				$pnameTF=$srcID[0]["P_NAME"];
+				$type=$srcID[0]["TYPE"];
+				if($type=="LAPTOP")
+				{
+					$o2=true;
+				}
+				else if($type=="MONITOR")
+				{
+					$o3=true;
+				}
+				else if($type=="MOUSE")
+				{
+					$o4=true;
+				}
+				else if($type=="SPEAKER")
+				{
+					$o5=true;
+				}
+				else if($type=="RAM")
+				{
+					$o6=true;
+				}
+				else if($type=="ROM")
+				{
+					$o7=true;
+				}
+				else if($type=="PROCCESOR")
+				{
+					$o8=true;
+				}
+				else if($type=="PORTABLE HDD/SSD")
+				{
+					$o9=true;
+				}
+				else if($type=="KEYBOARD")
+				{
+					$o10=true;
+				}
+				else if($type=="PRINTER")
+				{
+					$o11=true;
+				}
+				else if($type=="SOFTWARE")
+				{
+					$o12=true;
+				}
+				else
+				{
+					$o1==true;
+				}
+				$quantTF=$srcID[0]["QUANTITY"];
+				$buyPriceTF=$srcID[0]["BUY_PRICE"];
+				$sellPriceTF=$srcID[0]["SELL_PRICE"];
+				$addby=$srcID[0]["MOD_BY"];
+				$adddate=$srcID[0]["Add_PDate"];
+			}
 		}
 	}
 	
@@ -94,7 +157,18 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 		else
 		{
 			$pidTF=$_POST["pidTF"];
-			$insertERR=false;
+			$reqID=loadProduct($pidTF);
+			
+			if($reqID==null)
+			{
+				$pidTF=$_POST["pidTF"];
+			}
+			else
+			{
+				$insertERR=true;
+				$pidTF="";
+				$pidTFerror="*";
+			}
 		}
 		
 		if(empty($_POST["pnameTF"]))
@@ -106,7 +180,6 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 		else
 		{
 			$pnameTF=$_POST["pnameTF"];
-			$insertERR=false;
 		}
 		
 		if(isset($_POST["type"]))
@@ -178,7 +251,6 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 				{
 					$o12=true;
 				}
-				$insertERR=false;
 			}			
 		}
 		
@@ -199,7 +271,6 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 			{
 				$quantTF=$_POST['quantTF'];
 				$quantTFerror="";
-				$insertERR=false;
 			}
 			
 			else
@@ -225,7 +296,6 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 				{
 					$buyPriceTF=$_POST['buyPriceTF'];
 					$buyPriceTFerror="";
-					$insertERR=false;
 				}
 				
 				else
@@ -259,7 +329,6 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 				{
 					$sellPriceTF=$_POST['sellPriceTF'];
 					$sellPriceTFerror="";
-					$insertERR=false;
 				}
 				
 				else
@@ -280,7 +349,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 		
 		if(!$insertERR)
 		{
-			insertEmployee($pidTF, $pnameTF, $type, $quantTF, $buyPriceTF, $sellPriceTF, $uid);
+			insertProduct($pidTF, $pnameTF, $type, $quantTF, $buyPriceTF, $sellPriceTF, $uid);
 		}
 	}
 	

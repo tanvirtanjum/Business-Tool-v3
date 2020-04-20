@@ -48,11 +48,11 @@ function savePDF()
 function clear() 
 {
 	alert("ok");
-	var rowCount = document.getElementById('tab').rows.length;
+	/*var rowCount = document.getElementById('prodTable').tBodies[0].rows.length;
 	var i=0;
 	
 	for(i = 0; i<rowCount; i++)
 	{
-		document.getElementById('tab').deleteRow(0);
-	}
+		document.getElementById('prodTable').tBodies[0].deleteRow(0);
+	}*/
 }

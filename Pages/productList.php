@@ -42,7 +42,7 @@ include '../Page Controllers/productListController.php';
 									</tr>
 								</thead>
 								
-								<tbody id="tab">
+								<tbody>
 									<?php
 										showTable();
 									?>
@@ -115,12 +115,12 @@ include '../Page Controllers/productListController.php';
 						
 						<tr>
 							<td class="td1"> Modified By: </td>
-							<td> <input type="text" class="tf" name="modbyTF" placeholder="Automatically Generated." value="<?php echo $uid; ?>"> </td>
+							<td> <input type="text" class="tf" name="modbyTF" placeholder="Automatically Generated." value="<?php echo $addby; ?>" readonly> </td>
 						</tr>
 						
 						<tr>
 							<td class="td1"> Adding Date: </td>
-							<td> <input type="text" class="tf" name="addDateTF" placeholder="Automatically Generated." value=""> </td>
+							<td> <input type="text" class="tf" name="addDateTF" placeholder="Automatically Generated." value="<?php echo $adddate; ?>" readonly> </td>
 						</tr>
 					<table>
 				</div>

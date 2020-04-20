@@ -56,7 +56,7 @@ function loadTable()
 	}
 }
 
-function loadEmployee($PID)
+function loadProduct($PID)
 {
 	$result=array();
 	$result=null;
@@ -74,7 +74,7 @@ function loadEmployee($PID)
 	}	
 }
 
-function insertEmployee($PID, $name, $type, $quant, $buy, $sell, $mod_by)
+function insertProduct($PID, $name, $type, $quant, $buy, $sell, $mod_by)
 {
 	try
 	{
@@ -89,7 +89,7 @@ function insertEmployee($PID, $name, $type, $quant, $buy, $sell, $mod_by)
 	}
 }
 
-function updateEmployee($EmpID, $name, $did, $sal, $mob, $E_MAIL)
+function updateProduct($EmpID, $name, $did, $sal, $mob, $E_MAIL)
 {
 	try
 	{
