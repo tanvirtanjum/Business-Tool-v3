@@ -1,6 +1,7 @@
 <?php
 include '../Page Controllers/indexController.php';
 ?>
+
 <!DOCTYPE html>
 <html>
 	<head>
