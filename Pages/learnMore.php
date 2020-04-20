@@ -8,21 +8,6 @@ include '../Page Controllers/learnMoreController.php';
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title> Learn More </title>
 		<link rel="stylesheet" type="text/css" href="CSS/learnMore.css">
-		<style>
-		.card {
-		  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-		  transition: 0.3s;
-		  width: 70%;
-		}
-
-		.card:hover {
-		  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-		}
-
-		.container {
-		  padding: 2px 16px;
-		}
-		</style>
 	</head>	
 	<body>
 		<form autocomplete="off" action="" method="post">
@@ -45,42 +30,36 @@ include '../Page Controllers/learnMoreController.php';
 				</tr>
 			</table>
 
-			<table cellpadding="1">
-		<tr>
-		<td>
-		<div class="card">
-		<img src="Images/BT-TeamLeader.jpg" alt="Avatar" style="width:100%">
-		<div class="container">
-			<p> <h4><b>TANVIR TANJUM SHOURAV</b></h4> </p>
-			<p>Team Leader</p> 
-			<p> <span class="devinfomail"> <br> <a href="mailto:tanjumtanvir@gmail.com"> tanjumtanvir@gmail.com </a><span> </p>
-		</div>
-		</div>
-		</td>
-		
-		<td>
-		<div class="card">
-		<img src="Images/Designer.jpg" alt="Avatar" style="width:100%">
-		<div class="container">
-			<h4><b>RAHATUL MAKSUD RAHATUL</b></h4> 
-			<p>Designer</p> 
-			<p> <span class="devinfomail"> <br> <a href="mailto:ratulmaksud@gmail.com"> ratulmaksud@gmail.com </a> <span> </p>
-		</div>
-		</div>
-		</td>
-		
-		<td>
-		<div class="card">
-		<img src="Images/BT-TeamLeader.jpg" alt="Avatar" style="width:100%">
-		<div class="container">
-			<h4><b>ANIKA TAHSIN TINA</b></h4> 
-			<p>Tester</p> 
-			<p> <span class="devinfomail"> <br> <a href="mailto:tinatahsin3@gmail.com"> tinatahsin3@gmail.com </a><span> </p>
-		</div>
-		</div>
-		</td>
-		</tr>
-	</table>	
+			<table cellpadding="1" id="cardTable">
+				<tr>
+					<td>
+						<div class="card">
+							<img src="Images/BT-TeamLeader.jpg" alt="Avatar" style="width:100%">
+							<p> <h4><b>TANVIR TANJUM SHOURAV</b></h4> </p>
+							<p>Team Leader</p> 
+							<p> <span class="devinfomail"> <br> <a href="mailto:tanjumtanvir@gmail.com"> tanjumtanvir@gmail.com </a><span> </p>
+						</div>
+					</td>
+					
+					<td>
+						<div class="card">
+							<img src="Images/Designer.jpg" alt="Avatar" style="width:100%">
+							<h4><b>RAHATUL MAKSUD RAHATUL</b></h4> 
+							<p>Designer</p> 
+							<p> <span class="devinfomail"> <br> <a href="mailto:ratulmaksud@gmail.com"> ratulmaksud@gmail.com </a> <span> </p>
+						</div>
+					</td>
+					
+					<td>
+						<div class="card">
+							<img src="Images/BT-TeamLeader.jpg" alt="Avatar" style="width:100%">
+							<h4><b>ANIKA TAHSIN TINA</b></h4> 
+							<p>Tester</p> 
+							<p> <span class="devinfomail"> <br> <a href="mailto:tinatahsin3@gmail.com"> tinatahsin3@gmail.com </a><span> </p>
+						</div>
+					</td>
+				</tr>
+			</table>	
 		
 			<table>
 				<tr>
