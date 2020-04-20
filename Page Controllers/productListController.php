@@ -56,7 +56,11 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 	$addby=$uid;
 	$adddate="";
 	
+	$srchvalid=false;
+	
 	$insertERR=false;
+	
+	$updateERR=false;
 	
 	if(isset($_POST["logoutBTN"]))
 	{
@@ -142,391 +146,438 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 				$sellPriceTF=$srcID[0]["SELL_PRICE"];
 				$addby=$srcID[0]["MOD_BY"];
 				$adddate=$srcID[0]["Add_PDate"];
+				
+				$srchvalid=true;
 			}
 		}
 	}
 	
 	if(isset($_POST["insertBTN"]))
 	{
-		if(empty($_POST["pidTF"]))
+		if($sid == '1' || $sid == '2')
 		{
-			$pidTFerror="*";
-			$insertERR=true;
-		}
-		
-		else
-		{
-			$pidTF=$_POST["pidTF"];
-			$reqID=loadProduct($pidTF);
+			if(empty($_POST["pidTF"]))
+			{
+				$pidTFerror="*";
+				$insertERR=true;
+			}
 			
-			if($reqID==null)
+			else
 			{
 				$pidTF=$_POST["pidTF"];
+				$reqID=loadProduct($pidTF);
+				
+				if($reqID==null)
+				{
+					$pidTF=$_POST["pidTF"];
+				}
+				else
+				{
+					$insertERR=true;
+					$pidTF="";
+					$pidTFerror="*";
+				}
 			}
-			else
+			
+			if(empty($_POST["pnameTF"]))
 			{
-				$insertERR=true;
-				$pidTF="";
-				$pidTFerror="*";
-			}
-		}
-		
-		if(empty($_POST["pnameTF"]))
-		{
-			$pnameTFerror="*";
-			$insertERR=true;
-		}
-		
-		else
-		{
-			$pnameTF=$_POST["pnameTF"];
-		}
-		
-		if(isset($_POST["type"]))
-		{
-			$type=$_POST["type"];
-			if($type == "SELECT")
-			{
-				$o1=true;
-				$typeerror="*";
-				$type="";
+				$pnameTFerror="*";
 				$insertERR=true;
 			}
 			
 			else
+			{
+				$pnameTF=$_POST["pnameTF"];
+			}
+			
+			if(isset($_POST["type"]))
 			{
 				$type=$_POST["type"];
-				
-				if($type=="LAPTOP")
+				if($type == "SELECT")
 				{
-					$o2=true;
+					$o1=true;
+					$typeerror="*";
+					$type="";
+					$insertERR=true;
 				}
 				
-				if($type=="MONITOR")
+				else
 				{
-					$o3=true;
-				}
-				
-				if($type=="MOUSE")
-				{
-					$o4=true;
-				}
-				
-				if($type=="SPEAKER")
-				{
-					$o5=true;
-				}
-				
-				if($type=="RAM")
-				{
-					$o6=true;
-				}
-				
-				if($type=="ROM")
-				{
-					$o7=true;
-				}
-				
-				if($type=="PROCCESOR")
-				{
-					$o8=true;
-				}
-				
-				if($type=="PORTABLE HDD/SSD")
-				{
-					$o9=true;
-				}
-				
-				if($type=="KEYBOARD")
-				{
-					$o10=true;
-				}
-				
-				if($type=="PRINTER")
-				{
-					$o11=true;
-				}
-				
-				if($type=="SOFTWARE")
-				{
-					$o12=true;
-				}
-			}			
-		}
-		
-		else
-		{
-			$typeerror="*";
-			$insertERR=true;
-		}
-		
-		if(empty($_POST['quantTF']))
-		{
-			$quantTFerror="*";
-			$insertERR=true;
-		}
-		else
-		{
-			if(is_numeric ($_POST['quantTF'])==true && strpos( $_POST['quantTF'], "." ) == false )
-			{
-				$quantTF=$_POST['quantTF'];
-				$quantTFerror="";
+					$type=$_POST["type"];
+					
+					if($type=="LAPTOP")
+					{
+						$o2=true;
+					}
+					
+					if($type=="MONITOR")
+					{
+						$o3=true;
+					}
+					
+					if($type=="MOUSE")
+					{
+						$o4=true;
+					}
+					
+					if($type=="SPEAKER")
+					{
+						$o5=true;
+					}
+					
+					if($type=="RAM")
+					{
+						$o6=true;
+					}
+					
+					if($type=="ROM")
+					{
+						$o7=true;
+					}
+					
+					if($type=="PROCCESOR")
+					{
+						$o8=true;
+					}
+					
+					if($type=="PORTABLE HDD/SSD")
+					{
+						$o9=true;
+					}
+					
+					if($type=="KEYBOARD")
+					{
+						$o10=true;
+					}
+					
+					if($type=="PRINTER")
+					{
+						$o11=true;
+					}
+					
+					if($type=="SOFTWARE")
+					{
+						$o12=true;
+					}
+				}			
 			}
 			
 			else
 			{
-				$quantTF="";
-				$quantTFerror="Invalid";
+				$typeerror="*";
 				$insertERR=true;
 			}
-		}
-		
-		if(empty($_POST['buyPriceTF']))
-		{
-			$buyPriceTFerror="*";
-			$insertERR=true;
-		}
-		else
-		{
-			if(is_numeric ($_POST['buyPriceTF'])==true)
+			
+			if(empty($_POST['quantTF']))
 			{
-				$buyPriceTF=$_POST['buyPriceTF'];
-				$buyPriceTFerror="";
-				if($buyPriceTF != 0 && $buyPriceTF >= 1)
+				$quantTFerror="*";
+				$insertERR=true;
+			}
+			else
+			{
+				if(is_numeric ($_POST['quantTF'])==true && strpos( $_POST['quantTF'], "." ) == false )
+				{
+					$quantTF=$_POST['quantTF'];
+					
+					if($quantTF >= 0)
+					{
+						$quantTF=$_POST['quantTF'];
+						$quantTFerror="";
+					}
+					else
+					{
+						$quantTF="";
+						$quantTFerror="*";
+						$insertERR=true;
+					}	
+				}
+				
+				else
+				{
+					$quantTF="";
+					$quantTFerror="*";
+					$insertERR=true;
+				}
+			}
+			
+			if(empty($_POST['buyPriceTF']))
+			{
+				$buyPriceTFerror="*";
+				$insertERR=true;
+			}
+			else
+			{
+				if(is_numeric ($_POST['buyPriceTF'])==true)
 				{
 					$buyPriceTF=$_POST['buyPriceTF'];
-					$buyPriceTFerror="";
+					if($buyPriceTF != 0 && $buyPriceTF >= 1)
+					{
+						$buyPriceTF=$_POST['buyPriceTF'];
+						$buyPriceTFerror="";
+					}
+					
+					else
+					{
+						$buyPriceTF="";
+						$buyPriceTFerror="*";
+						$insertERR=true;
+					}
 				}
 				
 				else
 				{
 					$buyPriceTF="";
-					$buyPriceTFerror="Invalid";
+					$buyPriceTFerror="*";
 					$insertERR=true;
 				}
 			}
 			
-			else
+			if(empty($_POST['sellPriceTF']))
 			{
-				$buyPriceTF="";
-				$buyPriceTFerror="Invalid";
+				$sellPriceTFerror="*";
 				$insertERR=true;
 			}
-		}
-		
-		if(empty($_POST['sellPriceTF']))
-		{
-			$sellPriceTFerror="*";
-			$insertERR=true;
-		}
-		else
-		{
-			if(is_numeric ($_POST['sellPriceTF'])==true)
+			else
 			{
-				$sellPriceTF=$_POST['sellPriceTF'];
-				$sellPriceTFerror="";
-				if(!empty($_POST['buyPriceTF']) && $sellPriceTF > $buyPriceTF )
+				if(is_numeric ($_POST['sellPriceTF'])==true)
 				{
 					$sellPriceTF=$_POST['sellPriceTF'];
 					$sellPriceTFerror="";
+					if(!empty($_POST['buyPriceTF']) && $sellPriceTF > $buyPriceTF )
+					{
+						$sellPriceTF=$_POST['sellPriceTF'];
+						$sellPriceTFerror="";
+					}
+					
+					else
+					{
+						$sellPriceTF="";
+						$sellPriceTFerror="*";
+						$insertERR=true;
+					}
 				}
 				
 				else
 				{
 					$sellPriceTF="";
-					$sellPriceTFerror="Invalid";
+					$sellPriceTFerror="*";
 					$insertERR=true;
 				}
 			}
 			
-			else
+			if(!$insertERR)
 			{
-				$sellPriceTF="";
-				$sellPriceTFerror="Invalid";
-				$insertERR=true;
+				insertProduct($pidTF, $pnameTF, $type, $quantTF, $buyPriceTF, $sellPriceTF, $uid);
 			}
 		}
 		
-		if(!$insertERR)
-		{
-			insertProduct($pidTF, $pnameTF, $type, $quantTF, $buyPriceTF, $sellPriceTF, $uid);
-		}
+		else{}
 	}
 	
 	if(isset($_POST["updateBTN"]))
 	{
-		if(empty($_POST["pidTF"]))
+		if($sid == '1' || $sid == '2')
 		{
-			$pidTFerror="*";
-		}
-		
-		else
-		{
-			$pidTF=$_POST["pidTF"];
-		}
-		
-		if(empty($_POST["pnameTF"]))
-		{
-			$pnameTFerror="*";
-		}
-		
-		else
-		{
-			$pnameTF=$_POST["pnameTF"];
-		}
-		
-		if(isset($_POST["type"]))
-		{
-			$type=$_POST["type"];
-			if($type == "SELECT")
+			if(empty($_POST["pidTF"]))
 			{
-				$o1=true;
-				$typeerror="*";
-				$type="";
+				$pidTFerror="*";
+				$updateERR=true;
 			}
 			
 			else
+			{
+				$pidTF=$_POST["pidTF"];
+			}
+			
+			if(empty($_POST["pnameTF"]))
+			{
+				$pnameTFerror="*";
+				$updateERR=true;
+			}
+			
+			else
+			{
+				$pnameTF=$_POST["pnameTF"];
+			}
+			
+			if(isset($_POST["type"]))
 			{
 				$type=$_POST["type"];
-				
-				if($type=="LAPTOP")
+				if($type == "SELECT")
 				{
-					$o2=true;
+					$o1=true;
+					$typeerror="*";
+					$type="";
+					$updateERR=true;
 				}
 				
-				if($type=="MONITOR")
+				else
 				{
-					$o3=true;
-				}
-				
-				if($type=="MOUSE")
-				{
-					$o4=true;
-				}
-				
-				if($type=="SPEAKER")
-				{
-					$o5=true;
-				}
-				
-				if($type=="RAM")
-				{
-					$o6=true;
-				}
-				
-				if($type=="ROM")
-				{
-					$o7=true;
-				}
-				
-				if($type=="PROCCESOR")
-				{
-					$o8=true;
-				}
-				
-				if($type=="PORTABLE HDD/SSD")
-				{
-					$o9=true;
-				}
-				
-				if($type=="KEYBOARD")
-				{
-					$o10=true;
-				}
-				
-				if($type=="PRINTER")
-				{
-					$o11=true;
-				}
-				
-				if($type=="SOFTWARE")
-				{
-					$o12=true;
-				}
-			}			
-		}
-		
-		else
-		{
-			$typeerror="*";
-		}
-		
-		if(empty($_POST['quantTF']))
-		{
-			$quantTFerror="*";
-		}
-		else
-		{
-			if(is_numeric ($_POST['quantTF'])==true && strpos( $_POST['quantTF'], "." ) == false )
-			{
-				$quantTF=$_POST['quantTF'];
-				$quantTFerror="";
+					$type=$_POST["type"];
+					
+					if($type=="LAPTOP")
+					{
+						$o2=true;
+					}
+					
+					if($type=="MONITOR")
+					{
+						$o3=true;
+					}
+					
+					if($type=="MOUSE")
+					{
+						$o4=true;
+					}
+					
+					if($type=="SPEAKER")
+					{
+						$o5=true;
+					}
+					
+					if($type=="RAM")
+					{
+						$o6=true;
+					}
+					
+					if($type=="ROM")
+					{
+						$o7=true;
+					}
+					
+					if($type=="PROCCESOR")
+					{
+						$o8=true;
+					}
+					
+					if($type=="PORTABLE HDD/SSD")
+					{
+						$o9=true;
+					}
+					
+					if($type=="KEYBOARD")
+					{
+						$o10=true;
+					}
+					
+					if($type=="PRINTER")
+					{
+						$o11=true;
+					}
+					
+					if($type=="SOFTWARE")
+					{
+						$o12=true;
+					}
+				}			
 			}
 			
 			else
 			{
-				$quantTF="";
-				$quantTFerror="Invalid";
+				$typeerror="*";
+				$updateERR=true;
 			}
-		}
-		
-		if(empty($_POST['buyPriceTF']))
-		{
-			$buyPriceTFerror="*";
-		}
-		else
-		{
-			if(is_numeric ($_POST['buyPriceTF'])==true && strpos( $_POST['buyPriceTF'], "." ) == false )
+			
+			if(empty($_POST['quantTF']))
 			{
-				$buyPriceTF=$_POST['buyPriceTF'];
-				$buyPriceTFerror="";
-				if($buyPriceTF != 0 && $buyPriceTF >= 1)
+				$quantTFerror="*";
+				$updateERR=true;
+			}
+			else
+			{
+				if(is_numeric ($_POST['quantTF'])==true && strpos( $_POST['quantTF'], "." ) == false )
+				{
+					$quantTF=$_POST['quantTF'];
+					if($quantTF >= 0)
+					{
+						$quantTFerror="";
+					}
+					
+					else
+					{
+						$quantTF="";
+						$quantTFerror="*";
+						$updateERR=true;
+					}	
+				}
+				
+				else
+				{
+					$quantTF="";
+					$quantTFerror="*";
+					$updateERR=true;
+				}
+			}
+			
+			if(empty($_POST['buyPriceTF']))
+			{
+				$buyPriceTFerror="*";
+				$updateERR=true;
+			}
+			else
+			{
+				if(is_numeric ($_POST['buyPriceTF'])==true)
 				{
 					$buyPriceTF=$_POST['buyPriceTF'];
 					$buyPriceTFerror="";
+					if($buyPriceTF != 0 && $buyPriceTF >= 1)
+					{
+						$buyPriceTF=$_POST['buyPriceTF'];
+						$buyPriceTFerror="";
+					}
+					
+					else
+					{
+						$buyPriceTF="";
+						$buyPriceTFerror="*";
+						$updateERR=true;
+					}
 				}
 				
 				else
 				{
 					$buyPriceTF="";
-					$buyPriceTFerror="Invalid";
+					$buyPriceTFerror="*";
+					$updateERR=true;
 				}
 			}
 			
+			if(empty($_POST['sellPriceTF']))
+			{
+				$sellPriceTFerror="*";
+				$updateERR=true;
+			}
 			else
 			{
-				$buyPriceTF="";
-				$buyPriceTFerror="Invalid";
-			}
-		}
-		
-		if(empty($_POST['sellPriceTF']))
-		{
-			$sellPriceTFerror="*";
-		}
-		else
-		{
-			if(is_numeric ($_POST['sellPriceTF'])==true && strpos( $_POST['sellPriceTF'], "." ) == false )
-			{
-				$sellPriceTF=$_POST['sellPriceTF'];
-				$sellPriceTFerror="";
-				if(!empty($_POST['buyPriceTF']) && $sellPriceTF > $buyPriceTF )
+				if(is_numeric ($_POST['sellPriceTF'])==true)
 				{
 					$sellPriceTF=$_POST['sellPriceTF'];
 					$sellPriceTFerror="";
+					if(!empty($_POST['buyPriceTF']) && $sellPriceTF > $buyPriceTF )
+					{
+						$sellPriceTF=$_POST['sellPriceTF'];
+						$sellPriceTFerror="";
+					}
+					
+					else
+					{
+						$sellPriceTF="";
+						$sellPriceTFerror="*";
+						$updateERR=true;
+					}
 				}
 				
 				else
 				{
 					$sellPriceTF="";
-					$sellPriceTFerror="Invalid";
+					$sellPriceTFerror="*";
+					$updateERR=true;
 				}
 			}
 			
-			else
+			if(!$updateERR)
 			{
-				$sellPriceTF="";
-				$sellPriceTFerror="Invalid";
+				updateProduct($pidTF, $pnameTF, $type, $quantTF, $buyPriceTF, $sellPriceTF, $uid);
 			}
 		}
 	}
@@ -574,6 +625,14 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 		$buyPriceTFerror="";
 		$sellPriceTF="";
 		$sellPriceTFerror="";
+		$addby=$uid;
+		$adddate="";
+		
+		$srchvalid=false;
+		
+		$insertERR=false;
+		
+		$updateERR=false;
 	}
 }
 

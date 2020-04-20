@@ -89,11 +89,11 @@ function insertProduct($PID, $name, $type, $quant, $buy, $sell, $mod_by)
 	}
 }
 
-function updateProduct($EmpID, $name, $did, $sal, $mob, $E_MAIL)
+function updateProduct($PID, $name, $type, $quantity, $bp, $sp, $mdb)
 {
 	try
 	{
-		$query = "UPDATE `employee` SET `E_NAME`= '".strtoupper($name)."',`DID`= '$did',`SAL`= '$sal',`E_MOB`= '$mob', `E_MAIL`='".strtolower($E_MAIL)."' WHERE `EmpID` = '$EmpID';";
+		$query = "UPDATE `product` SET `P_NAME`= '".strtoupper($name)."',`TYPE`= '$type',`QUANTITY`= '$quantity',`BUY_PRICE`= '$bp', `SELL_PRICE`='$sp', `MOD_BY`='$mdb' WHERE `PID` = '$PID';";
 
 		execute($query);
 	}

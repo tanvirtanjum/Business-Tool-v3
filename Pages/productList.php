@@ -52,7 +52,7 @@ include '../Page Controllers/productListController.php';
 					</div>
 					
 					<div align="center" height="40px">
-						<input type="text" class="srchbypnametf" name="srchEmpByPNameTF" id="srchEmpByPNameTF" placeholder="Load Table by Product Name" onclick='clear()'> </td>
+						<input type="text" class="srchbypnametf" name="srchEmpByPNameTF" id="srchEmpByPNameTF" placeholder="Load Table by Product Name" onfocus='clear()'> </td>
 					</div>
 				</div>
 						
@@ -61,7 +61,7 @@ include '../Page Controllers/productListController.php';
 						<tr>
 							<td class="td1"> Product ID: </td>
 							<td> 
-								<input type="text" class="tf" name="pidTF" value="<?php echo "$pidTF";?>">
+								<input type="text" class="tf" name="pidTF" value="<?php echo "$pidTF";?>" <?php if($srchvalid==true){echo "readonly";}?>>
 							</td>
 							<td> <span style="color:red; font-size:15px;"> <?php echo "$pidTFerror";?> </span> </td>
 						</tr>
@@ -129,11 +129,11 @@ include '../Page Controllers/productListController.php';
 					<tr>
 						<td> <input type="submit" class="btn" name="refreshBTN" value="REFRESH"> </td>
 						<td class="col2"></td>
-						<td> <input type="submit" class="btn" name="insertBTN" value="INSERT"> </td>
+						<td> <input type="submit" class="btn" name="insertBTN" value="INSERT" <?php if($srchvalid){echo "disabled";} ?>> </td>
 						<td class="col2"></td>
-						<td> <input type="submit" class="btn" name="updateBTN" value="UPDATE"> </td>
+						<td> <input type="submit" class="btn" name="updateBTN" value="UPDATE" <?php if(!$srchvalid){echo "disabled";} ?>> </td>
 						<td class="col2"></td>
-						<td> <input type="submit" class="btn" name="deleteBTN" value="DELETE"> </td>
+						<td> <input type="submit" class="btn" name="deleteBTN" value="DELETE" <?php if(!$srchvalid){echo "disabled";} ?>> </td>
 					</tr>
 				</table>
 			</form>

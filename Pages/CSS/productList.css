@@ -106,6 +106,7 @@ input[type="text"].srchtf:focus
 	border: 2px solid #008CBA;
 }
 
+
 .tf
 {	
 	width:275px;
@@ -122,6 +123,14 @@ input[type="text"].tf:hover
 	border: 2px solid #008CBA;
 }
 input[type="text"].tf:focus
+{
+	border: 2px solid #008CBA;
+}
+input[type="number"].tf:hover
+{
+	border: 2px solid #008CBA;
+}
+input[type="number"].tf:focus
 {
 	border: 2px solid #008CBA;
 }
