@@ -25,9 +25,9 @@ include '../Page Controllers/learnMoreController.php';
 			</table>
 			
 			<table style="width:100%;">
-				<tr>
-					<td colspan="3"> <span class="devheader"><u> <br> Developer Information <br><br> <u></span> </td>
-				</tr>
+				<div class="a">
+					<a class="active"> Developer Information </a>
+				</div>
 			</table>
 
 			<table cellpadding="1" id="cardTable">
@@ -67,7 +67,7 @@ include '../Page Controllers/learnMoreController.php';
 				</tr>
 				<tr>
 					<td>
-						<span class="insheader"> <br> Instructions to be followed for the system~ </span>
+						<span class="a">Instructions to be followed for the system~ </span>
 						<span class="insinfo"> <br> <br> 1. Login- User must login with a valid user-id & password. <br> The loggedin User can be an ADMIN, a MANAGER or a SALESMAN. <br> The tasks will be enabled accroding to their designations. <br> After a succesful login user will get access to HOME-PAGE.  </span>
 						<span class="insinfo"> <br> <br> 2. Homepage is containing six features:  <br>
 							<ul> 
@@ -80,6 +80,11 @@ include '../Page Controllers/learnMoreController.php';
 									
 							</ul>
 						</span>
+					</td>
+				</tr>
+					
+				<tr>
+					<td>
 						<span class="insinfo">  <br> Description: </span>
 						<span class="insinfo"> <br> <br> Employee List: </span>
 						<span class="insinfo"> 
@@ -91,6 +96,10 @@ include '../Page Controllers/learnMoreController.php';
 								<li>Refresh: Accessible for all user.</li>
 							</ul>
 						</span>	
+					</td>
+				</tr>
+				<tr>
+						<td>
 						<span class="insinfo"> <br><br> Product List:</span>
 						<span class="insinfo"> 
 							<ul>
@@ -101,7 +110,10 @@ include '../Page Controllers/learnMoreController.php';
 								<li>Refresh: Accessible for all user.</li>
 							</ul>
 						</span>	
-						
+						</td>
+				</tr>
+				<tr>
+					<td>
 						<span class="insinfo"> <br><br> Sell Product:</span>
 						<span class="insinfo"> 
 							<ul>
@@ -119,7 +131,10 @@ include '../Page Controllers/learnMoreController.php';
 								</ul>
 							</ul>
 						</span>	
-						
+					</td>
+				</tr>
+				<tr>
+					<td>
 						<span class="insinfo"> <br><br> Take Note:</span>
 						<span class="insinfo"> 
 							<ul>
@@ -131,7 +146,10 @@ include '../Page Controllers/learnMoreController.php';
 								<li>Print: Accessible for all user.</li>
 							</ul>
 						</span>	
-						
+					</td>
+				</tr>
+				<tr>
+					<td>
 						<span class="insinfo"> <br><br> About Me:</span>
 						<span class="insinfo"> 
 							<ul>

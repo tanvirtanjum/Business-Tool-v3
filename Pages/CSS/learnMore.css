@@ -129,3 +129,24 @@ img {
 {
 	width: 33.33%;
 }
+
+
+
+.a {
+  float: middle;
+  color: black;
+  font-family: consolas;
+  text-align: center;
+  padding: 12px 14px;
+  text-decoration: none;
+  font-size: 20px;
+  background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+  box-shadow: 10px;
+  border-radius: 20px;
+}
+
+.a:hover {
+  background-color: grey;
+  color: white;
+}
+
