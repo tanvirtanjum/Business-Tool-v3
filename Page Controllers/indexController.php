@@ -52,7 +52,7 @@ if(!isset($_COOKIE['uid']) && !isset($_COOKIE['sid']))
 			
 			else
 			{
-				$err_invalid="Invalid Username Or Password";
+				$err_invalid="&#10033;"."Invalid Username Or Password";
 			}
 		}
 	}

@@ -80,7 +80,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 	{
 		if(empty($_POST["srchProdTF"]))
 		{
-			$srchProdTFerror="*Product ID required.";
+			$srchProdTFerror="&#10033;"."Product ID required.";
 		}
 		
 		else
@@ -158,7 +158,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 		{
 			if(empty($_POST["pidTF"]))
 			{
-				$pidTFerror="*";
+				$pidTFerror="&#10033;";
 				$insertERR=true;
 			}
 			
@@ -175,13 +175,13 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 				{
 					$insertERR=true;
 					$pidTF="";
-					$pidTFerror="*";
+					$pidTFerror="&#10033;";
 				}
 			}
 			
 			if(empty($_POST["pnameTF"]))
 			{
-				$pnameTFerror="*";
+				$pnameTFerror="&#10033;";
 				$insertERR=true;
 			}
 			
@@ -196,7 +196,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 				if($type == "SELECT")
 				{
 					$o1=true;
-					$typeerror="*";
+					$typeerror="&#10033;";
 					$type="";
 					$insertERR=true;
 				}
@@ -264,13 +264,13 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 			
 			else
 			{
-				$typeerror="*";
+				$typeerror="&#10033;";
 				$insertERR=true;
 			}
 			
 			if(empty($_POST['quantTF']))
 			{
-				$quantTFerror="*";
+				$quantTFerror="&#10033;";
 				$insertERR=true;
 			}
 			else
@@ -287,7 +287,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 					else
 					{
 						$quantTF="";
-						$quantTFerror="*";
+						$quantTFerror="&#10033;";
 						$insertERR=true;
 					}	
 				}
@@ -295,14 +295,14 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 				else
 				{
 					$quantTF="";
-					$quantTFerror="*";
+					$quantTFerror="&#10033;";
 					$insertERR=true;
 				}
 			}
 			
 			if(empty($_POST['buyPriceTF']))
 			{
-				$buyPriceTFerror="*";
+				$buyPriceTFerror="&#10033;";
 				$insertERR=true;
 			}
 			else
@@ -319,7 +319,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 					else
 					{
 						$buyPriceTF="";
-						$buyPriceTFerror="*";
+						$buyPriceTFerror="&#10033;";
 						$insertERR=true;
 					}
 				}
@@ -327,14 +327,14 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 				else
 				{
 					$buyPriceTF="";
-					$buyPriceTFerror="*";
+					$buyPriceTFerror="&#10033;";
 					$insertERR=true;
 				}
 			}
 			
 			if(empty($_POST['sellPriceTF']))
 			{
-				$sellPriceTFerror="*";
+				$sellPriceTFerror="&#10033;";
 				$insertERR=true;
 			}
 			else
@@ -352,7 +352,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 					else
 					{
 						$sellPriceTF="";
-						$sellPriceTFerror="*";
+						$sellPriceTFerror="&#10033;";
 						$insertERR=true;
 					}
 				}
@@ -360,7 +360,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 				else
 				{
 					$sellPriceTF="";
-					$sellPriceTFerror="*";
+					$sellPriceTFerror="&#10033;";
 					$insertERR=true;
 				}
 			}
@@ -380,7 +380,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 		{
 			if(empty($_POST["pidTF"]))
 			{
-				$pidTFerror="*";
+				$pidTFerror="&#10033;";
 				$updateERR=true;
 			}
 			
@@ -391,7 +391,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 			
 			if(empty($_POST["pnameTF"]))
 			{
-				$pnameTFerror="*";
+				$pnameTFerror="&#10033;";
 				$updateERR=true;
 			}
 			
@@ -406,7 +406,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 				if($type == "SELECT")
 				{
 					$o1=true;
-					$typeerror="*";
+					$typeerror="&#10033;";
 					$type="";
 					$updateERR=true;
 				}
@@ -474,13 +474,13 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 			
 			else
 			{
-				$typeerror="*";
+				$typeerror="&#10033;";
 				$updateERR=true;
 			}
 			
 			if(empty($_POST['quantTF']))
 			{
-				$quantTFerror="*";
+				$quantTFerror="&#10033;";
 				$updateERR=true;
 			}
 			else
@@ -496,7 +496,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 					else
 					{
 						$quantTF="";
-						$quantTFerror="*";
+						$quantTFerror="&#10033;";
 						$updateERR=true;
 					}	
 				}
@@ -504,14 +504,14 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 				else
 				{
 					$quantTF="";
-					$quantTFerror="*";
+					$quantTFerror="&#10033;";
 					$updateERR=true;
 				}
 			}
 			
 			if(empty($_POST['buyPriceTF']))
 			{
-				$buyPriceTFerror="*";
+				$buyPriceTFerror="&#10033;";
 				$updateERR=true;
 			}
 			else
@@ -529,7 +529,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 					else
 					{
 						$buyPriceTF="";
-						$buyPriceTFerror="*";
+						$buyPriceTFerror="&#10033;";
 						$updateERR=true;
 					}
 				}
@@ -537,14 +537,14 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 				else
 				{
 					$buyPriceTF="";
-					$buyPriceTFerror="*";
+					$buyPriceTFerror="&#10033;";
 					$updateERR=true;
 				}
 			}
 			
 			if(empty($_POST['sellPriceTF']))
 			{
-				$sellPriceTFerror="*";
+				$sellPriceTFerror="&#10033;";
 				$updateERR=true;
 			}
 			else
@@ -562,7 +562,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 					else
 					{
 						$sellPriceTF="";
-						$sellPriceTFerror="*";
+						$sellPriceTFerror="&#10033;";
 						$updateERR=true;
 					}
 				}
@@ -570,7 +570,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 				else
 				{
 					$sellPriceTF="";
-					$sellPriceTFerror="*";
+					$sellPriceTFerror="&#10033;";
 					$updateERR=true;
 				}
 			}
@@ -586,7 +586,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 	{
 		if(empty($_POST["pidTF"]))
 		{
-			$pidTFerror="*";
+			$pidTFerror="&#10033;";
 		}
 		
 		else

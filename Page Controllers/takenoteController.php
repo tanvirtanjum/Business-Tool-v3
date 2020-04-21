@@ -52,7 +52,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 	{
 		if(empty($_POST["noteNameTF"]))
 		{
-			$namingErr = "*";
+			$namingErr = "&#10033;";
 			$upCheck = false;
 		}
 		
@@ -91,7 +91,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 	{
 		if(empty($_POST["noteIDTF"]))
 		{
-			$idErr = "*";
+			$idErr = "&#10033;";
 			$downCheck = false;
 		}
 		
@@ -107,7 +107,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 			
 			if($srchdata == null)
 			{
-				$idErr = "*";
+				$idErr = "&#10033;";
 				$downCheck = false;
 			}
 			
@@ -123,7 +123,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 	{	
 		if(empty($_POST["noteIDTF"]))
 		{
-			$idErr = "*";
+			$idErr = "&#10033;";
 			$updCheck = false;
 		}
 		
@@ -135,7 +135,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 		
 		if(empty($_POST["noteNameTF"]))
 		{
-			$namingErr = "*";
+			$namingErr = "&#10033;";
 			$updCheck = false;
 		}
 		
@@ -174,7 +174,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 	{	
 		if(empty($_POST["noteIDTF"]))
 		{
-			$idErr = "*";
+			$idErr = "&#10033;";
 			$dltCheck = false;
 		}
 		

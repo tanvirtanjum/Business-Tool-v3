@@ -83,7 +83,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 	{
 		if(empty($_POST["srchEmpTF"]))
 		{
-			$srchEmpTFerror="*";
+			$srchEmpTFerror="&#10033;";
 		}
 		
 		else
@@ -137,7 +137,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 		{
 			if(empty($_POST["eidTF"]))
 			{
-				$eidTFerror="*";
+				$eidTFerror="&#10033;";
 				$insertion=false;
 				$insertError=true;			
 			}
@@ -152,13 +152,13 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 					$eidTF="";
 					$insertError=true;
 					$insertion=false;
-					$eidTFerror="*";
+					$eidTFerror="&#10033;";
 				}
 			}
 			
 			if(empty($_POST["enameTF"]))
 			{
-				$enameTFerror="*";
+				$enameTFerror="&#10033;";
 				$insertError=true;
 				$insertion=false;
 			}
@@ -174,7 +174,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 				if($design == "4")
 				{
 					$o1=true;
-					$designerror="*";
+					$designerror="&#10033;";
 					$design="";
 					$insertError=true;
 					$insertion=false;
@@ -203,14 +203,14 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 			
 			else
 			{
-				$designerror="*";
+				$designerror="&#10033;";
 				$insertError=true;
 				$insertion=false;
 			}
 			
 			if(empty($_POST["salTF"]))
 			{
-				$salTFerror="*";
+				$salTFerror="&#10033;";
 				$insertError=true;
 				$insertion=false;
 			}
@@ -230,7 +230,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 			
 			if(empty($_POST["mobTF"]))
 			{
-				$mobTFerror="*";
+				$mobTFerror="&#10033;";
 				$insertError=true;
 				$insertion=false;
 			}
@@ -251,7 +251,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 			
 			if(empty($_POST["mailTF"]))
 			{
-				$mailTFerror="*";
+				$mailTFerror="&#10033;";
 				$insertError=true;
 				$insertion=false;
 			}
@@ -298,7 +298,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 		{
 			if(empty($_POST["eidTF"]))
 			{
-				$eidTFerror="*";
+				$eidTFerror="&#10033;";
 				$updateError=true;	
 			}
 			
@@ -309,7 +309,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 			
 			if(empty($_POST["enameTF"]))
 			{
-				$enameTFerror="*";
+				$enameTFerror="&#10033;";
 				$updateError=true;
 			}
 			
@@ -349,13 +349,13 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 			
 			else
 			{
-				$designerror="*";
+				$designerror="&#10033;";
 				$updateError=true;
 			}
 			
 			if(empty($_POST["salTF"]))
 			{
-				$salTFerror="*";
+				$salTFerror="&#10033;";
 				$updateError=true;
 			}
 			
@@ -374,7 +374,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 			
 			if(empty($_POST["mobTF"]))
 			{
-				$mobTFerror="*";
+				$mobTFerror="&#10033;";
 				$updateError=true;
 			}
 			
@@ -393,7 +393,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 			
 			if(empty($_POST["mailTF"]))
 			{
-				$mailTFerror="*";
+				$mailTFerror="&#10033;";
 				$updateError=true;
 			}
 			

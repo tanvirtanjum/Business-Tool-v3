@@ -42,7 +42,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 		
 		if(empty($_POST["oldpassPF"]))
 		{
-			$oldpassPFerror="*";
+			$oldpassPFerror="&#10033;";
 			$haserror=true;
 		}
 		
@@ -70,7 +70,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 		
 		if(empty($_POST["newpassPF"]))
 		{
-			$newpassPFerror="*";
+			$newpassPFerror="&#10033;";
 			$haserror=true;
 		}
 		
@@ -86,7 +86,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 		
 		if(empty($_POST["confirmpassPF"]))
 		{
-			$confirmpassPFerror="*";
+			$confirmpassPFerror="&#10033;";
 			$haserror=true;
 		}
 		
