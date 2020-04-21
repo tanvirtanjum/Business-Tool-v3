@@ -32,7 +32,7 @@ include '../Page Controllers/indexController.php';
 						</td>
 						
 						<td align="left">
-							<input type="text" class="tf" name="uidTF" id="uidTF" placeholder="User ID." value="<?php echo "$uid" ?>" required> 
+							<input type="text" class="tf" name="uidTF" id="uidTF" placeholder="User ID." value="<?php echo "$uid" ?>" required autofocus> 
 						</td>
 					</tr>
 					
