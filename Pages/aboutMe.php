@@ -14,22 +14,22 @@ include '../Page Controllers/aboutMeController.php';
 				<table>
 					<tr align="right" valign="middle" style="height: 40px;">
 						<td> <p class="text"> ID: </p> </td>
-						<td> <input type="text" class="tf" name="empidTF" value="<?php echo "$EmpID"; ?>"> </td>
+						<td> <input type="text" class="tf" name="empidTF" value="<?php echo "$EmpID"; ?>" readonly> </td>
 					</tr>
 					
 					<tr align="right" valign="middle" style="height: 40px;">
 						<td> <p class="text"> Name: </p> </td>
-						<td> <input type="text" class="tf" name="empnameTF" value="<?php echo "$Name"; ?>"> </td>
+						<td> <input type="text" class="tf" name="empnameTF" value="<?php echo "$Name"; ?>" readonly> </td>
 					</tr>
 					
 					<tr align="right" valign="middle" style="height: 40px;">
 						<td> <p class="text"> Designation: </p> </td>
-						<td> <input type="text" class="tf" name="dignTF" value="<?php if($Design == 1){echo "ADMIN";} else if($Design == 2){echo "MANAGER";} else if($Design == 3){echo "SALESMAN";} else{} ?>"> </td>
+						<td> <input type="text" class="tf" name="dignTF" value="<?php if($Design == 1){echo "ADMIN";} else if($Design == 2){echo "MANAGER";} else if($Design == 3){echo "SALESMAN";} else{} ?>" readonly> </td>
 					</tr>
 					
 					<tr align="right" valign="middle" style="height: 40px;">
 						<td> <p class="text"> Salary: </p> </td>
-						<td> <input type="text" class="tf" name="salTF" value="<?php echo "$Salary"; ?>"> </td>
+						<td> <input type="text" class="tf" name="salTF" value="<?php echo "$Salary"; ?>" readonly> </td>
 					</tr>
 					
 					<tr align="right" valign="middle" style="height: 40px;">
@@ -44,12 +44,12 @@ include '../Page Controllers/aboutMeController.php';
 					
 					<tr align="right" valign="middle" style="height: 40px;">
 						<td> <p class="text"> Join Date:</p> </td>
-						<td> <input type="text" class="tf" name="joindateTF" value="<?php echo "$Jdate"; ?>"> </td>
+						<td> <input type="text" class="tf" name="joindateTF" value="<?php echo "$Jdate"; ?>" readonly> </td>
 					</tr>
 					
 					<tr align="right" valign="middle" style="height: 40px;">
 						<td> <p class="text"> Added By: </p> </td>
-						<td> <input type="text" class="tf" name="addedbyTF" value="<?php echo "$Addedby"; ?>"> </td>
+						<td> <input type="text" class="tf" name="addedbyTF" value="<?php echo "$Addedby"; ?>" readonly> </td>
 					</tr>
 					
 					<tr>
