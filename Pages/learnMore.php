@@ -52,7 +52,7 @@ include '../Page Controllers/learnMoreController.php';
 					
 					<td>
 						<div class="card">
-							<img src="Images/BT-TeamLeader.jpg" alt="Avatar" style="width:100%">
+							<img src="Images/Tester.jpg" alt="Avatar" style="width:100%">
 							<p class="devinfoname">ANIKA TAHSIN TINA</[> 
 							<p class="devinfodesign">Tester</p> 
 							<p> <br> <a class="devinfomail" href="mailto:tinatahsin3@gmail.com"> tinatahsin3@gmail.com </a> </p>
