@@ -54,7 +54,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 			{
 				if(md5($oldpassPF) != $data[0]['PASS'])
 				{
-					$msg1 = '<span>Fill Correctly.</span>';
+					$msg1 = '&#10033;';
 					$oldpassPF ="";
 					$haserror=true;
 				}
@@ -62,7 +62,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 			
 			else
 			{
-				$msg1 = '<span>Fill Correctly.</span>';
+				$msg1 = '&#10033;';
 				$oldpassPF ="";
 				$haserror=true;
 			}
@@ -79,7 +79,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 			$newpassPF =$_POST["newpassPF"];
 			if(strlen($newpassPF) < 4) 
 			{
-				$msg2 = '<span> Password must be atleast 4 digit</span>';
+				$msg2 = '&#10033;';
 				$haserror=true;
 			}
 		}
@@ -95,7 +95,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 			$confirmpassPF =$_POST["confirmpassPF"];
 			if(strlen($confirmpassPF) < 4) 
 			{
-				$msg3 = '<span> Password must be atleast 4 digit</span>';
+				$msg3 = '&#10033;';
 				$haserror=true;
 			}
 		}
@@ -105,7 +105,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 			if($newpassPF != $confirmpassPF)
 			{
 				$haserror=true;
-				$msg4 = '<span>Fill Confirm Password Correctly.</span>';
+				$msg4 = '&#10033;';
 			}
 		}
 

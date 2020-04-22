@@ -22,7 +22,7 @@ include '../Page Controllers/indexController.php';
 					
 					<tr>
 						<td colspan="2" align="middle" valign="middle"> 
-							<marquee class="marquee"><p>Login with your Organization ID and Password.</p></marquee>
+							<marquee class="marquee"><span>Login with your Organization ID and Password.</span></marquee>
 						</td>
 					</tr>
 					
@@ -63,7 +63,10 @@ include '../Page Controllers/indexController.php';
 					<tr>
 						<td></td>
 						<td valign="middle">
-							<input type="checkbox" name="showCB" onClick="showPass()"> <span class="text">Show Password</span>
+							<label class="container"> <span>Show Password</span>
+								<input type="checkbox" name="showCB" onClick="showPass()">
+								<span class="checkmark"></span>
+							</label>
 						</td>
 					</tr>
 					
