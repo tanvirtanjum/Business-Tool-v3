@@ -26,35 +26,20 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 	$sid = $_COOKIE['sid'];
 	
 	$pidTF="";
-	$pidTFerror="";
 	$pnameTF="";
-	$pnameTFerror="";
 	
 	$srchProdTF="";
-	$srchProdTFerror="";
 	
 	$quantTF="";
-	$quantTFerror="";
 	
 	$priceTF="";
-	$priceTFerror="";
 	
 	$cusnameTF="";
-	$cusnameTFerror="";
 	
 	$cusmobTF="";
-	$cusmobTFerror="";
 	
 	$sidTF="";
-	$sidTFerror="";
 	
-	
-	
-	$temp = "";
-	$msg = "";
-	$msg1="";
-	$msg2="";
-	$rst = "";
 	
 	if(isset($_POST["logoutBTN"]))
 	{
@@ -81,7 +66,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 	{
 		if(empty($_POST["srchProdTF"]))
 		{
-			$srchProdTFerror="*";
+		
 		}
 		
 		else
@@ -95,7 +80,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 	{
 		if(empty($_POST["pidTF"]))
 		{
-			$pidTFerror="*";
+			
 		}
 		
 		else
@@ -105,7 +90,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 		
 		if(empty($_POST["pnameTF"]))
 		{
-			$pnameTFerror="*";
+			
 		}
 		
 		else
@@ -115,7 +100,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 		
 		if(empty($_POST["quantTF"]))
 		{
-			$quantTFerror="*";
+			
 		}
 		
 		else
@@ -124,13 +109,13 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 		$quantTF =$_POST["quantTF"];
 			 if(!is_numeric($quantTF)) 
 			{
-				$msg = '<span> Not valid</span>';
+				
 			} 	
 		}
 		
 		if(empty($_POST["priceTF"]))
 		{
-			$priceTFerror="*";
+			
 		}
 		
 		else
@@ -139,13 +124,13 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 			$priceTF =$_POST["priceTF"];
 			if(!is_numeric($priceTF)) 
 			{
-				$msg1 = '<span> Not valid</span>';
+				
 			} 	
 		}
 		
 		if(empty($_POST["cusnameTF"]))
 		{
-			$cusnameTFerror="*";
+			
 		}
 		
 		else
@@ -156,7 +141,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 		
 		if(empty($_POST["cusmobTF"]))
 		{
-			$cusmobTFerror="*";
+			
 		}
 		
 		else
@@ -165,13 +150,13 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 		$cusmobTF =$_POST["cusmobTF"];
 			 if(!is_numeric($cusmobTF)) 
 			{
-				$msg2 = '<span> Not valid</span>';
+				
 			} 	
 		}
 		
 		if(empty($_POST["sidTF"]))
 		{
-			$sidTFerror="*";
+			
 		}
 		
 		else
