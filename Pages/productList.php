@@ -10,7 +10,7 @@ include '../Page Controllers/productListController.php';
 		<link rel="stylesheet" type="text/css" href="CSS/productList.css">
 	</head>
 	
-	<body style="background-image: url('Images/6.jpg'); background-repeat: no-repeat; background-size: cover;">
+	<body style="background-image: url('Images/productList.jpg'); background-repeat: no-repeat; background-size: cover;">
 		<div class="container">
 			<form autocomplete="off" action="" method="post">
 				<div class="floatRightTop">
