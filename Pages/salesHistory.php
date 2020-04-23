@@ -26,17 +26,25 @@ include '../Page Controllers/salesHistoryController.php';
 					</table>
 					<div class="scrollit">
 						<table name="salesTable" id="salesTable">
-							<tr>
-								<th>Sales ID.</th>
-								<th>Product ID</th>
-								<th>Selling Quantity</th>
-								<th>Obtained Ammount</th>
-								<th>Total Profit</th>
-								<th>Customer Name</th>
-								<th>Customer Contact</th>
-								<th>Sold By</th>
-								<th>Date</th>
-							</tr>
+							<thead>
+								<tr>
+									<th>Sales ID.</th>
+									<th>Product ID</th>
+									<th>Selling Quantity</th>
+									<th>Obtained Ammount</th>
+									<th>Total Profit</th>
+									<th>Customer Name</th>
+									<th>Customer Contact</th>
+									<th>Sold By</th>
+									<th>Date</th>
+								</tr>
+							</thead>
+							
+							<tbody>
+								<?php
+								showTable();
+								?>
+							</tbody>
 						</table>
 					</div>
 				</div>

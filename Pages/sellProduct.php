@@ -62,24 +62,24 @@ include '../Page Controllers/sellProductController.php';
 						<tr>
 							<td class="td1"> Product ID: </td>
 							<td> <input type="text" class="tf" name="prodidTF" id="prodidTF" value="<?php echo "$pnameTF";?>"> </td>
-							<td> <span id="prodidTFerr" style="color:red; font-size:15px;"> </span></td>
+							<td> <span id="prodidTFerr" style="color:red; font-size:15px;"> <?php echo $m1; ?> </span></td>
 						</tr>
 						
 						<tr>
 							<td class="td1"> Purchase Quantity: </td>
 							<td> <input type="number" class="tf" name="quantTF" id="quantTF" min="0" value="<?php echo "$quantTF";?>"> </td>
-							<td> <span id="quantTFerr" style="color:red; font-size:15px;"> </span></td>
+							<td> <span id="quantTFerr" style="color:red; font-size:15px;"> <?php echo $m2; ?> </span></td>
 						</tr>
 						
 						<tr>
 							<td class="td1"> Price(/unit): </td>
 							<td> <input type="number" class="tf" name="priceTF" id="priceTF" min="0" value="<?php echo "$priceTF";?>"> </td>
-							<td> <span id="priceTFerr" style="color:red; font-size:15px;"> </span></td>
+							<td> <span id="priceTFerr" style="color:red; font-size:15px;"> <?php echo $m3; ?> </span></td>
 						</tr>
 						
 						<tr>
 							<td class="td1"> Customer Name: </td>
-							<td> <input type="text" class="tf" name="cusnameTF" id="cusnameTF" value="<?php echo "$cusnameTF";?>"> </td>
+							<td> <input type="text" class="tf" style="text-transform: uppercase;" name="cusnameTF" id="cusnameTF" value="<?php echo "$cusnameTF";?>"> </td>
 							<td> <span id="cusnameTFerr" style="color:red; font-size:15px;"> </span></td>
 						</tr>
 						

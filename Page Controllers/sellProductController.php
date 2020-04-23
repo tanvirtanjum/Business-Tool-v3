@@ -1,5 +1,6 @@
 <?php
 require_once '../DB Handler/productDB.php';
+require_once '../DB Handler/salesDB.php';
 
 function showTable()
 {
@@ -40,6 +41,19 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 	
 	$sidTF="";
 	
+	$check=array();
+	$check=null;
+	//$pQ="";
+	//$pS="";
+	//$pBP="";
+	//$pBS="";
+	
+	$m1="";
+	$m2="";
+	$m3="";
+	
+	$inERR=false;
+	
 	
 	if(isset($_POST["logoutBTN"]))
 	{
@@ -78,44 +92,63 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 	
 	if(isset($_POST["sellBTN"]))
 	{
-		if(empty($_POST["pidTF"]))
+		if(empty($_POST["prodidTF"]))
 		{
-			
+			$inERR=true;
 		}
 		
 		else
 		{
-			$pidTF=$_POST["pidTF"];
-		}
-		
-		if(empty($_POST["pnameTF"]))
-		{
+			$pnameTF=$_POST["prodidTF"];
 			
-		}
-		
-		else
-		{
-			$pnameTF=$_POST["pnameTF"];
+			$check=loadProduct($pnameTF);
+			
+			if($check == null)
+			{
+				$inERR=true;
+				$m1="&#10033;";
+			}
+			
+			else
+			{
+				if($check[0]['AVAILABILITY'] != 'AVAILABLE')
+				{
+					$inERR=true;
+					$m1="&#10033;";
+				}
+			}
 		}
 		
 		if(empty($_POST["quantTF"]))
 		{
-			
+			$inERR=true;
 		}
 		
 		else
 		{
-			
-		$quantTF =$_POST["quantTF"];
-			 if(!is_numeric($quantTF)) 
+			$quantTF =$_POST["quantTF"];
+			if(!is_numeric($quantTF)) 
 			{
+				$inERR=true;
+				$m2="&#10033;";
+			} 
 				
-			} 	
+			else
+			{
+				if($check != null)
+				{
+					if($quantTF<1 || $quantTF > $check[0]['QUANTITY'])
+					{
+						$inERR=true;
+						$m2="&#10033;";
+					}
+				}
+			}
 		}
 		
 		if(empty($_POST["priceTF"]))
 		{
-			
+			$inERR=true;
 		}
 		
 		else
@@ -124,13 +157,26 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 			$priceTF =$_POST["priceTF"];
 			if(!is_numeric($priceTF)) 
 			{
+				$inERR=true;
+				$m3="&#10033;";
+			} 
 				
-			} 	
+			else
+			{
+				if($check != null)
+				{
+					if($priceTF < $check[0]['BUY_PRICE'] || $priceTF > $check[0]['SELL_PRICE'])
+					{
+						$inERR=true;
+						$m3="&#10033;";
+					}
+				}
+			}
 		}
 		
 		if(empty($_POST["cusnameTF"]))
 		{
-			
+			$inERR=true;
 		}
 		
 		else
@@ -141,29 +187,30 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 		
 		if(empty($_POST["cusmobTF"]))
 		{
-			
+			$inERR=true;
 		}
 		
 		else
 		{
 			
-		$cusmobTF =$_POST["cusmobTF"];
-			 if(!is_numeric($cusmobTF)) 
+			$cusmobTF =$_POST["cusmobTF"];
+			if(!is_numeric($cusmobTF)) 
 			{
-				
+				$inERR=true;
 			} 	
 		}
 		
-		if(empty($_POST["sidTF"]))
+		if(!$inERR)
 		{
+			$a="DONE";
+			$OB_AMMOUNT=$priceTF*$quantTF;
+			$PROFIT=$OB_AMMOUNT-($quantTF*$check[0]['BUY_PRICE']);
 			
+			$upq=$check[0]['QUANTITY']-$quantTF;
+			
+			insertSales($pnameTF, $quantTF, $OB_AMMOUNT, $PROFIT, $cusnameTF, $cusmobTF, $uid);
+			updateOnSell($pnameTF, $upq);
 		}
-		
-		else
-		{
-			$sidTF=$_POST["sidTF"];
-		}
-
 	}
 }
 

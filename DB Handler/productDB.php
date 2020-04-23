@@ -103,4 +103,19 @@ function updateProduct($PID, $name, $type, $quantity, $bp, $sp, $mdb)
 		throw $e->getMessage();
 	}
 }
+
+function updateOnSell($PID, $quantity)
+{
+	try
+	{
+		$query = "UPDATE `product` SET `QUANTITY`= '$quantity' WHERE `PID` = '$PID';";
+
+		execute($query);
+	}
+	
+	catch (Exception $e)
+	{
+		throw $e->getMessage();
+	}
+}
 ?>
