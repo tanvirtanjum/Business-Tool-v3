@@ -52,7 +52,7 @@ include '../Page Controllers/sellProductController.php';
 				</div>
 						
 				<div class="floatLeftDown">
-					<table name="input">
+					<table name="input" style="width: 100%;">
 						<tr>
 							<td class="td1"> Purchase ID: </td>
 							<td> <input type="text" class="tf" name="puridTF" id="puridTF" value="<?php echo "$pidTF";?>" placeholder="Auto Generated" readonly> </td>

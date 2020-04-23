@@ -1,7 +1,7 @@
 .floatRightTop 
 { 
 	padding-top: 1%;
-	width:70%;
+	width:68%;
 	float: right; 
 	margin-bottom: auto;
 }
@@ -26,7 +26,7 @@
 
 .td1
 {
-	text-align: right;
+	text-align: left;
 	vertical-align: middle;
 	
 	height: 50px;
@@ -109,7 +109,7 @@ input[type="text"].srchtf:focus
 
 .tf
 {	
-	width:250px;
+	width:100%;
 	padding: 5px 5px 5px 5px;
 	border: 2px solid #ccc;
 	border-radius: 12px;
@@ -126,6 +126,7 @@ input[type="text"].tf:focus
 {
 	border: 2px solid #008CBA;
 }
+
 
 .btnTB
 {
