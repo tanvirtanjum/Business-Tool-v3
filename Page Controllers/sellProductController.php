@@ -1,4 +1,25 @@
 <?php
+require_once '../DB Handler/productDB.php';
+
+function showTable()
+{
+	$table=loadTable();
+	
+	foreach($table as $data)
+	{
+		echo "<tr>";
+		echo "<td align='middle'>".$data["PID"]."</td>";
+		echo "<td>".$data["P_NAME"]."</td>";
+		echo "<td align='middle'>".$data["TYPE"]."</td>";
+		echo "<td align='middle'>".$data["QUANTITY"]."</td>";
+		echo "<td align='middle'>".$data["BUY_PRICE"]."</td>";
+		echo "<td align='middle'>".$data["SELL_PRICE"]."</td>";
+		echo "<td align='middle'>".$data["MOD_BY"]."</td>";
+		echo "<td align='middle'>".$data["Add_PDate"]."</td>";
+		echo "</tr>";
+	}
+}
+
 if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 {
 	$uid = $_COOKIE['uid'];

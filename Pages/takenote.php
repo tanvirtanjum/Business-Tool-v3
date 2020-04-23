@@ -48,7 +48,7 @@ include '../Page Controllers/takenoteController.php';
 				</div>
 						
 				<div class="floatLeftDown">
-					<table name="upload">
+					<table name="upload" style="width:100%;">
 						<tr>
 							<td>
 								<input type="text" class="tf" name="noteNameTF" placeholder="Note Name" value="<?php echo $notename;?>">
