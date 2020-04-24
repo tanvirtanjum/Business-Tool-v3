@@ -29,6 +29,19 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 	$srchProdTF="";
 	$srchProdTFerror="";
 	
+	$load=array();
+	$load=null;
+	
+	$sidTF="";
+	$prodidTF="";
+	$quantTF="";
+	$obtamntTF="";
+	$profitTF="";
+	$cusnameTF="";
+	$cusmobTF="";
+	$empidTF="";
+	$sellDateTF="";
+	
 	if(isset($_POST["logoutBTN"]))
 	{
 		setcookie("uid",$uid,time()-600);
@@ -47,12 +60,39 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 	{
 		if(empty($_POST["srchProdTF"]))
 		{
-			$srchProdTFerror="*";
+			$srchProdTFerror="&#10033;";
 		}
-		
 		else
 		{
 			$srchProdTF=$_POST["srchProdTF"];
+			$load=loadSales($srchProdTF);
+		}
+		
+		if($load !=null)
+		{
+			$sidTF=$load[0]['SLID'];
+			$prodidTF=$load[0]['PID'];
+			$quantTF=$load[0]['QUANT'];
+			$obtamntTF=$load[0]['OB_AMMOUNT'];
+			$profitTF=$load[0]['PROFIT'];
+			$cusnameTF=$load[0]['C_NAME'];
+			$cusmobTF=$load[0]['C_MOB'];
+			$empidTF=$load[0]['SOLD_BY'];
+			$sellDateTF=$load[0]['Sell_SDate'];
+		}
+		else
+		{
+			$srchProdTFerror="&#10033;";
+			
+			$sidTF="";
+			$prodidTF="";
+			$quantTF="";
+			$obtamntTF="";
+			$profitTF="";
+			$cusnameTF="";
+			$cusmobTF="";
+			$empidTF="";
+			$sellDateTF="";
 		}
 	
 	}
