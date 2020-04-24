@@ -53,47 +53,53 @@ include '../Page Controllers/salesHistoryController.php';
 					<table name="input">
 						<tr>
 							<td class="td1"> Sales ID: </td>
+<<<<<<< .mine
+							<td style="column-width: 225px;"> <input type="text" class="tf" name="sidTF" value="<?php echo $sidTF; ?>" readonly> </td>
+||||||| .r83
+							<td style="column-width: 225px;"> <input type="text" class="tf" name="sidTF" value=""> </td>
+=======
 							<td> <input type="text" class="tf" name="sidTF" value=""> </td>
+>>>>>>> .r85
 						</tr>
 						
 						<tr>
 							<td class="td1"> Product ID: </td>
-							<td> <input type="text" class="tf" name="prodidTF" value=""> </td>
+							<td> <input type="text" class="tf" name="prodidTF" value="<?php echo $prodidTF; ?>"  readonly> </td>
 						</tr>
 						
 						<tr>
 							<td class="td1"> Selling Quantity: </td>
-							<td> <input type="text" class="tf" name="quantTF" value=""> </td>
+							<td> <input type="number" class="tf" name="quantTF" value="<?php echo $quantTF; ?>"  readonly> </td>
 						</tr>
 						
 						<tr>
 							<td class="td1"> Obtained Ammount: </td>
-							<td> <input type="text" class="tf" name="obtamntTF" value=""> </td>
+							<td> <input type="number" class="tf" name="obtamntTF" value="<?php echo $obtamntTF; ?>"  readonly> </td>
 						</tr>
 						
 						<tr>
 							<td class="td1"> Total Profit: </td>
-							<td> <input type="text" class="tf" name="profitTF" value=""> </td>
+							<td> <input type="number" class="tf" name="profitTF" value="<?php echo $profitTF; ?>"  readonly> </td>
 						</tr>
 						
 						<tr>
 							<td class="td1"> Customer Name: </td>
-							<td> <input type="text" class="tf" name="cusnameTF" value=""> </td>
+							<td> <input type="text" class="tf" name="cusnameTF" value="<?php echo $cusnameTF; ?>"  readonly> </td>
 						</tr>
 						
 						<tr>
 							<td class="td1"> Customer Contact: </td>
-							<td> <input type="text" class="tf" name="cusmobTF" value=""> </td>
+							<td> <input type="number" class="tf" name="cusmobTF" value="<?php echo $cusmobTF; ?>"  readonly> </td>
 						</tr>
 						
 						<tr>
 							<td class="td1"> Sold By: </td>
-							<td> <input type="text" class="tf" name="empidTF" value=""> </td>
+							<td> <input type="text" class="tf" name="empidTF" value="<?php echo $empidTF; ?>"  readonly> </td>
 						</tr>
 						
 						<tr>
 							<td class="td1"> Date: </td>
-							<td> <input type="text" class="tf" name="sellDateTF" value=""> </td>
+							<td> <input type="text" class="tf" name="sellDateTF" value="<?php echo $sellDateTF; ?>"  readonly> </td>
 						</tr>
 
 						<tr>
