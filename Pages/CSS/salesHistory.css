@@ -28,7 +28,7 @@
 
 .td1
 {
-	text-align: right;
+	text-align: left;
 	vertical-align: middle;
 	
 	height: 50px;
@@ -118,6 +118,7 @@ input[type="text"].srchtf:focus
 	border-radius: 12px;
 	font-family: "Consolas";
 	font-size: 15px;
+	text-align: center;
 	
 	transition-duration: 0.4s;
 }
@@ -126,6 +127,14 @@ input[type="text"].tf:hover
 	border: 2px solid #008CBA;
 }
 input[type="text"].tf:focus
+{
+	border: 2px solid #008CBA;
+}
+input[type="number"].tf:hover
+{
+	border: 2px solid #008CBA;
+}
+input[type="number"].tf:focus
 {
 	border: 2px solid #008CBA;
 }
