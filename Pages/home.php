@@ -12,7 +12,7 @@ include '../Page Controllers/homeController.php';
 	<body style="background-image: url('Images/home1.gif'); background-repeat: no-repeat; background-position:center top; background-size: 15% 20%;">
 		<div class="form">
 			<form autocomplete="off" action="" method="post">
-				<table>
+				<table align="middle" valign="center">
 					<tr>
 						<td> <input type="image" src="Images\employee_list_option.png" alt="employee_list" class="button" name="employeeBTN"> </td>
 						<td class="col"></td>

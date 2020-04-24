@@ -4,6 +4,7 @@
 	width:70%;
 	float: right; 
 	margin-bottom: auto;
+	height:90%;
 }
 
 .floatLeftDown 
@@ -13,6 +14,7 @@
 	width: 30%; 
 	float: left; 
 	margin-bottom: auto;
+	height:90%;
 }
 
 .container 
@@ -48,27 +50,37 @@
 	
 	
 }
-#salesTable td, #salesTable th 
+#salesTable th 
 {
-	border: 1px solid #ddd;
+	border: 2px solid #ddd;
 	padding: 8px;
 }
-#salesTable tr:nth-child(even)
+#salesTable td
+{
+	border: 2px solid #000000;
+	padding: 8px;
+}
+#salesTable tr:nth-child(even) 
 {
 	background-color: #f2f2f2;
 }
+#salesTable tr:nth-child(odd) 
+{
+	background-color: #E6E6FA;
+}
 #salesTable tr:hover 
 {
-	background-color: CYAN;
+	background-color: #4682B4;
 }
 #salesTable th 
 {
 	padding-top: 8px;
 	padding-bottom: 8px;
 	text-align: center;
-	background-color: #008CBA;
+	background-color: #2E8B57;
 	color: white;
 }
+
 
 .scrollit /*add table scrolling */
 {
@@ -100,7 +112,7 @@ input[type="text"].srchtf:focus
 
 .tf
 {	
-	width:250px;
+	width:100%;
 	padding: 5px 5px 5px 5px;
 	border: 2px solid #ccc;
 	border-radius: 12px;

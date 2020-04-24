@@ -29,17 +29,17 @@ include '../Page Controllers/aboutMeController.php';
 					
 					<tr align="right" valign="middle" style="height: 40px;">
 						<td> <p class="text"> Salary: </p> </td>
-						<td> <input type="text" class="tf" name="salTF" value="<?php echo "$Salary"; ?>" readonly> </td>
+						<td> <input type="number" class="tf" name="salTF" value="<?php echo "$Salary"; ?>" readonly> </td>
 					</tr>
 					
 					<tr align="right" valign="middle" style="height: 40px;">
 						<td> <p class="text">Mobile No.: </p> </td>
-						<td> <input type="text" class="tf" name="mobTF" value="<?php echo "$Mob"; ?>"> </td>
+						<td> <input type="number" class="tf" name="mobTF" value="<?php echo "$Mob"; ?>"> </td>
 					</tr>
 					
 					<tr align="right" valign="middle" style="height: 40px;">
 						<td> <p class="text">E-mail: </p> </td>
-						<td> <input type="text" class="tf" name="mailTF" value="<?php echo "$mail"; ?>"> </td>
+						<td> <input type="mail" class="tf" name="mailTF" value="<?php echo "$mail"; ?>"> </td>
 					</tr>
 					
 					<tr align="right" valign="middle" style="height: 40px;">

@@ -165,7 +165,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 			{
 				if($check != null)
 				{
-					if($priceTF < $check[0]['BUY_PRICE'] || $priceTF > $check[0]['SELL_PRICE'])
+					if($priceTF <= $check[0]['BUY_PRICE'] || $priceTF > $check[0]['SELL_PRICE'])
 					{
 						$inERR=true;
 						$m3="&#10033;";

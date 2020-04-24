@@ -85,7 +85,7 @@ include '../Page Controllers/sellProductController.php';
 						
 						<tr>
 							<td class="td1"> Customer Number: </td>
-							<td> <input type="number" class="tf" name="cusmobTF" id="cusmobTF" min="0" value="<?php echo "$cusmobTF";?>"> </td>
+							<td> <input type="number" class="tf" name="cusmobTF" id="cusmobTF" min="0" placeholder="01XXXXXXXXX" value="<?php echo "$cusmobTF";?>"> </td>
 							<td> <span id="cusmobTFerr" style="color:red; font-size:15px;"> </span> </td>
 						</tr>
 						

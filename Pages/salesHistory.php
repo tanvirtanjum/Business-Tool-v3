@@ -53,7 +53,7 @@ include '../Page Controllers/salesHistoryController.php';
 					<table name="input">
 						<tr>
 							<td class="td1"> Sales ID: </td>
-							<td> <input type="text" class="tf" name="sidTF" value=""> </td>
+							<td style="column-width: 225px;"> <input type="text" class="tf" name="sidTF" value=""> </td>
 						</tr>
 						
 						<tr>

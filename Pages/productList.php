@@ -57,10 +57,10 @@ include '../Page Controllers/productListController.php';
 				</div>
 						
 				<div class="floatLeftDown">
-					<table name="input">
+					<table name="input" style="border-collapse: collapse;">
 						<tr>
 							<td class="td1"> Product ID: </td>
-							<td> 
+							<td style="column-width: 265px;"> 
 								<input type="text" class="tf" name="pidTF" value="<?php echo "$pidTF";?>" <?php if($srchvalid==true){echo "readonly";}?>>
 							</td>
 							<td> <span style="color:red; font-size:15px;"> <?php echo "$pidTFerror";?> </span> </td>

@@ -16,13 +16,13 @@ include '../Page Controllers/indexController.php';
 				<table>
 					<tr>
 						<td colspan="2" valign="top" align="center"> 
-							<img src="Images/bt_logo_option.png" alt="BusinessToolLogo" style="width:180px;height:150px;" > 
+							<img src="Images/bt_logo_option.png" alt="BusinessToolLogo" style="width:160px;height:133.27px;" > 
 						</td>
 					</tr>
 					
 					<tr>
-						<td colspan="2" align="middle" valign="middle"> 
-							<marquee class="marquee"><span>Login with your Organization ID and Password.</span></marquee>
+						<td colspan="2" align="middle" valign="middle">						
+							<br> <marquee class="marquee"><span>Login with your Organization ID and Password.</span></marquee> 
 						</td>
 					</tr>
 					
@@ -82,7 +82,7 @@ include '../Page Controllers/indexController.php';
 					</tr>	
 					<tr valign="middle">
 						<td align="center" colspan="2">
-							<a href="recoverPassword.php" target="_blank" class="link"> Forgotten Password? </a>
+							<br> <a href="recoverPassword.php" target="_blank" class="link"> Forgotten Password? </a>
 						</td>
 					</tr>	
 				</table>

@@ -5,6 +5,7 @@
 	width:70%;
 	float: right; 
 	margin-bottom: auto;
+	height: 90%;
 }
 
 .floatLeftDown 
@@ -14,6 +15,7 @@
 	width: 30%; 
 	float: left; 
 	margin-bottom: auto;
+	height: 90%;
 }
 
 .container 
@@ -94,6 +96,7 @@
 	border-radius: 12px;
 	font-family: "Consolas";
 	font-size: 15px;
+	text-align: center;
 	
 	transition-duration: 0.4s;
 }
@@ -116,6 +119,7 @@ input[type="text"].srchtf:focus
 	border-radius: 12px;
 	font-family: "Consolas";
 	font-size: 15px;
+	text-align: center;
 	
 	transition-duration: 0.4s;
 }
@@ -132,12 +136,13 @@ input[type="text"].srchbynametf:focus
 
 .tf
 {	
-	width:275px;
+	width:100%;
 	padding: 5px 5px 5px 5px;
 	border: 2px solid #ccc;
 	border-radius: 12px;
 	font-family: "Consolas";
 	font-size: 15px;
+	text-align: center;
 	
 	transition-duration: 0.4s;
 }
@@ -149,11 +154,27 @@ input[type="text"].tf:focus
 {
 	border: 2px solid #008CBA;
 }
+input[type="number"].tf:hover
+{
+	border: 2px solid #008CBA;
+}
+input[type="number"].tf:focus
+{
+	border: 2px solid #008CBA;
+}
+input[type="mail"].tf:hover
+{
+	border: 2px solid #008CBA;
+}
+input[type="mail"].tf:focus
+{
+	border: 2px solid #008CBA;
+}
 
 select 
 {
     background-color: lightgray; 
-	width:275px;
+	width:100%;
 	border: 2px solid #ccc;
 	padding: 5px 5px 5px 5px;
     border-radius: 12px;

@@ -1,9 +1,10 @@
 .floatRightTop 
 { 
 	padding-top: 1%;
-	width:68%;
+	width:70%;
 	float: right; 
 	margin-bottom: auto;
+	height: 90%;
 }
 
 .floatLeftDown 
@@ -21,11 +22,12 @@
 	margin-bottom: auto;
 	margin-left: auto;
 	margin-right: auto;
+	height: 90%;
 }
 
 .td1
 {
-	text-align: right;
+	text-align: left;
 	vertical-align: middle;
 	
 	height: 50px;
@@ -92,6 +94,7 @@
 	border-radius: 12px;
 	font-family: "Consolas";
 	font-size: 15px;
+	text-align: center;
 	
 	transition-duration: 0.4s;
 }
@@ -109,12 +112,13 @@ input[type="text"].srchtf:focus
 
 .tf
 {	
-	width:275px;
+	width:95%;
 	padding: 5px 5px 5px 5px;
 	border: 2px solid #ccc;
 	border-radius: 12px;
 	font-family: "Consolas";
 	font-size: 15px;
+	text-align: center;
 	
 	transition-duration: 0.4s;
 }
@@ -138,7 +142,7 @@ input[type="number"].tf:focus
 select 
 {
     background-color: lightgray; 
-	width:275px;
+	width:100%;
 	border: 2px solid #ccc;
 	padding: 5px 5px 5px 5px;
     border-radius: 12px;

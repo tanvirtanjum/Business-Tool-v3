@@ -28,6 +28,7 @@ include '../Page Controllers/employeeListController.php';
 					</table>
 					<div class="scrollit">
 						<table name="empTable" id="empTable">
+							<!--<caption>Active Employee List</caption>-->
 							<thead>
 								<tr>
 									<th>ID.</th>
@@ -46,6 +47,13 @@ include '../Page Controllers/employeeListController.php';
 									showTable();
 								?>
 							</tbody>
+							
+							<!--<tfoot>
+								<tr>
+								  <td>Sum</td>
+								  <td>$180</td>
+								</tr>
+							  </tfoot>-->
 						</table>
 					</div>
 				</div>
@@ -54,8 +62,10 @@ include '../Page Controllers/employeeListController.php';
 					<table name="input">
 						<tr>
 							<td class="td1"> Employee ID: </td>
-							<td> 
+							<td style="column-width: 265px;"> 
 								<input type="text" class="tf" name="eidTF" value="<?php echo "$eidTF";?>" <?php if($srchvalid==true){echo "readonly";}?>>
+							</td>
+							<td>
 								<span style="color:red; font-size:15px;"> <?php echo "$eidTFerror";?> </span>
 							</td>
 						</tr>
@@ -64,8 +74,10 @@ include '../Page Controllers/employeeListController.php';
 							<td class="td1"> Name: </td>
 							<td> 
 								<input type="text" class="tf" style="text-transform: uppercase;" name="enameTF" value="<?php echo "$enameTF";?>">
-								<span style="color:red; font-size:15px;"> <?php echo "$enameTFerror";?> </span>
 							</td>	
+							<td>
+								<span style="color:red; font-size:15px;"> <?php echo "$enameTFerror";?> </span>
+							</td>
 						</tr>
 						
 						<tr>
@@ -77,6 +89,8 @@ include '../Page Controllers/employeeListController.php';
 								  <option value="2" <?php if($o3 == true) {echo "selected";} ?>> 2. MANAGER </option>
 								  <option value="3" <?php if($o4 == true) {echo "selected";} ?>> 3. SALESMAN </option>
 								</select>
+							</td>
+							<td>
 								<span style="color:red; font-size:15px;"> <?php echo "$designerror";?> </span>
 							</td>
 						</tr>

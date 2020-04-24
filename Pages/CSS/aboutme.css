@@ -85,6 +85,7 @@ input[type="submit"].logout:hover
 	border-radius: 12px;
 	font-family: "Bradley Hand", cursive;
 	font-size: 14px;
+	text-align: left;
 	
 	transition-duration: 0.4s;
 }
@@ -96,11 +97,19 @@ input[type="text"].tf:focus
 {
 	border: 2px solid #008CBA;
 }
-input[type="password"].tf:hover
+input[type="number"].tf:hover
 {
 	border: 2px solid #008CBA;
 }
-input[type="password"].tf:focus
+input[type="number"].tf:focus
+{
+	border: 2px solid #008CBA;
+}
+input[type="mail"].tf:hover
+{
+	border: 2px solid #008CBA;
+}
+input[type="mail"].tf:focus
 {
 	border: 2px solid #008CBA;
 }
