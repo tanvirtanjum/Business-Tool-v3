@@ -9,7 +9,7 @@ include '../Page Controllers/salesHistoryController.php';
 		<link rel="stylesheet" type="text/css" href="CSS/salesHistory.css">
 	</head>
 	
-	<body style="background-image: url('Images/salesHistory.jpg'); background-repeat: no-repeat; background-size: cover;">
+	<body style="background-image: url('Images/salesHistory1.jpg'); background-repeat: no-repeat; background-size: cover;">
 		<div class="container">
 			<form autocomplete="off" action="" method="post">
 				<div class="floatRightTop">
