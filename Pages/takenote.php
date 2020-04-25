@@ -56,13 +56,8 @@ include '../Page Controllers/takenoteController.php';
 								<input type="submit" class="uploadbtn" name="uploadBTN" value="Upload">
 							</td>
 						</tr>
-					
-						<tr>
-							<td>
-								<textarea id="noteTA" name="noteTA" class="noteTA" placeholder="Write here..."><?php echo $downtext; ?></textarea>
-							</td> 
-						</tr>
 					</table>
+					<textarea id="noteTA" name="noteTA" class="noteTA" placeholder="Write here..."><?php echo $downtext; ?></textarea>
 				</div>
 				
 				<table name="buttons" class="btnTB">
