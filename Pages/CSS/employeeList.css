@@ -29,14 +29,29 @@
 
 .td1
 {
-	text-align: right;
+	text-align: left;
 	vertical-align: middle;
 	
 	height: 50px;
+	width: calc(20%);
 	
 	font-family: "Consolas";
 	font-size: 18px;
 	font-style: bold;
+}
+.td2
+{
+	vertical-align: middle;
+	
+	height: 50px;
+	width: calc(76%);
+}
+.td3
+{
+	vertical-align: middle;
+	
+	height: 50px;
+	width: calc(4%);
 }
 
 #empTable

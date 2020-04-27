@@ -33,6 +33,7 @@ form
 .marquee
 {
 	height: 30px;
+	width: 	350px;
 	position: relative;
 	
 	background-color: #008CBA; 

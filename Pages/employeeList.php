@@ -62,27 +62,28 @@ include '../Page Controllers/employeeListController.php';
 					<table name="input">
 						<tr>
 							<td class="td1"> Employee ID: </td>
-							<td style="column-width: 265px;"> 
-								<input type="text" class="tf" name="eidTF" value="<?php echo "$eidTF";?>" <?php if($srchvalid==true){echo "readonly";}?>>
+							<td class="td2"> 
+								<input type="text" class="tf" name="eidTF" id="eidTF" value="<?php echo "$eidTF";?>" <?php if($srchvalid==true){echo "readonly";}?>>
+								<input type="hidden" name="pass" id="pass" value="<?php echo $autopass; ?>">
 							</td>
-							<td>
-								<span style="color:red; font-size:15px;"> <?php echo "$eidTFerror";?> </span>
+							<td class="td3">
+								<span id="eidTFErr" style="color:red; font-size:15px;"> <?php echo "$eidTFerror";?> </span>
 							</td>
 						</tr>
 						
 						<tr>
 							<td class="td1"> Name: </td>
-							<td> 
-								<input type="text" class="tf" style="text-transform: uppercase;" name="enameTF" value="<?php echo "$enameTF";?>">
+							<td class="td2"> 
+								<input type="text" class="tf" name="enameTF" id="enameTF" style="text-transform: uppercase;" value="<?php echo "$enameTF";?>">
 							</td>	
-							<td>
-								<span style="color:red; font-size:15px;"> <?php echo "$enameTFerror";?> </span>
+							<td class="td3">
+								<span id="enameTFErr" style="color:red; font-size:15px;"> <?php echo "$enameTFerror";?> </span>
 							</td>
 						</tr>
 						
 						<tr>
 							<td class="td1"> Designation: </td>
-							<td> 
+							<td class="td2"> 
 								<select name="design" id="design">
 								  <option value="4" <?php if($o1 == true) {echo "selected";} ?>> ---SELECT--- </option>
 								  <option value="1" <?php if($o2 == true) {echo "selected";} ?>> 1. ADMIN </option>
@@ -90,37 +91,37 @@ include '../Page Controllers/employeeListController.php';
 								  <option value="3" <?php if($o4 == true) {echo "selected";} ?>> 3. SALESMAN </option>
 								</select>
 							</td>
-							<td>
-								<span style="color:red; font-size:15px;"> <?php echo "$designerror";?> </span>
+							<td class="td3">
+								<span id="designErr" style="color:red; font-size:15px;"> <?php echo "$designerror";?> </span>
 							</td>
 						</tr>
 						
 						<tr>
 							<td class="td1"> Salary: </td>
-							<td> <input type="number" min="0" class="tf" name="salTF" value="<?php echo "$salTF";?>"> </td>
-							<td> <span style="color:red; font-size:15px;"><?php echo $msg; ?> <?php echo "$salTFerror"; ?> </span></td>
+							<td class="td2"> <input type="number" min="0" class="tf" name="salTF" id="salTF" value="<?php echo "$salTF";?>"> </td>
+							<td class="td3"> <span id="salTFErr" style="color:red; font-size:15px;"><?php echo $msg; ?> <?php echo "$salTFerror"; ?> </span></td>
 						</tr>
 						
 						<tr>
 							<td class="td1"> Mobile No.: </td>
-							<td> <input type="number" min="0" class="tf" name="mobTF" value="<?php echo "$mobTF";?>"> </td>
-							<td> <span style="color:red; font-size:15px;"><?php echo $msg1; ?> <?php echo "$mobTFerror"; ?> </span></td>
+							<td class="td2"> <input type="number" min="0" class="tf" name="mobTF" id="mobTF" value="<?php echo "$mobTF";?>"> </td>
+							<td class="td3"> <span id="mobTFErr" style="color:red; font-size:15px;"><?php echo $msg1; ?> <?php echo "$mobTFerror"; ?> </span></td>
 						</tr>
 						
 						<tr>
 							<td class="td1"> E-mail: </td>
-							<td> <input type="mail" class="tf" style="text-transform: lowercase;" name="mailTF" value="<?php echo "$mailTF";?>"> </td>
-							<td> <span style="color:red; font-size:15px;"><?php echo $msg1; ?> <?php echo "$mobTFerror"; ?> </span></td>
+							<td class="td2"> <input type="mail" class="tf" style="text-transform: lowercase;" name="mailTF" id="mailTF" value="<?php echo "$mailTF";?>"> </td>
+							<td class="td3"> <span id="mailTFErr" style="color:red; font-size:15px;"><?php echo $msg1; ?> <?php echo "$mobTFerror"; ?> </span></td>
 						</tr>
 						
 						<tr>
 							<td class="td1"> Join Date: </td>
-							<td> <input type="text" class="tf" name="jdTF" placeholder="Auto Generated" value="<?php if($srchvalid==true){echo "$jdTF";}else{echo "$jdTF";} ?>" readonly> </td>
+							<td class="td2"> <input type="text" class="tf" name="jdTF" id="jdTF" placeholder="Auto Generated" value="<?php if($srchvalid==true){echo "$jdTF";}else{echo "$jdTF";} ?>" readonly> </td>
 						</tr>
 						
 						<tr>
 							<td class="td1"> Added By: </td>
-							<td> <input type="text" class="tf" name="addedbyTF" placeholder="Auto Generated"  value="<?php if($srchvalid==true){echo "$addedbyTF";}else{echo "$uid";} ?>" readonly> </td>
+							<td class="td3"> <input type="text" class="tf" name="addedbyTF" id="addedbyTF" placeholder="Auto Generated" value="<?php if($srchvalid==true){echo "$addedbyTF";}else{echo "$uid";} ?>" readonly> </td>
 						</tr>
 
 					</table>
@@ -129,7 +130,7 @@ include '../Page Controllers/employeeListController.php';
 						<tr>
 							<td> <button class="btn" name="refreshBTN"> REFRESH </button> </td>
 							<td class="col2"></td>
-							<td> <button class="btn" name="insertBTN" onclick='return showPASS("<?php echo $eidTF;?>","<?php echo $pass;?>")' <?php if($srchvalid){echo "disabled";} ?>> INSERT </button> </td> 
+							<td> <button class="btn" name="insertBTN" onclick='return validateINSERT("<?php echo $eidTF;?>","<?php echo $autopass;?>")' <?php if($srchvalid){echo "disabled";} ?>> INSERT </button> </td> 
 							<td class="col2"></td>
 							<td> <button class="btn" name="updateBTN" <?php if(!$srchvalid){echo "disabled";} ?>> UPDATE </button> </td>
 							<td class="col2"></td>
