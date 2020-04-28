@@ -19,7 +19,20 @@ function showTable()
 		echo "</tr>";
 	}
 }
-
+function showFoot()
+{
+	$table=calc();
+	
+	foreach($table as $data)
+	{
+		echo "<td align='middle'>&#931;=".$data["TotalSale"]."</td>";
+		echo "<td align='middle'>~~</td>";
+		echo "<td align='middle'>&#931;=".$data["TotalQuant"]."</td>";
+		echo "<td align='middle'>&#931;=".$data["TotalAmmnt"]."</td>";
+		echo "<td align='middle'>&#931;=".$data["TotalProfit"]."</td>";
+		echo "<td colspan='4' align='middle'>~~</td>";
+	}
+}
 if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 {
 	$uid = $_COOKIE['uid'];

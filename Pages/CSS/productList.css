@@ -53,6 +53,9 @@
 {
 	border: 2px solid #ddd;
 	padding: 8px;
+	position: -webkit-sticky; /* Safari */
+	position: sticky;
+	top: 0;
 }
 #prodTable td
 {

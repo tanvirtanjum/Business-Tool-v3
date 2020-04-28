@@ -45,6 +45,18 @@ include '../Page Controllers/salesHistoryController.php';
 								showTable();
 								?>
 							</tbody>
+							
+							<tfoot>
+								<!--<td align="middle">&#931;=2</td>
+								<td></td>
+								<td align="middle">&#931;=2</td>
+								<td align="middle">&#931;=2</td>
+								<td align="middle">&#931;=2</td>
+								<td colspan="4"></td>-->
+								<?php
+								showFoot();
+								?>
+							</tfoot>
 						</table>
 					</div>
 				</div>

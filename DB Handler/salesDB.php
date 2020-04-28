@@ -51,4 +51,21 @@ function insertSales($PID, $QUANT, $OB_AMMOUNT, $PROFIT, $C_NAME, $C_MOB, $SOLD_
 		throw $e->getMessage();
 	}
 }
+
+function calc()
+{
+	try
+	{										
+		$query="SELECT COUNT(`PID`) AS TotalSale, SUM(`QUANT`) AS TotalQuant, SUM(`OB_AMMOUNT`) AS TotalAmmnt, SUM(`PROFIT`) AS TotalProfit FROM `sales`;";
+
+		$result=get($query);
+		return $result;
+	}
+	
+	catch (Exception $e)
+	{
+		throw $e->getMessage();
+		return $result;
+	}	
+}
 ?>
