@@ -5,6 +5,7 @@ include '../Page Controllers/advancedEmployeeSearchController.php';
 <!DOCTYPE html>
 <html>
 	<head>
+		<title> Advanced Employee Search </title>
 		<script src="../Page Controllers/javascript/advancedEmployeeSearchJS.js"></script>
 		<link rel="stylesheet" type="text/css" href="CSS/advancedEmployeeSearch.css">
 	</head>
