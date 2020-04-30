@@ -1,8 +1,8 @@
 <?php
- $serverName="localhost";
- $userName="root";
- $password="";
- $dbName="btweb";
+$serverName="localhost";
+$userName="root";
+$password="";
+$dbName="btweb";
  
 function execute($query)
 {

@@ -3,34 +3,54 @@ require_once '../DB Handler/salesDB.php';
 function showTable()
 {
 	$table=loadSaleTable();
-	
-	foreach($table as $data)
+	if($table != null)
 	{
-		echo "<tr>";
-		echo "<td align='middle'>".$data["SLID"]."</td>";
-		echo "<td align='middle'>".$data["PID"]."</td>";
-		echo "<td align='middle'>".$data["QUANT"]."</td>";
-		echo "<td align='middle'>".$data["OB_AMMOUNT"]."</td>";
-		echo "<td align='middle'>".$data["PROFIT"]."</td>";
-		echo "<td>".$data["C_NAME"]."</td>";
-		echo "<td align='middle'>".$data["C_MOB"]."</td>";
-		echo "<td align='middle'>".$data["SOLD_BY"]."</td>";
-		echo "<td align='middle'>".$data["Sell_SDate"]."</td>";
-		echo "</tr>";
+		foreach($table as $data)
+		{
+			echo "<tr>";
+			echo "<td align='middle'>".$data["SLID"]."</td>";
+			echo "<td align='middle'>".$data["PID"]."</td>";
+			echo "<td align='middle'>".$data["QUANT"]."</td>";
+			echo "<td align='middle'>".$data["OB_AMMOUNT"]."</td>";
+			echo "<td align='middle'>".$data["PROFIT"]."</td>";
+			echo "<td>".$data["C_NAME"]."</td>";
+			echo "<td align='middle'>".$data["C_MOB"]."</td>";
+			echo "<td align='middle'>".$data["SOLD_BY"]."</td>";
+			echo "<td align='middle'>".$data["Sell_SDate"]."</td>";
+			echo "</tr>";
+		}
+	}
+	
+	else
+	{
+		echo "<tr> <td colspan='9' align='middle'> NO DATA FOUND </td> </tr>";
 	}
 }
 function showFoot()
 {
 	$table=calc();
-	
-	foreach($table as $data)
+	if($table[0]["TotalSale"] != 0)
 	{
-		echo "<td align='middle'>&#931;=".$data["TotalSale"]."</td>";
+		foreach($table as $data)
+		{
+			echo "<td align='middle'>&#931;<sub>sale</sub>=".$data["TotalSale"]."</td>";
+			echo "<td align='middle'>~~</td>";
+			echo "<td align='middle'>&#931;<sub>quantity</sub>=".$data["TotalQuant"]."</td>";
+			echo "<td align='middle'>&#931;<sub>ammount</sub>=".$data["TotalAmmnt"]."</td>";
+			echo "<td align='middle'>&#931;<sub>profit</sub>=".$data["TotalProfit"]."</td>";
+			echo "<td colspan='4' align='middle'>~~</td>";
+		}
+	}
+	
+	else
+	{
+		echo "<td align='middle'>&#931;<sub>sale</sub>=0</td>";
 		echo "<td align='middle'>~~</td>";
-		echo "<td align='middle'>&#931;=".$data["TotalQuant"]."</td>";
-		echo "<td align='middle'>&#931;=".$data["TotalAmmnt"]."</td>";
-		echo "<td align='middle'>&#931;=".$data["TotalProfit"]."</td>";
+		echo "<td align='middle'>&#931;<sub>quantity</sub>=0</td>";
+		echo "<td align='middle'>&#931;<sub>ammount</sub>=0</td>";
+		echo "<td align='middle'>&#931;<sub>profit</sub>=0</td>";
 		echo "<td colspan='4' align='middle'>~~</td>";
+		
 	}
 }
 if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))

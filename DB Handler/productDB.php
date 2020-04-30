@@ -1,34 +1,15 @@
 <?php
 require_once 'DBC.php';
 
-//$key = $_GET['key'];
-
-function loadTableByType($key)
+function loadTableByType($type)
 {
 	$result=array();
 	$result=null;
 	try
 	{
-		$query="SELECT * FROM `product` WHERE `TYPE` LIKE %$key%;";
+		$query="SELECT * FROM `product` WHERE `TYPE` LIKE '%".$type."%' AND `AVAILABILITY` = 'AVAILABLE' ORDER BY `PID`;";
 		$result=get($query);
 		return $result;
-		
-		if($result != null)
-		{
-			foreach($result as $data)
-			{
-				echo "<tr>";
-				echo "<td>".$data["PID"]."</td>";
-				echo "<td>".$data["P_NAME"]."</td>";
-				echo "<td>".$data["TYPE"]."</td>";
-				echo "<td>".$data["QUANTITY"]."</td>";
-				echo "<td>".$data["BUY_PRICE"]."</td>";
-				echo "<td>".$data["SELL_PRICE"]."</td>";
-				echo "<td>".$data["MOD_BY"]."</td>";
-				echo "<td>".$data["Add_PDate"]."</td>";
-				echo "</tr>";		
-			}
-		}
 	}
 	
 	catch (Exception $e)
@@ -44,7 +25,7 @@ function loadTable()
 	$result=null;
 	try
 	{
-		$query="SELECT * FROM `product` WHERE `AVAILABILITY` = 'AVAILABLE' ORDER BY `TYPE`,`MOD_BY`;";
+		$query="SELECT * FROM `product` WHERE `AVAILABILITY` = 'AVAILABLE' ORDER BY `TYPE`,`PID`;";
 		$result=get($query);
 		return $result;
 	}

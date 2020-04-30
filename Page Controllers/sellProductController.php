@@ -2,45 +2,64 @@
 require_once '../DB Handler/productDB.php';
 require_once '../DB Handler/salesDB.php';
 
-$srchProdTF = $_POST['srchProdTF'];
+$srchProdTF = "";
 function showTable()
 {
 	$table=array();
 	$table=null;
 	
-	if($srchProdTF == "" || $srchProdTF == null)
+	if(empty($_POST["srchProdTF"]))
 	{
 		$table=loadTable();
-		foreach($table as $data)
+		
+		if($table != null)
 		{
-			echo "<tr>";
-			echo "<td align='middle'>".$data["PID"]."</td>";
-			echo "<td>".$data["P_NAME"]."</td>";
-			echo "<td align='middle'>".$data["TYPE"]."</td>";
-			echo "<td align='middle'>".$data["QUANTITY"]."</td>";
-			echo "<td align='middle'>".$data["BUY_PRICE"]."</td>";
-			echo "<td align='middle'>".$data["SELL_PRICE"]."</td>";
-			echo "<td align='middle'>".$data["MOD_BY"]."</td>";
-			echo "<td align='middle'>".$data["Add_PDate"]."</td>";
-			echo "</tr>";
+			foreach($table as $data)
+			{
+				echo "<tr>";
+				echo "<td align='middle'>".$data["PID"]."</td>";
+				echo "<td>".$data["P_NAME"]."</td>";
+				echo "<td align='middle'>".$data["TYPE"]."</td>";
+				echo "<td align='middle'>".$data["QUANTITY"]."</td>";
+				echo "<td align='middle'>".$data["BUY_PRICE"]."</td>";
+				echo "<td align='middle'>".$data["SELL_PRICE"]."</td>";
+				echo "<td align='middle'>".$data["MOD_BY"]."</td>";
+				echo "<td align='middle'>".$data["Add_PDate"]."</td>";
+				echo "</tr>";
+			}
+		}
+		
+		else
+		{
+			echo "<tr> <td colspan='8' align='middle'> NO DATA FOUND </td> </tr>";
 		}
 	}
 	
-	else if($srchProdTF == "" || $srchProdTF == null)
+	else if(!empty($_POST["srchProdTF"]))
 	{
-		$table=loadTableByType('$srchProdTF');
-		foreach($table as $data)
+		$srchProdTF = $_POST["srchProdTF"];
+		
+		$table=loadTableByType($srchProdTF);
+		if($table != null)
 		{
-			echo "<tr>";
-			echo "<td align='middle'>".$data["PID"]."</td>";
-			echo "<td>".$data["P_NAME"]."</td>";
-			echo "<td align='middle'>".$data["TYPE"]."</td>";
-			echo "<td align='middle'>".$data["QUANTITY"]."</td>";
-			echo "<td align='middle'>".$data["BUY_PRICE"]."</td>";
-			echo "<td align='middle'>".$data["SELL_PRICE"]."</td>";
-			echo "<td align='middle'>".$data["MOD_BY"]."</td>";
-			echo "<td align='middle'>".$data["Add_PDate"]."</td>";
-			echo "</tr>";
+			foreach($table as $data)
+			{
+				echo "<tr>";
+				echo "<td align='middle'>".$data["PID"]."</td>";
+				echo "<td>".$data["P_NAME"]."</td>";
+				echo "<td align='middle'>".$data["TYPE"]."</td>";
+				echo "<td align='middle'>".$data["QUANTITY"]."</td>";
+				echo "<td align='middle'>".$data["BUY_PRICE"]."</td>";
+				echo "<td align='middle'>".$data["SELL_PRICE"]."</td>";
+				echo "<td align='middle'>".$data["MOD_BY"]."</td>";
+				echo "<td align='middle'>".$data["Add_PDate"]."</td>";
+				echo "</tr>";
+			}
+		}
+		
+		else
+		{
+			echo "<tr> <td colspan='8' align='middle'> NO DATA FOUND </td> </tr>";
 		}
 	}
 	
