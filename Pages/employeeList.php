@@ -18,8 +18,9 @@ include '../Page Controllers/employeeListController.php';
 							<td> <input type="text" class="srchtf" name="srchEmpTF" placeholder="Search by Employee ID." value="<?php echo "$srchEmpTF";?>"> </td>
 							<td> <span style="color:red; font-size:15px;"> <?php echo"$srchEmpTFerror";?> </span> </td>
 							<td> <button class="srchbtn" name="srchBTN"> Search </button> </td>
-							<td style="width:50%;"> </td>
-							<td> <input type="text" class="srchbynametf" name="srchEmpByNameTF" id="srchEmpByNameTF" placeholder="Load Table by Employee Name" onclick='clear()'> </td>
+							<td style="width:30%;"> </td>
+							<td> <button class="printbtn" name="printbtn" id="printbtn" onclick='savePDF()'>Print Table</button> </td> 
+							<!--<td> <input type="text" class="srchtf" placeholder="Search by Employee ID." onclick="clear()" > </td>-->
 							<td style="width:30%;"> </td>
 							<td> <button class="srchbtn" name="gohomebtn"> Home </button> </td>
 							<td class="col"> </td>
@@ -27,34 +28,36 @@ include '../Page Controllers/employeeListController.php';
 						</tr>
 					</table>
 					<div class="scrollit">
-						<table name="empTable" id="empTable">
-							<!--<caption>Active Employee List</caption>-->
-							<thead>
-								<tr>
-									<th>ID.</th>
-									<th>Name</th>
-									<th>Design. ID.</th>
-									<th>Salary</th>
-									<th>Mobile No</th>
-									<th>E-mail</th>
-									<th>Join Date</th>
-									<th>Added By</th>	
-								</tr>
-							</thead>
-							
-							<tbody id='tab'>
-								<?php
-									showTable();
-								?>
-							</tbody>
-							
-							<!--<tfoot>
-								<tr>
-								  <td>Sum</td>
-								  <td>$180</td>
-								</tr>
-							  </tfoot>-->
-						</table>
+						<div id="printableTable">
+							<table name="empTable" id="empTable">
+								<!--<caption>Active Employee List</caption>-->
+								<thead>
+									<tr>
+										<th>ID.</th>
+										<th>Name</th>
+										<th>Design. ID.</th>
+										<th>Salary</th>
+										<th>Mobile No</th>
+										<th>E-mail</th>
+										<th>Join Date</th>
+										<th>Added By</th>	
+									</tr>
+								</thead>
+								
+								<tbody id='tab'>
+									<?php
+										showTable();
+									?>
+								</tbody>
+								
+								<!--<tfoot>
+									<tr>
+									  <td>Sum</td>
+									  <td>$180</td>
+									</tr>
+								  </tfoot>-->
+							</table>
+						</div>
 					</div>
 				</div>
 						
@@ -123,10 +126,11 @@ include '../Page Controllers/employeeListController.php';
 							<td class="td1"> Added By: </td>
 							<td class="td3"> <input type="text" class="tf" name="addedbyTF" id="addedbyTF" placeholder="Auto Generated" value="<?php if($srchvalid==true){echo "$addedbyTF";}else{echo "$uid";} ?>" readonly> </td>
 						</tr>
-
-					</table>
-					
-					<table name="buttons" class="btnTB">
+					</table>	
+				</div>
+				
+				<div class="">
+					<table name="buttons" class="btnTB" align="middle" valign="center">
 						<tr>
 							<td> <button class="btn" name="refreshBTN"> REFRESH </button> </td>
 							<td class="col2"></td>
