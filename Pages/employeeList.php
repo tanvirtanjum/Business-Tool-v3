@@ -18,9 +18,11 @@ include '../Page Controllers/employeeListController.php';
 							<td> <input type="text" class="srchtf" name="srchEmpTF" placeholder="Search by Employee ID." value="<?php echo "$srchEmpTF";?>"> </td>
 							<td> <span style="color:red; font-size:15px;"> <?php echo"$srchEmpTFerror";?> </span> </td>
 							<td> <button class="srchbtn" name="srchBTN"> Search </button> </td>
-							<td style="width:30%;"> </td>
+							<td style="width:15%;"> </td>
 							<td> <button class="printbtn" name="printbtn" id="printbtn" onclick='savePDF()'>Print Table</button> </td> 
 							<!--<td> <input type="text" class="srchtf" placeholder="Search by Employee ID." onclick="clear()" > </td>-->
+							<td style="width:15%;"> </td>
+							<td> <a href="advancedEmployeeSearch.php" target="_blank"> <button type="button" class="printbtn" name="printbtn">Print Table</button> </a></td> 
 							<td style="width:30%;"> </td>
 							<td> <button class="srchbtn" name="gohomebtn"> Home </button> </td>
 							<td class="col"> </td>
