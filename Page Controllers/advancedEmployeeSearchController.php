@@ -1,10 +1,11 @@
 <?php
 require_once '../DB Handler/employeeDB.php';
-require_once '../DB Handler/loginDB.php';
+$uid = $_GET['uid'];
+$sid = $_GET['sid'];
 
 function showTable()
 {
-	$table=loadTable();
+	$table=loadAllTable();
 	
 	foreach($table as $data)
 	{
@@ -19,5 +20,10 @@ function showTable()
 		echo "<td align='middle'>".$data["ADDED_BY"]."</td>";
 		echo "</tr>";		
 	}
+}
+
+if((!isset($_GET['uid']) && !isset($_GET['sid'])) && ($_GET['sid'] != 1 || $_GET['sid'] != 2))
+{
+	header("Location:index.php");
 }
 ?>

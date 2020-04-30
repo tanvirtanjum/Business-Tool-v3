@@ -13,7 +13,8 @@ function srch()
 {
 	var xhttp = new XMLHttpRequest();
 	
-	var key = document.getElementById('srchEmpByNameTF').value;
+	var key1 = document.getElementById('srchEmpByNameTF').value;
+	var key2 = document.getElementById('srchEmpByDesignTF').value;
 	
 	xhttp.onreadystatechange=function()
 	{
@@ -22,7 +23,8 @@ function srch()
 			document.getElementById('tab').innerHTML = xhttp.responseText;
 		}
 	}
-	xhttp.open("GET","db.php?key="+key,true);
+	xhttp.open("GET","../DB Handler/advancedEmployeeSearchDB.php?key1="+key1+"&key2="+key2,true);
+	//xhttp.open("GET","../DB Handler/employeeDB.php?key="+key,true);
 	xhttp.send();
 }
 		
