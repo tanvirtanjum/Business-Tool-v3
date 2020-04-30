@@ -3,7 +3,7 @@ require_once 'DBC.php';
 
 //$key = $_GET['key'];
 
-function loadTableByType()
+function loadTableByType($key)
 {
 	$result=array();
 	$result=null;
