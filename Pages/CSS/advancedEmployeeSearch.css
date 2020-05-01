@@ -48,7 +48,8 @@
 {
 	border-collapse: collapse;
     width: 100%;
-	height: calc(100%);
+	/*height: calc(100%);*/
+	height: 30px;
 	
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	border-collapse: collapse;
