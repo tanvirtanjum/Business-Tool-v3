@@ -14,7 +14,7 @@
 	display: block;
 	/*overflow: scroll;*/
 	padding-top: 1%;
-	width: 68%;
+	width: 70%;
 	float: right; 
 	margin-bottom: auto;
 }
@@ -48,7 +48,7 @@
 {
 	vertical-align: middle;
 	
-	width: calc(50%);
+	width: calc(48%);
 }
 
 #salesTable
