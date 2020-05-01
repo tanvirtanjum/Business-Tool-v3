@@ -22,7 +22,7 @@ include '../Page Controllers/employeeListController.php';
 							<td> <button class="printbtn" name="printbtn" id="printbtn" onclick='savePDF()'>Print Table</button> </td> 
 							<!--<td> <input type="text" class="srchtf" placeholder="Search by Employee ID." onclick="clear()" > </td>-->
 							<td style="width:15%;"> </td>
-							<td> <a href="advancedEmployeeSearch.php?uid=<?php echo $_COOKIE['uid'];?>&sid=<?php echo $_COOKIE['sid'];?>" target="_blank"> <button type="button" class="advsrchbtn" name="printbtn">Advanced Search</button> </a></td> 
+							<td> <button class="advsrchbtn" name="advsrchbtn" id="advsrchbtn" formtarget="_blank">Advanced Search</button> </td> 
 							<td style="width:30%;"> </td>
 							<td> <button class="srchbtn" name="gohomebtn"> Home </button> </td>
 							<td class="col"> </td>

@@ -1,14 +1,14 @@
 <?php
 require_once '../DB Handler/employeeDB.php';
-if((!isset($_GET['uid']) && !isset($_GET['sid'])) && ($_GET['sid'] != 1 || $_GET['sid'] != 2))
+if((!isset($_COOKIE['uid']) && !isset($_COOKIE['sid'])) && ($_COOKIE['sid'] != 1 || $_COOKIE['sid'] != 2))
 {
-	header("Location:index.php");
+	header("Location:employeeList.php");
 }
 
 else
 {
-	$uid = $_GET['uid'];
-	$sid = $_GET['sid'];
+	$uid = $_COOKIE['uid'];
+	$sid = $_COOKIE['sid'];
 	
 	function showTable()
 	{

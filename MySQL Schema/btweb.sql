@@ -1,10 +1,10 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 18, 2020 at 06:04 PM
--- Server version: 10.4.10-MariaDB
+-- Generation Time: May 01, 2020 at 11:41 AM
+-- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.1.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -48,8 +48,12 @@ INSERT INTO `employee` (`EmpID`, `E_NAME`, `DID`, `SAL`, `E_MOB`, `E_MAIL`, `JOI
 ('BT-01MG', 'RAHATUL MAKSUD', 2, 100000.00, '01735493564', 'ratulmaksud@gmail.com', '2020-04-14 23:01:42', 'BT-01AD'),
 ('BT-01SM', 'ANIKA TAHSIN TINA', 3, 50000.00, '01815247877', 'tinatahsin3@gmail.com', '2020-04-15 01:38:21', 'BT-01AD'),
 ('BT-02AD', 'ZISHAD HOSSAIN LIMON', 1, 170000.00, '01521203725', 'zishadhossainlimon@gmail.com', '2020-04-15 01:47:51', 'BT-01AD'),
+('BT-02MG', 'MEDUL HOSSAIN MASUM', 2, 75500.00, '01515478520', 'medul@gmail.com', '2020-05-01 02:52:00', 'BT-01AD'),
 ('BT-02SM', 'SHARABAN TAHURA', 3, 55000.00, '01720014532', 'sh.tahura@gmail.com', '2020-04-16 20:37:32', 'BT-01AD'),
 ('BT-03AD', 'DEWAN AMOR CHOWDHURY', 1, 170000.00, '01515247821', 'amorchy@gmail.com', '2020-04-15 01:57:16', 'BT-02AD'),
+('BT-03MG', 'SHAHRIAR OMI', 2, 65500.00, '01515478502', 'omi@gmail.com', '2020-05-01 02:53:40', 'BT-01AD'),
+('BT-04MG', 'IFTEKHAR LIUM', 2, 65500.00, '01515478512', 'lium@gmail.com', '2020-05-01 02:54:43', 'BT-01AD'),
+('BT-05MG', 'SAKIB SADAT', 2, 65500.00, '01515478500', 'sakib@gmail.com', '2020-05-01 02:57:54', 'BT-01AD'),
 ('superuser', 'SUPER USER', 1, 0.00, '00000000000', 'super@super.super', '2020-03-27 01:25:08', 'superuser');
 
 -- --------------------------------------------------------
@@ -84,8 +88,12 @@ INSERT INTO `log_in` (`LID`, `SID`, `PASS`) VALUES
 ('BT-01MG', 2, '9a415b754803aa4a3af9355a8b8be7e8'),
 ('BT-01SM', 3, 'bd4d08cd70f4be1982372107b3b448ef'),
 ('BT-02AD', 1, '01a5480f5021b4d8f231de3489e61c42'),
+('BT-02MG', 2, '76e9a17937b75b73a8a430acf210feaf'),
 ('BT-02SM', 3, '8073bd4ed0fe0c330290c58056a2cd5e'),
 ('BT-03AD', 1, '5da2297bad6924526e48e00dbfc3c27a'),
+('BT-03MG', 2, 'ca3a856a28df7d77d948949206ff9fdf'),
+('BT-04MG', 2, 'c1285fcadc52c0d3dc8813fc2c2e2b2a'),
+('BT-05MG', 2, '8df7c2e3c3c3be098ef7b382bd2c37ba'),
 ('superuser', 1, '81dc9bdb52d04dc20036dbd8313ed055');
 
 -- --------------------------------------------------------
@@ -107,7 +115,7 @@ CREATE TABLE `note` (
 
 INSERT INTO `note` (`NoteID`, `NoteName`, `OwnerID`, `Text`) VALUES
 (1, 'Contact', 'BT-01AD', 'Abbu: 01552321780\r\nAmmu: 01720017312\r\nVaiya: 01521308969'),
-(2, 'Task', 'BT-01AD', 'Complete javascript validation.\r\n');
+(2, 'Task', 'BT-01AD', 'Complete javascript validation. (DONE)\r\nAjax. (DONE)\r\n');
 
 -- --------------------------------------------------------
 
@@ -132,7 +140,7 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`PID`, `P_NAME`, `TYPE`, `AVAILABILITY`, `QUANTITY`, `BUY_PRICE`, `SELL_PRICE`, `MOD_BY`, `Add_PDate`) VALUES
-('K-1', 'A4TECH BLOODY B125', 'KEYBOARD', 'AVAILABLE', 22, 2400.00, 2500.00, 'BT-01MG', '2020-04-18 21:31:27'),
+('K-1', 'A4TECH BLOODY B125', 'KEYBOARD', 'AVAILABLE', 20, 2400.00, 2500.00, 'BT-01MG', '2020-04-18 21:31:27'),
 ('K-2', 'GAMDIAS HERMES M5 WHITE MECHANICAL GAMING KEYBOARD', 'KEYBOARD', 'AVAILABLE', 12, 3850.00, 4000.00, 'BT-01MG', '2020-04-18 21:32:57'),
 ('K-3', 'CORSAIR K95 RGB PLATINUM', 'KEYBOARD', 'AVAILABLE', 10, 16700.00, 17900.00, 'BT-01MG', '2020-04-18 21:33:50'),
 ('L-01', 'HP ENVY X360M', 'LAPTOP', 'AVAILABLE', 50, 125000.00, 130000.00, 'BT-01AD', '2020-04-18 20:29:12'),
@@ -183,6 +191,13 @@ CREATE TABLE `sales` (
   `SOLD_BY` varchar(15) NOT NULL,
   `Sell_SDate` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `sales`
+--
+
+INSERT INTO `sales` (`SLID`, `PID`, `QUANT`, `OB_AMMOUNT`, `PROFIT`, `C_NAME`, `C_MOB`, `SOLD_BY`, `Sell_SDate`) VALUES
+(1, 'K-1', 2, 4900.00, 100.00, 'TANVIR AHMED', '01515247854', 'BT-01AD', '2020-04-30 20:51:49');
 
 -- --------------------------------------------------------
 
@@ -275,7 +290,7 @@ ALTER TABLE `note`
 -- AUTO_INCREMENT for table `sales`
 --
 ALTER TABLE `sales`
-  MODIFY `SLID` int(254) NOT NULL AUTO_INCREMENT;
+  MODIFY `SLID` int(254) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables

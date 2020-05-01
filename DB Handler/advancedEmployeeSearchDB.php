@@ -1,10 +1,18 @@
 <?php
 require_once 'DBC.php';
+
 $key1 = $_GET['key1'];
 $key2 = $_GET['key2'];
+$key3 = $_GET['key3'];
+$key4 = $_GET['key4'];
+$key5 = $_GET['key5'];
+$key6 = $_GET['key6'];
+$key7 = $_GET['key7'];
+
 $table=null;
 
-$query ="SELECT * FROM `employee` WHERE `E_NAME` LIKE '%$key1%' AND `DID` LIKE '%$key2%';";
+//$query = "SELECT * FROM `employee` WHERE `E_NAME` LIKE '%$key1%' AND `DID` LIKE '%$key2%';";
+$query = "SELECT * FROM `employee` WHERE `E_NAME` LIKE '%$key1%' AND `DID` LIKE '%$key2%' AND `SAL` >= '$key3'  AND `E_MOB` LIKE '%$key4%' AND `E_MAIL` LIKE '%$key5%' AND `JOIN_DATE` LIKE '%$key6%' AND `ADDED_BY` LIKE '%$key7%' ORDER BY `DID`,`EmpID`;";	
 
 $table=get($query);
 if($table != null)

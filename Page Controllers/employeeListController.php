@@ -80,6 +80,13 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 		header("Location:home.php");
 	}
 	
+	if(isset($_POST["advsrchbtn"]))
+	{
+		setcookie("uid",$uid,time()+600);
+		setcookie("sid",$sid,time()+600);
+		header("Location:advancedEmployeeSearch.php");
+	}
+	
 	if(isset($_POST["srchBTN"]))
 	{
 		if(empty($_POST["srchEmpTF"]))
