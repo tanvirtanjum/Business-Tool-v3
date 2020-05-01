@@ -37,6 +37,24 @@ function loadTable()
 	}
 }
 
+function loadAllTable()
+{
+	$result=array();
+	$result=null;
+	try
+	{
+		$query="SELECT * FROM `product` ORDER BY `TYPE`,`PID`;";
+		$result=get($query);
+		return $result;
+	}
+	
+	catch (Exception $e)
+	{
+		throw $e->getMessage();
+		return $result;
+	}
+}
+
 function loadProduct($PID)
 {
 	$result=array();

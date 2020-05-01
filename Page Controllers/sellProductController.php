@@ -77,8 +77,6 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 	$pidTF="";
 	$pnameTF="";
 	
-	$srchProdTF="";
-	
 	$quantTF="";
 	
 	$priceTF="";
@@ -122,20 +120,6 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 		setcookie("uid",$uid,time()+600);
 		setcookie("sid",$sid,time()+600);
 		header("Location:salesHistory.php");
-	}
-	
-	if(isset($_POST["srchBTN"]))
-	{
-		if(empty($_POST["srchProdTF"]))
-		{
-		
-		}
-		
-		else
-		{
-			$srchProdTF=$_POST["srchProdTF"];
-		}
-	
 	}
 	
 	if(isset($_POST["sellBTN"]))

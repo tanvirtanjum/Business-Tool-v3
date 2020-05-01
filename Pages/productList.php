@@ -27,6 +27,12 @@ include '../Page Controllers/productListController.php';
 								<button class="savebtn" onclick="return savePDF()"> Print Table </button> 
 							</td>
 							<td style="width:20%;"></td>
+
+							<td>
+								<button class="advsrchbtn" name="advsrchbtn" id="advsrchbtn" formtarget="_blank">Advanced Search</button> 
+							</td>
+							
+							<td style="width:20%;"></td>
 							<td>
 								<input type="submit" class="srchbtn" name="gohomebtn" value="Home">
 							</td>

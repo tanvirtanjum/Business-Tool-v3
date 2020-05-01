@@ -34,6 +34,6 @@ if($table != null)
 
 else
 {
-	echo "<tr> <td colspan='8' align='middle'> NO DATA FOUND </td> </tr>";
+	echo "<tr> <td colspan='8' align='middle'> <span style='color:red;'> NO DATA FOUND </span> </td> </tr>";
 }
 ?>

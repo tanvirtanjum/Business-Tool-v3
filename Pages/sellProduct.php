@@ -7,7 +7,8 @@ include '../Page Controllers/sellProductController.php';
 	<head> 
 		<title> Sell Product </title>
 		<link rel="stylesheet" type="text/css" href="CSS/sellProduct.css">
-		<script src="../Page Controllers/javascript/sellProduct.js"></script>
+		<!--<script src="../Page Controllers/javascript/advancedProductSearchOnSaleJS.js"></script>-->
+		<script src="../Page Controllers/javascript/sellProductJS.js"></script>
 	</head>
 	
 	<body style="background-image: url('Images/5.jpg'); background-repeat: no-repeat; background-size: cover;">
@@ -16,15 +17,31 @@ include '../Page Controllers/sellProductController.php';
 				<div class="floatRightTop">
 					<table name="search&logout">
 						<tr>
-							<td><input type="text" class="srchtf" name="srchProdTF" placeholder="Search by Product Type" value="<?php echo "$srchProdTF";?>"></td>
-							<td> <span style="color:red; font-size:15px;"> </span> </td>
-							<td><input type="submit" class="srchbtn" name="srchBTN" value="Search"></td>
+							<td>
+								<input type="text" class="srchtf" id="srchProdTypeTF" placeholder="Sort by Product Type" onkeyup="srch()">
+							</td>
+							
+							<td> 
+								<span style="color:red; font-size:15px;"> </span> 
+							</td>
+							
 							<td style="width:50%;"></td>
-							<td><input type="submit" class="srchbtn" name="gohomebtn" value="Home"></td>
+							
+							<td>
+								<input type="submit" class="srchbtn" name="gohomebtn" value="Home">
+							</td>
+							
 							<td class="space"></td>
-							<td><input type="submit" class="gobtn" name="goBTN" value="Check Sales History  >>"></td>
+							
+							<td>
+								<input type="submit" class="gobtn" name="goBTN" value="Check Sales History  >>">
+							</td>
+							
 							<td class="col"></td>
-							<td><input type="submit" class="logoutbtn" name="logoutBTN" value="Logout"></td>
+							
+							<td>
+								<input type="submit" class="logoutbtn" name="logoutBTN" value="Logout">
+							</td>
 						</tr>
 					</table>
 					<div class="scrollit">

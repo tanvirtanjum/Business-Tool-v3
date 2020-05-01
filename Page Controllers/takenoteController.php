@@ -5,13 +5,21 @@ function showTable($para)
 {
 	$table=loadTable($para);
 	
-	foreach($table as $data)
+	if($table != null)
 	{
-		echo "<tr>";
-		echo "<td align='middle'>".$data["NoteID"]."</td>";
-		echo "<td>".$data["NoteName"]."</td>";
-		echo "<td align='middle'>".$data["OwnerID"]."</td>";
-		echo "</tr>";		
+		foreach($table as $data)
+		{
+			echo "<tr>";
+			echo "<td align='middle'>".$data["NoteID"]."</td>";
+			echo "<td>".$data["NoteName"]."</td>";
+			echo "<td align='middle'>".$data["OwnerID"]."</td>";
+			echo "</tr>";		
+		}
+	}
+	
+	else
+	{
+		echo "<tr> <td colspan='3' align='middle'> <span style='color:red;'> NO DATA FOUND </span> </td> </tr>";
 	}
 }
 
