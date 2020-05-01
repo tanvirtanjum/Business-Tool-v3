@@ -23,6 +23,7 @@
 	margin-bottom: auto;
 	margin-left: auto;
 	margin-right: auto;
+	height:95%;
 }
 
 .td1
@@ -42,13 +43,26 @@
 {
 	border-collapse: collapse;
     width: 100%;
-	/*height: 30px;*/
+	height: calc(100%);
 	
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	border-collapse: collapse;
 	font-style: bold;
 	
 	
+}
+#noteTable caption 
+{
+	border: 2px solid #ddd;
+	padding: 8px;
+	/*position: -webkit-sticky; /* Safari 
+	position: sticky;*/
+	top: 0;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	text-align: center;
+	background-color: #2E8B57;
+	color: white;
 }
 #noteTable th 
 {
@@ -57,6 +71,7 @@
 	position: -webkit-sticky; /* Safari */
 	position: sticky;
 	top: 0;
+
 }
 #noteTable td
 {
@@ -87,7 +102,8 @@
 .scrollit /*add table scrolling */
 {
     overflow:scroll;
-    height:90%;
+    /*height:400px;*/
+	height: calc(100%);
 }
 
 .tf
