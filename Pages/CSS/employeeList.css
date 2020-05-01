@@ -68,6 +68,19 @@
 	
 	
 }
+#empTable caption 
+{
+	border: 2px solid #ddd;
+	padding: 8px;
+	/*position: -webkit-sticky; /* Safari 
+	position: sticky;*/
+	top: 0;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	text-align: center;
+	background-color: #2E8B57;
+	color: white;
+}
 #empTable th 
 {
 	border: 2px solid #ddd;
@@ -254,7 +267,7 @@ option
 
 .col2
 {
-	width: 150px;
+	width: 100px;
 }
 
 .srchbtn

@@ -62,56 +62,64 @@ include '../Page Controllers/salesHistoryController.php';
 				</div>
 						
 				<div class="floatLeftDown">
-					<table name="input">
+					<table name="input" style="width: calc(100%);">
 						<tr>
 							<td class="td1"> Sales ID: </td>
-							<td style="column-width: 225px;"> <input type="text" class="tf" name="sidTF" value="<?php echo $sidTF; ?>" readonly> </td>
+							<td class="td2"> 
+								<input type="text" class="tf" name="sidTF" value="<?php echo $sidTF; ?>" readonly> 
+							</td>
 						</tr>
 						
 						<tr>
 							<td class="td1"> Product ID: </td>
-							<td> <input type="text" class="tf" name="prodidTF" value="<?php echo $prodidTF; ?>"  readonly> </td>
+							<td class="td2">
+								<input type="text" class="tf" name="prodidTF" value="<?php echo $prodidTF; ?>"  readonly> 
+							</td>
 						</tr>
 						
 						<tr>
 							<td class="td1"> Selling Quantity: </td>
-							<td> <input type="number" class="tf" name="quantTF" value="<?php echo $quantTF; ?>"  readonly> </td>
+							<td class="td2"> 
+								<input type="number" class="tf" name="quantTF" value="<?php echo $quantTF; ?>"  readonly> 
+							</td>
 						</tr>
 						
 						<tr>
 							<td class="td1"> Obtained Ammount: </td>
-							<td> <input type="number" class="tf" name="obtamntTF" value="<?php echo $obtamntTF; ?>"  readonly> </td>
+							<td class="td2"> 
+								<input type="number" class="tf" name="obtamntTF" value="<?php echo $obtamntTF; ?>"  readonly> 
+							</td>
 						</tr>
 						
 						<tr>
 							<td class="td1"> Total Profit: </td>
-							<td> <input type="number" class="tf" name="profitTF" value="<?php echo $profitTF; ?>"  readonly> </td>
+							<td class="td2"> <input type="number" class="tf" name="profitTF" value="<?php echo $profitTF; ?>"  readonly> </td>
 						</tr>
 						
 						<tr>
 							<td class="td1"> Customer Name: </td>
-							<td> <input type="text" class="tf" name="cusnameTF" value="<?php echo $cusnameTF; ?>"  readonly> </td>
+							<td class="td2"> <input type="text" class="tf" name="cusnameTF" value="<?php echo $cusnameTF; ?>"  readonly> </td>
 						</tr>
 						
 						<tr>
 							<td class="td1"> Customer Contact: </td>
-							<td> <input type="number" class="tf" name="cusmobTF" value="<?php echo $cusmobTF; ?>"  readonly> </td>
+							<td class="td2"> <input type="number" class="tf" name="cusmobTF" value="<?php echo $cusmobTF; ?>"  readonly> </td>
 						</tr>
 						
 						<tr>
 							<td class="td1"> Sold By: </td>
-							<td> <input type="text" class="tf" name="empidTF" value="<?php echo $empidTF; ?>"  readonly> </td>
+							<td class="td2"> 
+								<input type="text" class="tf" name="empidTF" value="<?php echo $empidTF; ?>"  readonly> 
+							</td>
 						</tr>
 						
 						<tr>
 							<td class="td1"> Date: </td>
-							<td> <input type="text" class="tf" name="sellDateTF" value="<?php echo $sellDateTF; ?>"  readonly> </td>
+							<td class="td2"> <input type="text" class="tf" name="sellDateTF" value="<?php echo $sellDateTF; ?>"  readonly> </td>
 						</tr>
-
-						<tr>
-							<td colspan="2" align="center" style="height:90px;"> <input type="submit" class="btn" name="refreshBTN" value="Refresh"> </td>	
-						</tr>
-					<table>
+					</table>
+				
+					<div align='middle' style="padding-top:5%;"> <input type="submit" class="btn" name="refreshBTN" value="Refresh"> </div>
 				</div>
 			</form>
 		</div>

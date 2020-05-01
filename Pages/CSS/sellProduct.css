@@ -1,20 +1,3 @@
-.floatRightTop 
-{ 
-	padding-top: 1%;
-	width:68%;
-	float: right; 
-	margin-bottom: auto;
-}
-
-.floatLeftDown 
-{ 
-	padding-top: 3%;
-	padding-bottom: 3%;
-	width: 30%; 
-	float: left; 
-	margin-bottom: auto;
-}
-
 .container 
 { 
 	overflow: hidden; 
@@ -22,31 +5,81 @@
 	margin-bottom: auto;
 	margin-left: auto;
 	margin-right: auto;
+	width: 100%;
+	height: 95%
 }
+
+.floatRightTop 
+{ 
+	/*overflow: scroll;*/
+	padding-top: 1%;
+	width:70%;
+	float: right; 
+	margin-bottom: auto;
+}
+
+.floatLeftDown 
+{ 
+	display: block;
+	/*overflow: scroll;*/
+	padding-top: 3%;
+	width: 30%; 
+	float: left; 
+	margin-bottom: auto;
+
+	padding-bottom:5%;
+}
+
 
 .td1
 {
 	text-align: left;
 	vertical-align: middle;
 	
-	height: 50px;
+	height: 45px;
+	width: calc(20%);
 	
 	font-family: "Consolas";
 	font-size: 18px;
 	font-style: bold;
+}
+.td2
+{
+	vertical-align: middle;
+	
+	width: calc(76%);
+}
+.td3
+{
+	vertical-align: middle;
+	
+	width: calc(4%);
 }
 
 #prodTable
 {
 	border-collapse: collapse;
     width: 100%;
-	height: 30px;
+	height: calc(100%);
 	
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	/*border-collapse: collapse;*/
+	border-collapse: collapse;
 	font-style: bold;
 	
 	
+}
+#prodTable caption 
+{
+	border: 2px solid #ddd;
+	padding: 8px;
+	/*position: -webkit-sticky; /* Safari 
+	position: sticky;*/
+	top: 0;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	text-align: center;
+	background-color: #2E8B57;
+	color: white;
 }
 #prodTable th 
 {
@@ -55,6 +88,7 @@
 	position: -webkit-sticky; /* Safari */
 	position: sticky;
 	top: 0;
+
 }
 #prodTable td
 {
@@ -85,12 +119,19 @@
 .scrollit /*add table scrolling */
 {
     overflow:scroll;
+    /*height:400px;*/
+	height: calc(100%);
+}
+
+.scrollit /*add table scrolling */
+{
+    overflow:scroll;
     height:400px;
 }
 
 .srchtf
 {	
-	width:70px;
+	width:55px;
 	padding: 5px 5px 5px 5px;
 	border: 2px solid #ccc;
 	border-radius: 12px;

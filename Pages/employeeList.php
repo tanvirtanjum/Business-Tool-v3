@@ -32,7 +32,7 @@ include '../Page Controllers/employeeListController.php';
 					<div class="scrollit">
 						<div id="printableTable">
 							<table name="empTable" id="empTable">
-								<!--<caption>Active Employee List</caption>-->
+								<caption>Active Employee List</caption>
 								<thead>
 									<tr>
 										<th>ID.</th>
