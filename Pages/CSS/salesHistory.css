@@ -112,11 +112,10 @@
 }
 
 
-scrollit /*add table scrolling */
+.scrollit /*add table scrolling */
 {
     overflow:scroll;
-    /*height:400px;*/
-	height: calc(100%);
+    height:400px;
 }
 
 .srchtf
