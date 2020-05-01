@@ -11,9 +11,10 @@
 
 .floatRightTop 
 { 
+	display: block;
 	/*overflow: scroll;*/
 	padding-top: 1%;
-	width: calc(65%);
+	width: 68%;
 	float: right; 
 	margin-bottom: auto;
 }
@@ -23,7 +24,7 @@
 	display: block;
 	/*overflow: scroll;*/
 	padding-top: 3%;
-	width: calc(30%); 
+	width: 30%; 
 	float: left; 
 	margin-bottom: auto;
 
