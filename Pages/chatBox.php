@@ -14,54 +14,57 @@ include '../Page Controllers/chatController.php';
 		<form action="" method="post" autocomplete="off">
 			<div class="container">
 				<div class="floatLeft">
-				<div class="card">
-					<div align="middle">
-						<table style="width:calc(80%);">
-							<tr align="middle"> 
-								<td class="td1"> <label> To: </label> </td>
-								<td class="td2"> <input type = "text" name="toTB" class="tf" value="<?php echo $toTB; ?>" placeholder="Valid User ID"> </td> 
-							</tr>
-							
-							<tr align="middle">
-								<td class="td1"> <label> Subject: </label> </td>
-								<td class="td2"> <input type = "text" name="SsubTB" class="tf" value="<?php echo $SsubTB; ?>" placeholder="Write Subject"> </td>
-							<td>
-						</table>
-					</div>
-					
-					<textarea id="sendnoteTA" name="sendnoteTA" class="noteTA" placeholder="Write Here.."><?php echo $sendnoteTA; ?></textarea>
-					
-					<br> <br> 
+					<div class="card">
+						<div align="middle">
+							<table style="width:calc(80%);">
+								<tr align="middle"> 
+									<td class="td1"> <label> To: </label> </td>
+									<td class="td2"> <input type = "text" name="toTB" class="tf" value="<?php echo $toTB; ?>" placeholder="Valid User ID"> </td> 
+								</tr>
+								
+								<tr align="middle">
+									<td class="td1"> <label> Subject: </label> </td>
+									<td class="td2"> <input type = "text" name="SsubTB" class="tf" value="<?php echo $SsubTB; ?>" placeholder="Write Subject"> </td>
+								<td>
+							</table>
+						</div>
 						
-					<div align="middle">
-						<button name="sendBTN" class="sendbtn"> Send </button>
+						<textarea id="sendnoteTA" name="sendnoteTA" class="noteTA" placeholder="Write Here.."><?php echo $sendnoteTA; ?></textarea>
+						
+						<br> <br> 
+							
+						<div align="middle">
+							<button name="sendBTN" class="sendbtn"> Send </button>
+						</div>
 					</div>
 				</div>
-				</div>
+				
 				<div class="floatLeftTwo">
-					<div align="middle">
-						<table style="width:calc(80%);">
-							<tr> 
-								<td class="td1"> <label> From: </label> </td>
-								<td class="td2"> 
-									<input type = "text" name="fromTB" id="fromTB" class="tf" value="<?php echo $fromTB; ?>" placeholder="Auto Generated" readonly> 
-									<input type = "hidden" id="dateTB" value="<?php echo $dateTB; ?>" readonly> 
-								</td> 
-							</tr>
-							
-							<tr>
-								<td class="td1"> <label> Subject: </label> </td>
-								<td class="td2"> <input type = "text" name="RsubTB" class="tf" value="<?php echo $RsubTB; ?>" placeholder="Auto Generated" readonly> </td>
-							<td>
-						</table>
-					</div>
-					
-					<textarea id="receivenoteTA" name="receivenoteTA" class="noteTA" readonly placeholder="Auto Generated"><?php echo $receivenoteTA; ?></textarea>
-					
-					<br> <br> 
+					<div class="cardTwo">
+						<div align="middle">
+							<table style="width:calc(80%);">
+								<tr> 
+									<td class="td1"> <label> From: </label> </td>
+									<td class="td2"> 
+										<input type = "text" name="fromTB" id="fromTB" class="tf" value="<?php echo $fromTB; ?>" placeholder="Auto Generated" readonly> 
+										<input type = "hidden" id="dateTB" value="<?php echo $dateTB; ?>" readonly> 
+									</td> 
+								</tr>
+								
+								<tr>
+									<td class="td1"> <label> Subject: </label> </td>
+									<td class="td2"> <input type = "text" name="RsubTB" class="tf" value="<?php echo $RsubTB; ?>" placeholder="Auto Generated" readonly> </td>
+								<td>
+							</table>
+						</div>
 						
-					<div align="middle">
-						<button name="sendBTN" class="printbtn" onclick="return saveFile()"> Print </button>
+						<textarea id="receivenoteTA" name="receivenoteTA" class="noteTA" readonly placeholder="Auto Generated"><?php echo $receivenoteTA; ?></textarea>
+						
+						<br> <br> 
+							
+						<div align="middle">
+							<button name="sendBTN" class="printbtn" onclick="return saveFile()"> Print </button>
+						</div>
 					</div>
 				</div>
 				
