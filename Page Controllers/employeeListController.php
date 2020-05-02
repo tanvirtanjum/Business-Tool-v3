@@ -62,6 +62,7 @@ $autopass = rand(1234,9999);
 $srchvalid= false;
 
 $updateError=false;
+$dltError=false;
 
 if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 {
@@ -296,6 +297,43 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 	
 	if(isset($_POST["deleteBTN"]))
 	{
+		if($sid == '1')
+		{
+			if(empty($_POST["eidTF"]))
+			{
+				$eidTFerror="&#10033;";
+				//$insertion=false;
+				$dltError=true;			
+			}
+			
+			else
+			{
+				$eidTF=$_POST["eidTF"];
+				
+				$dltdata=loadEmployee($eidTF);
+				if($dltdata == null)
+				{
+					$eidTF="";
+					$dltError=true;
+					$eidTFerror="&#10033;";
+				}
+				
+				if($eidTF == $uid)
+				{
+					$eidTF="";
+					$dltError=true;
+					$eidTFerror="&#10033;";
+				}
+			}
+			
+			if(!$dltError)
+			{
+				updateSID($eidTF,'4');
+				deleteEmployee($eidTF);
+			}
+		}
+		
+		else{}
 	}
 	
 	if(isset($_POST["updateBTN"]))
@@ -419,6 +457,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 			}
 			
 			else{}
+			
 		}
 		
 		else if($sid=='2' || $sid=='3')
@@ -472,6 +511,9 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 		$idpass="";
 		
 		$srchvalid= false;
+		
+		$updateError=false;
+		$dltError=false;
 		
 	}
 }

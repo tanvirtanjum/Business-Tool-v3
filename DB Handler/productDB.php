@@ -117,4 +117,19 @@ function updateOnSell($PID, $quantity)
 		throw $e->getMessage();
 	}
 }
+
+function deleteProduct($PID)
+{
+	try
+	{
+		$query = "UPDATE `product` SET `AVAILABILITY`= 'UNAVAILABLE' WHERE `PID` = '$PID';";
+
+		execute($query);
+	}
+	
+	catch (Exception $e)
+	{
+		throw $e->getMessage();
+	}
+}
 ?>

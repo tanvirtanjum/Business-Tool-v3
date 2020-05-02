@@ -81,7 +81,7 @@
 	padding-top: 8px;
 	padding-bottom: 8px;
 	text-align: center;
-	background-color: #2E8B57;
+	background-color: #00008B;
 	color: white;
 }
 #seenTable th 
@@ -115,7 +115,7 @@
 	padding-top: 8px;
 	padding-bottom: 8px;
 	text-align: center;
-	background-color: #2E8B57;
+	background-color: #00008B;
 	color: white;
 }
 
@@ -142,7 +142,7 @@
 	padding-top: 8px;
 	padding-bottom: 8px;
 	text-align: center;
-	background-color: #2E8B57;
+	background-color: #DC143C;
 	color: white;
 }
 #unseenTable th 
@@ -176,7 +176,7 @@
 	padding-top: 8px;
 	padding-bottom: 8px;
 	text-align: center;
-	background-color: #2E8B57;
+	background-color: #DC143C;
 	color: white;
 }
 
@@ -210,7 +210,7 @@
 	padding-top: 8px;
 	padding-bottom: 8px;
 	text-align: center;
-	background-color: #2E8B57;
+	background-color: #2F4F4F;
 	color: white;
 }
 #sentTable th 
@@ -244,7 +244,7 @@
 	padding-top: 8px;
 	padding-bottom: 8px;
 	text-align: center;
-	background-color: #2E8B57;
+	background-color: #2F4F4F;
 	color: white;
 }
 

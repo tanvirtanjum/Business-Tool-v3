@@ -84,4 +84,19 @@ function updateEmployee($EmpID, $name, $did, $sal, $mob, $E_MAIL)
 		throw $e->getMessage();
 	}
 }
+
+function deleteEmployee($EmpID)
+{
+	try
+	{
+		$query = "UPDATE `employee` SET `DID`= '4' WHERE `EmpID` = '$EmpID';";
+
+		execute($query);
+	}
+	
+	catch (Exception $e)
+	{
+		throw $e->getMessage();
+	}
+}
 ?>
