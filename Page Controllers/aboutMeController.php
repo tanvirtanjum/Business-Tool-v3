@@ -1,5 +1,6 @@
 <?php
 require_once '../DB Handler/employeeDB.php';
+require_once '../DB Handler/chatDB.php';
 
 $EmpID="";
 $Name="";
@@ -14,6 +15,9 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 {
 	$uid = $_COOKIE['uid'];
 	$sid = $_COOKIE['sid'];
+	
+	$tab=calc($uid);
+	$no= $tab[0]["TotalMsg"];
 	
 	$data=loadEmployee($uid);
 	
@@ -38,6 +42,13 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 		setcookie("uid",$uid,time()+600);
 		setcookie("sid",$sid,time()+600);
 		header("Location:home.php");
+	}
+	
+	if(isset($_POST["msgBTN"]))
+	{
+		setcookie("uid",$uid,time()+600);
+		setcookie("sid",$sid,time()+600);
+		header("Location:chatBox.php");
 	}
 	
 	if(isset($_POST["settingBTN"]))

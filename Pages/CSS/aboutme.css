@@ -121,3 +121,25 @@ input[type="mail"].tf:focus
 	font-style: bold;
 	color: #008CBA;
 }
+
+.openbtn
+{	
+	width:120px;
+	height:30px;
+	background-color: black;
+	color: white;
+	border-radius: 12px;
+	border: 2px solid black;
+	text-align: center;
+	font-size: 16px;
+	transition-duration: 0.4s;
+    cursor: pointer;
+}
+.openbtn:hover
+{
+	width:140px;
+	background-color: white; 
+    color: black; 
+    border: 2px solid black;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}

@@ -27,6 +27,7 @@ include '../Page Controllers/takenoteController.php';
 					</table>
 					<div class="scrollit">
 						<table name="noteTable" id="noteTable">
+							<caption>Your Notes</caption>
 							<thead>
 								<tr>
 									<th>Note ID</th>

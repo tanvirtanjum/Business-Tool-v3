@@ -21,6 +21,10 @@ include '../Page Controllers/sellProductController.php';
 								<input type="text" class="srchtf" id="srchProdTypeTF" placeholder="Sort by Product Type" onkeyup="srch()">
 							</td>
 							
+							<td>
+								<input type="text" class="srchtf" id="srchProdNameTF" placeholder="Sort by Product Name" onkeyup="srch()">
+							</td>
+							
 							<td> 
 								<span style="color:red; font-size:15px;"> </span> 
 							</td>
@@ -46,6 +50,7 @@ include '../Page Controllers/sellProductController.php';
 					</table>
 					<div class="scrollit">
 						<table name="prodTable" id="prodTable">
+							<caption>Available Product List</caption>
 							<thead>
 								<tr>
 									<th>ID.</th>

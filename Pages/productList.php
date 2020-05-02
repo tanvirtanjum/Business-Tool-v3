@@ -45,6 +45,7 @@ include '../Page Controllers/productListController.php';
 					<div class="scrollit">
 						<div id="printableTable">
 							<table name="prodTable" id="prodTable">
+								<caption>Available Product List</caption>
 								<thead>
 									<tr>
 										<th>ID.</th>

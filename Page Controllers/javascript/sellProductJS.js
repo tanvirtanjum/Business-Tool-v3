@@ -47,6 +47,7 @@ function srch()
 	var xhttp = new XMLHttpRequest();
 	
 	var key1 = document.getElementById('srchProdTypeTF').value;
+	var key2 = document.getElementById('srchProdNameTF').value;
 	
 	xhttp.onreadystatechange=function()
 	{
@@ -55,7 +56,7 @@ function srch()
 			document.getElementById('tab').innerHTML = xhttp.responseText;
 		}
 	}
-	xhttp.open("GET","../DB Handler/advancedProductSearchOnSaleDB.php?key1="+key1,true);
+	xhttp.open("GET","../DB Handler/advancedProductSearchOnSaleDB.php?key1="+key1+"&key2="+key2,true);
 	//xhttp.open("GET","../DB Handler/employeeDB.php?key="+key,true);
 	xhttp.send();
 }

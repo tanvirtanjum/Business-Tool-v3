@@ -13,6 +13,10 @@ include '../Page Controllers/aboutMeController.php';
 			<form autocomplete="off" method="post" action="">
 				<table>
 					<tr align="right" valign="middle" style="height: 40px;">
+						<td colspan='2' align='middle'> <button name='msgBTN' class="openbtn" formtarget="_blank"> Message(<?php echo $no; ?>) </button> </p> </td>
+					</tr>
+					
+					<tr align="right" valign="middle" style="height: 40px;">
 						<td> <p class="text"> ID: </p> </td>
 						<td> <input type="text" class="tf" name="empidTF" value="<?php echo "$EmpID"; ?>" readonly> </td>
 					</tr>
@@ -34,12 +38,12 @@ include '../Page Controllers/aboutMeController.php';
 					
 					<tr align="right" valign="middle" style="height: 40px;">
 						<td> <p class="text">Mobile No.: </p> </td>
-						<td> <input type="number" class="tf" name="mobTF" value="<?php echo "$Mob"; ?>"> </td>
+						<td> <input type="number" class="tf" name="mobTF" value="<?php echo "$Mob"; ?>" readonly> </td>
 					</tr>
 					
 					<tr align="right" valign="middle" style="height: 40px;">
 						<td> <p class="text">E-mail: </p> </td>
-						<td> <input type="mail" class="tf" name="mailTF" value="<?php echo "$mail"; ?>"> </td>
+						<td> <input type="mail" class="tf" name="mailTF" value="<?php echo "$mail"; ?>" readonly> </td>
 					</tr>
 					
 					<tr align="right" valign="middle" style="height: 40px;">

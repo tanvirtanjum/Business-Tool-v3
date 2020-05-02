@@ -23,7 +23,7 @@ function showTable()
 	
 	else
 	{
-		echo "<tr> <td colspan='9' align='middle'> NO DATA FOUND </td> </tr>";
+		echo "<tr> <td colspan='9' align='middle'> <span style='color:red;'> NO DATA FOUND </span> </td> </tr>";
 	}
 }
 function showFoot()

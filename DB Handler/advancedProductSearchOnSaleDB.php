@@ -2,11 +2,12 @@
 require_once 'DBC.php';
 
 $key1 = $_GET['key1'];
+$key2 = $_GET['key2'];
 
 $table=null;
 
 //$query = "SELECT * FROM `employee` WHERE `E_NAME` LIKE '%$key1%' AND `DID` LIKE '%$key2%';";
-$query="SELECT * FROM `product` WHERE `TYPE` LIKE '%$key1%' AND `AVAILABILITY` = 'AVAILABLE' ORDER BY `PID`;";
+$query="SELECT * FROM `product` WHERE `TYPE` LIKE '%$key1%' AND `P_NAME` LIKE '%$key2%' AND `AVAILABILITY` = 'AVAILABLE' ORDER BY `PID`;";
 $table=get($query);
 if($table != null)
 {	

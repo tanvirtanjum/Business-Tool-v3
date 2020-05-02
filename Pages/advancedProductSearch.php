@@ -75,6 +75,7 @@ include '../Page Controllers/advancedProductSearchController.php';
 					<div class="scrollit">
 						<div id="printableTable">
 							<table name="prodTable" id="prodTable">
+								<caption>Product List</caption>
 								<thead>
 									<tr>
 										<th>ID.</th>
