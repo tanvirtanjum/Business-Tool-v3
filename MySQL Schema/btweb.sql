@@ -1,10 +1,10 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 01, 2020 at 01:49 PM
--- Server version: 10.4.10-MariaDB
+-- Generation Time: May 02, 2020 at 05:56 PM
+-- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.1.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -21,6 +21,39 @@ SET time_zone = "+00:00";
 --
 -- Database: `btweb`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `chat`
+--
+
+CREATE TABLE `chat` (
+  `MSG_ID` int(11) NOT NULL,
+  `DATE` datetime NOT NULL DEFAULT current_timestamp(),
+  `SUB` varchar(250) DEFAULT NULL,
+  `SENDER` varchar(15) NOT NULL,
+  `TEXT` longtext NOT NULL,
+  `RECEIVER` varchar(15) NOT NULL,
+  `STATUS` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `chat`
+--
+
+INSERT INTO `chat` (`MSG_ID`, `DATE`, `SUB`, `SENDER`, `TEXT`, `RECEIVER`, `STATUS`) VALUES
+(1, '2020-05-02 20:10:19', 'HOLA', 'BT-01AD', 'HELLO', 'BT-03AD', 1),
+(2, '2020-05-02 20:12:21', 'RE: Hola', 'BT-03AD', 'hello tanvir....', 'BT-01AD', 1),
+(3, '2020-05-02 20:16:47', 'Add JavaScript', 'BT-01AD', 'Add javascript validation to chat', 'BT-03AD', 1),
+(4, '2020-05-02 20:17:23', 'Add Functionality', 'BT-01AD', 'Add functionality to chat...\r\nOpen\r\nprint', 'BT-03AD', 1),
+(5, '2020-05-02 20:17:44', 'Commit', 'BT-01AD', 'After all commit...', 'BT-03AD', 1),
+(6, '2020-05-02 20:22:16', 'Add BG', 'BT-03AD', 'Add BG to newly added pages..', 'BT-01MG', 0),
+(7, '2020-05-02 20:23:10', 'Check Chat', 'BT-03AD', 'Check newly added function...', 'BT-01MG', 0),
+(8, '2020-05-02 20:25:13', 'Check Chat', 'BT-03AD', 'Check newly added function...', 'BT-01MG', 0),
+(9, '2020-05-02 20:38:00', 'Commit', 'BT-01AD', '', 'BT-03AD', 1),
+(10, '2020-05-02 20:39:04', 'Sell', 'BT-01AD', '  Try to sell on max profit', 'BT-01MG', 0),
+(11, '2020-05-02 21:10:24', 'Test', 'BT-03AD', '  Test text....', 'BT-01AD', 1);
 
 -- --------------------------------------------------------
 
@@ -100,7 +133,7 @@ INSERT INTO `log_in` (`LID`, `SID`, `PASS`) VALUES
 ('BT-02AD', 1, '01a5480f5021b4d8f231de3489e61c42'),
 ('BT-02MG', 2, '76e9a17937b75b73a8a430acf210feaf'),
 ('BT-02SM', 3, '8073bd4ed0fe0c330290c58056a2cd5e'),
-('BT-03AD', 1, '5da2297bad6924526e48e00dbfc3c27a'),
+('BT-03AD', 1, '81dc9bdb52d04dc20036dbd8313ed055'),
 ('BT-03MG', 2, 'ca3a856a28df7d77d948949206ff9fdf'),
 ('BT-03SM', 3, '820e694038fadbf9b60b834215b46fdb'),
 ('BT-04MG', 2, 'c1285fcadc52c0d3dc8813fc2c2e2b2a'),
@@ -184,7 +217,7 @@ INSERT INTO `product` (`PID`, `P_NAME`, `TYPE`, `AVAILABILITY`, `QUANTITY`, `BUY
 ('P-3', 'AMD RYZEN 3 2200G', 'PROCCESOR', 'AVAILABLE', 30, 8200.00, 9000.00, 'BT-01MG', '2020-04-18 21:27:41'),
 ('P-4', 'INTEL 7TH GENERATION CORE I5-7400 PROCESSOR', 'PROCCESOR', 'AVAILABLE', 35, 15800.00, 17360.00, 'BT-01MG', '2020-05-01 17:16:32'),
 ('PHS-1', 'TRANSCEND J25M3 1TB USB 3.0', 'PORTABLE HDD/SSD', 'AVAILABLE', 27, 5200.00, 5500.00, 'BT-01MG', '2020-04-18 21:28:49'),
-('PHS-2', 'WESTERN DIGITAL ELEMENTS 1TB', 'PORTABLE HDD/SSD', 'AVAILABLE', 40, 4350.00, 4670.00, 'BT-01MG', '2020-04-18 21:29:33'),
+('PHS-2', 'WESTERN DIGITAL ELEMENTS 1TB', 'PORTABLE HDD/SSD', 'UNAVAILABLE', 40, 4350.00, 4670.00, 'BT-01MG', '2020-04-18 21:29:33'),
 ('PHS-3', 'TRANSCEND ESD350C 240GB PORTABLE', 'PORTABLE HDD/SSD', 'AVAILABLE', 27, 7900.00, 8140.00, 'BT-01MG', '2020-04-18 21:30:31'),
 ('PRI-04', 'CANON PIXMA G4010 ', 'PRINTER', 'AVAILABLE', 20, 21000.00, 21500.00, 'BT-01MG', '2020-05-01 17:24:53'),
 ('PRI-1', 'CANON IMAGECLASS MF244DW', 'PRINTER', 'AVAILABLE', 30, 21000.00, 21500.00, 'BT-01MG', '2020-04-18 21:35:43'),
@@ -266,6 +299,14 @@ INSERT INTO `status` (`SID`, `DESIGNATION`) VALUES
 --
 
 --
+-- Indexes for table `chat`
+--
+ALTER TABLE `chat`
+  ADD PRIMARY KEY (`MSG_ID`),
+  ADD KEY `SENDER` (`SENDER`),
+  ADD KEY `RECEIVER` (`RECEIVER`);
+
+--
 -- Indexes for table `employee`
 --
 ALTER TABLE `employee`
@@ -322,6 +363,12 @@ ALTER TABLE `status`
 --
 
 --
+-- AUTO_INCREMENT for table `chat`
+--
+ALTER TABLE `chat`
+  MODIFY `MSG_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
 -- AUTO_INCREMENT for table `note`
 --
 ALTER TABLE `note`
@@ -336,6 +383,13 @@ ALTER TABLE `sales`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `chat`
+--
+ALTER TABLE `chat`
+  ADD CONSTRAINT `chat_ibfk_1` FOREIGN KEY (`SENDER`) REFERENCES `log_in` (`LID`),
+  ADD CONSTRAINT `chat_ibfk_2` FOREIGN KEY (`RECEIVER`) REFERENCES `log_in` (`LID`);
 
 --
 -- Constraints for table `employee`
