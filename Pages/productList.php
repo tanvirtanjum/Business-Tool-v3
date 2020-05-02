@@ -75,6 +75,7 @@ include '../Page Controllers/productListController.php';
 							<td class="td1"> Product ID: </td>
 							<td class="td2"> 
 								<input type="text" class="tf" name="pidTF" value="<?php echo "$pidTF";?>" <?php if($srchvalid==true){echo "readonly";}?>>
+								<input type="hidden" class="tf" name="av" id="av" value="<?php echo "$av";?>" readonly>
 							</td>
 							<td class="td3"> <span style="color:red; font-size:15px;"> <?php echo "$pidTFerror";?> </span> </td>
 						</tr>
@@ -165,7 +166,9 @@ include '../Page Controllers/productListController.php';
 							<td class="col2"></td>
 							<td> <input type="submit" class="btn" name="updateBTN" value="UPDATE" <?php if(!$srchvalid){echo "disabled";} ?>> </td>
 							<td class="col2"></td>
-							<td> <input type="submit" class="btn" name="deleteBTN" value="DELETE" <?php if(!$srchvalid){echo "disabled";} ?>> </td>
+							<td> 
+								<input type="submit" class="btn" name="deleteBTN" id="DELETE" value="DELETE" <?php if(!$srchvalid){echo "disabled";}?> onmouseover="change()"> 
+							</td>
 						</tr>
 					</table>
 				</div>

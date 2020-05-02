@@ -118,11 +118,11 @@ function updateOnSell($PID, $quantity)
 	}
 }
 
-function deleteProduct($PID)
+function deleteProduct($PID, $AV)
 {
 	try
 	{
-		$query = "UPDATE `product` SET `AVAILABILITY`= 'UNAVAILABLE' WHERE `PID` = '$PID';";
+		$query = "UPDATE `product` SET `AVAILABILITY`= '$AV' WHERE `PID` = '$PID';";
 
 		execute($query);
 	}

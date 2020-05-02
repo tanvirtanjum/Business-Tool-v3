@@ -45,6 +45,14 @@ function savePDF()
 	}
 }
 
+function change()
+{
+	if(document.getElementById("av").value == "UNAVAILABLE")
+	{
+		document.getElementById("DELETE").value="RE-ASSIGN";
+	}
+}
+
 function clear() 
 {
 	alert("ok");

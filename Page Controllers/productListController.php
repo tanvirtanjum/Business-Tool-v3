@@ -55,6 +55,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 	$sellPriceTFerror="";
 	$addby=$uid;
 	$adddate="";
+	$av="";
 	
 	$srchvalid=false;
 	
@@ -153,6 +154,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 				$sellPriceTF=$srcID[0]["SELL_PRICE"];
 				$addby=$srcID[0]["MOD_BY"];
 				$adddate=$srcID[0]["Add_PDate"];
+				$av=$srcID[0]["AVAILABILITY"];
 				
 				$srchvalid=true;
 			}
@@ -599,6 +601,17 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 		else
 		{
 			$pidTF=$_POST["pidTF"];
+			
+			if($_POST["deleteBTN"] == "DELETE")
+			{
+				deleteProduct($pidTF,"UNAVAILABLE");
+			}
+			
+			else
+			{
+				deleteProduct($pidTF,"AVAILABLE");
+			}
+			
 		}
 	}
 	
@@ -634,6 +647,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 		$sellPriceTFerror="";
 		$addby=$uid;
 		$adddate="";
+		$av="";
 		
 		$srchvalid=false;
 		
