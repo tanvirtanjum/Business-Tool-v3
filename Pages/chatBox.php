@@ -14,6 +14,7 @@ include '../Page Controllers/chatController.php';
 		<form action="" method="post" autocomplete="off">
 			<div class="container">
 				<div class="floatLeft">
+				<div class="card">
 					<div align="middle">
 						<table style="width:calc(80%);">
 							<tr align="middle"> 
@@ -36,7 +37,7 @@ include '../Page Controllers/chatController.php';
 						<button name="sendBTN" class="sendbtn"> Send </button>
 					</div>
 				</div>
-				
+				</div>
 				<div class="floatLeftTwo">
 					<div align="middle">
 						<table style="width:calc(80%);">
