@@ -9,7 +9,7 @@ include '../Page Controllers/advancedProductSearchController.php';
 		<script src="../Page Controllers/javascript/advancedProductSearchJS.js"></script>
 		<link rel="stylesheet" type="text/css" href="CSS/advancedProductSearch.css">
 	</head>
-	<body>
+	<body style="background-image: url('Images/prodSearch.jpg'); background-repeat: no-repeat; background-size: cover;">
 		<form autocomplete="off" method="POST" action="">
 			<div class="container">
 				<div class='floatLeftDown'>
