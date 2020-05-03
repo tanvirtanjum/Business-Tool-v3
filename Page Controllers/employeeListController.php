@@ -64,7 +64,7 @@ $srchvalid= false;
 $updateError=false;
 $dltError=false;
 
-if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
+if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']) && ($_COOKIE['sid'] != 1 || $_COOKIE['sid'] != 2))
 {
 	
 	if(isset($_POST["logoutBTN"]))

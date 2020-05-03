@@ -6,17 +6,19 @@ include '../Page Controllers/homeController.php';
 <html>
 	<head>
 		<title> Home </title>
+		<script src="../Page Controllers/javascript/homeJS.js"></script>
 		<link rel="stylesheet" type="text/css" href="CSS/home.css">
 	</head>
 	
 	<body style="background-image: url('Images/home1.gif'); background-repeat: no-repeat; background-position:center top; background-size: 15% 20%;">
 		<div class="form">
 			<form autocomplete="off" action="" method="post">
+				<input type="hidden" id="sid" value="<?php echo $_COOKIE['sid']; ?>">
 				<table align="middle" valign="center">
 					<tr>
-						<td> <input type="image" src="Images\employee_list_option.png" alt="employee_list" class="button" name="employeeBTN"> </td>
+						<td> <input type="image" src="Images\employee_list_option.png" alt="employee_list" class="button" name="employeeBTN" onclick="return access()"> </td>
 						<td class="col"></td>
-						<td> <input type="image" src="Images\product_list_option.png" alt="product_list" class="button" name="productBTN"> </td>
+						<td> <input type="image" src="Images\product_list_option.png" alt="product_list" class="button" name="productBTN" onclick="return access()"> </td>
 						<td class="col"></td>
 						<td> <input type="image" src="Images\sell_product_opt.png" alt="sell_product" class="button" name="sellBTN"> </td>
 						<td class="col"></td>

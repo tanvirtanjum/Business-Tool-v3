@@ -1,84 +1,109 @@
 function validateINSERT(id,pass)
 {
-	var ret = true;
+	var sid=document.getElementById('sid').value;
 	
-	var eid = document.getElementById('eidTF').value;
-	id=eid;
-	pass=document.getElementById('pass').value;
-	var ename = document.getElementById('enameTF').value;
-	var design = document.getElementById('design').value;
-	var sal = document.getElementById('salTF').value;
-	var mob = document.getElementById('mobTF').value;
-	var mail = document.getElementById('mailTF').value;
-	
-	
-	
-	if(eid.trim().length < 1)
-	{
-		document.getElementById('eidTFErr').innerHTML="&#10033;"
-		ret = false;
-	}
-	
-	if(ename.trim().length < 1)
-	{
-		document.getElementById('enameTFErr').innerHTML="&#10033;"
-		ret = false;
-	}
-	
-	if(design.trim().length < 1 || design == "4")
-	{
-		document.getElementById('designErr').innerHTML="&#10033;"
-		ret = false;
-	}
-	
-	if(sal < 1)
-	{
-		document.getElementById('salTFErr').innerHTML="&#10033;"
-		ret = false;
-	}
-	if(mob < 1)
-	{
-		document.getElementById('mobTFErr').innerHTML="&#10033;"
-		ret = false;
-	}
-	var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-	if(mail.trim().length < 1 || !mail.match(mailformat))
-	{
-		document.getElementById('mailTFErr').innerHTML="&#10033;"
-		ret = false;
-	}
-	
-	if(ret == true)
-	{
+	if(sid == 2)
+	{	
+		var ret = true;
 		
-		var con = confirm("Procced?");
+		var eid = document.getElementById('eidTF').value;
+		id=eid;
+		pass=document.getElementById('pass').value;
+		var ename = document.getElementById('enameTF').value;
+		var design = document.getElementById('design').value;
+		var sal = document.getElementById('salTF').value;
+		var mob = document.getElementById('mobTF').value;
+		var mail = document.getElementById('mailTF').value;
 		
-		if(con == true)
+		if(eid.trim().length < 1)
 		{
-			if(id != "" && pass !="")
-			{
-				alert("User ID: "+id+"\nPassword: "+pass+"");
-				return ret;
-			}
+			document.getElementById('eidTFErr').innerHTML="&#10033;"
+			ret = false;
+		}
+		
+		if(ename.trim().length < 1)
+		{
+			document.getElementById('enameTFErr').innerHTML="&#10033;"
+			ret = false;
+		}
+		
+		if(design.trim().length < 1 || design == "4")
+		{
+			document.getElementById('designErr').innerHTML="&#10033;"
+			ret = false;
+		}
+		
+		if(sal < 1)
+		{
+			document.getElementById('salTFErr').innerHTML="&#10033;"
+			ret = false;
+		}
+		if(mob < 1)
+		{
+			document.getElementById('mobTFErr').innerHTML="&#10033;"
+			ret = false;
+		}
+		var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+		if(mail.trim().length < 1 || !mail.match(mailformat))
+		{
+			document.getElementById('mailTFErr').innerHTML="&#10033;"
+			ret = false;
+		}
+		
+		if(ret == true)
+		{
 			
-			else
+			var con = confirm("Procced?");
+			
+			if(con == true)
 			{
-				alert("PRESS \"INSERT\" AGAIN TO GET PASSWORD.");
-				return ret;
+				if(id != "" && pass !="")
+				{
+					alert("User ID: "+id+"\nPassword: "+pass+"");
+					return ret;
+				}
+				
+				else
+				{
+					alert("PRESS \"INSERT\" AGAIN TO GET PASSWORD.");
+					return ret;
+				}
+					
 			}
 				
+			else
+			{
+				alert("Canceled..");
+				return false;
+			}		
 		}
-			
+		
 		else
 		{
-			alert("Canceled..");
-			return false;
-		}		
+			return ret;
+		}
 	}
 	
 	else
 	{
-		return ret;
+		alert("Access Denied");
+		return false;
+	}
+}
+
+function access()
+{
+	var sid=document.getElementById('sid').value;
+	
+	if(sid == 2)
+	{
+		alert("Access Denied");
+		return false;
+	}
+	
+	else
+	{
+		return true;
 	}
 }
 

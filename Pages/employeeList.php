@@ -15,7 +15,11 @@ include '../Page Controllers/employeeListController.php';
 				<div class="floatRightTop">
 					<table name="search&logout">
 						<tr>
-							<td> <input type="text" class="srchtf" name="srchEmpTF" placeholder="Search by Employee ID." value="<?php echo "$srchEmpTF";?>"> </td>
+						
+							<td>
+								<input type="hidden" id="sid" value="<?php echo $_COOKIE['sid']; ?>">
+								<input type="text" class="srchtf" name="srchEmpTF" placeholder="Search by Employee ID." value="<?php echo "$srchEmpTF";?>"> 
+							</td>
 							<td> <span style="color:red; font-size:15px;"> <?php echo"$srchEmpTFerror";?> </span> </td>
 							<td> <button class="srchbtn" name="srchBTN"> Search </button> </td>
 							<td style="width:15%;"> </td>
@@ -138,9 +142,9 @@ include '../Page Controllers/employeeListController.php';
 							<td class="col2"></td>
 							<td> <button class="btn" name="insertBTN" onclick='return validateINSERT("<?php echo $eidTF;?>","<?php echo $autopass;?>")' <?php if($srchvalid){echo "disabled";} ?>> INSERT </button> </td> 
 							<td class="col2"></td>
-							<td> <button class="btn" name="updateBTN" <?php if(!$srchvalid){echo "disabled";} ?>> UPDATE </button> </td>
+							<td> <button class="btn" name="updateBTN" onclick='return access()' <?php if(!$srchvalid){echo "disabled";} ?>> UPDATE </button> </td>
 							<td class="col2"></td>
-							<td> <button class="btn" name="deleteBTN" <?php if(!$srchvalid){echo "disabled";} ?>> DELETE </button> </td>
+							<td> <button class="btn" name="deleteBTN" onclick='return access()' <?php if(!$srchvalid){echo "disabled";} ?>> DELETE </button> </td>
 						</tr>
 					</table>
 				</div>
