@@ -9,7 +9,7 @@ include '../Page Controllers/advancedEmployeeSearchController.php';
 		<script src="../Page Controllers/javascript/advancedEmployeeSearchJS.js"></script>
 		<link rel="stylesheet" type="text/css" href="CSS/advancedEmployeeSearch.css">
 	</head>
-	<body>
+	<body style="background-image: url('Images/search.jpg'); background-repeat: no-repeat; background-size: cover;">
 		<form autocomplete="off" method="POST" action="">
 			<div class="container">
 				<div class='floatLeftDown'>

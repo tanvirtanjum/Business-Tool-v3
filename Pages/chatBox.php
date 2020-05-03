@@ -10,7 +10,7 @@ include '../Page Controllers/chatController.php';
 		<link rel="stylesheet" type="text/css" href="CSS/chatBox.css">
 	</head>
 	
-	<body>
+	<body style="background-image: url('Images/chatbox.jpg'); background-repeat: no-repeat; background-size: cover;">
 		<form action="" method="post" autocomplete="off" enctype="multipart/form-data">
 			<div class="container">
 				<div class="floatLeft">
