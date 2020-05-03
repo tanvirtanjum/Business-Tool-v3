@@ -31,7 +31,7 @@ include '../Page Controllers/chatController.php';
 						
 						<textarea id="sendnoteTA" name="sendnoteTA" class="noteTA" placeholder="Write Here.."><?php echo $sendnoteTA; ?></textarea>
 						<br>
-						<input type="file" name="file" size="45">
+						<input type="file" name="file" size="45" class="ch">
 						<br> <br> 
 							
 						<div align="middle">
@@ -65,7 +65,7 @@ include '../Page Controllers/chatController.php';
 						<input type="text" id="do" value="">
 						<button name="down" onclick="Download()">Download</button>-->
 						<label> Download: </label>
-						<a  href="<?php echo $attch; ?>" target="_blank" onclick="return Download()"> <input type="text" id="url" value="<?php echo $attch; ?>" readonly style="color: blue; text-decoration: underline;"> </a> 
+						<a href="<?php echo $attch;?>" target="_blank" onclick="return Download()"> <input type="text" id="url" value="<?php echo $attch; ?>" readonly class="link"> </a> 
 						<br> <br> 
 							
 						<div align="middle">

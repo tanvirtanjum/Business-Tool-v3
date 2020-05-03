@@ -1,6 +1,7 @@
 <?php
 require_once '../DB Handler/chatDB.php';
 require_once '../DB Handler/employeeDB.php';
+require_once '../Pages/Attachments/rename.php';
 
 function showUnseenTable($para)
 {
@@ -132,14 +133,24 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 		{
 			if( $_FILES['file']['name'] != "" )
 			{
-				$attachment="Attachments/".$_FILES['file']['name'];
-				copy ( $_FILES['file']['tmp_name'], "C:/xampp/htdocs/Git/trunk/Pages/Attachments/". $_FILES['file']['name'] )
-				/*or die( "Could not copy file" )*/;
+				//$now = new DateTime();
+				//$newname=$now->format('Y-m-d H:i:s')."";
+				$newname=rand(00000,99999);
+				$attachment="Attachments/".$newname.$_FILES['file']['name'];
+				//$newname.=$_FILES['file']['name'];
+				$dir="C:/xampp/htdocs/Git/trunk/Pages/Attachments/$newname";
+				//$dir =$dir.;
+				copy ( $_FILES['file']['tmp_name'], $dir . $_FILES['file']['name'] );
+				
+				$sendnoteTA=$_POST["sendnoteTA"];
+				sendMSG($SsubTB,$uid,$sendnoteTA,$attachment,$toTB);
 			}
-			else{}
+			else
+			{
+				$sendnoteTA=$_POST["sendnoteTA"];
+				sendMSG($SsubTB,$uid,$sendnoteTA,$attachment,$toTB);
+			}
 						
-			$sendnoteTA=$_POST["sendnoteTA"];
-			sendMSG($SsubTB,$uid,$sendnoteTA,$attachment,$toTB);
 		}
 	}
 	

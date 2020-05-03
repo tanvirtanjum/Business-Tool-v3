@@ -394,3 +394,28 @@ input[type="number"].tf2:focus
 	padding-bottom: 4%;
 	border-radius: 5px;
 }
+
+.link
+{
+	color: blue; 
+	text-decoration: none;
+	background-color: #DCDCDC;
+	border-color: #DCDCDC;
+	text-align: center;
+}
+input[type="text"].link:hover
+{
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.ch
+{	
+	width: calc(40%);
+	background-color: #DCDCDC;
+	border-color: #DCDCDC;
+	color: black;
+	text-align: center;
+	transition-duration: 0.4s;
+    cursor: pointer;
+}
