@@ -11,7 +11,7 @@ include '../Page Controllers/chatController.php';
 	</head>
 	
 	<body>
-		<form action="" method="post" autocomplete="off">
+		<form action="" method="post" autocomplete="off" enctype="multipart/form-data">
 			<div class="container">
 				<div class="floatLeft">
 					<div class="card">
@@ -30,7 +30,8 @@ include '../Page Controllers/chatController.php';
 						</div>
 						
 						<textarea id="sendnoteTA" name="sendnoteTA" class="noteTA" placeholder="Write Here.."><?php echo $sendnoteTA; ?></textarea>
-						
+						<br>
+						<input type="file" name="file" size="45">
 						<br> <br> 
 							
 						<div align="middle">
@@ -59,7 +60,12 @@ include '../Page Controllers/chatController.php';
 						</div>
 						
 						<textarea id="receivenoteTA" name="receivenoteTA" class="noteTA" readonly placeholder="Auto Generated"><?php echo $receivenoteTA; ?></textarea>
-						
+						<br>
+						<!--<iframe id="my_iframe" style="display:none;"></iframe>
+						<input type="text" id="do" value="">
+						<button name="down" onclick="Download()">Download</button>-->
+						<label> Download: </label>
+						<a  href="<?php echo $attch; ?>" target="_blank" onclick="return Download()"> <input type="text" id="url" value="<?php echo $attch; ?>" readonly style="color: blue; text-decoration: underline;"> </a> 
 						<br> <br> 
 							
 						<div align="middle">

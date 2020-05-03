@@ -55,11 +55,11 @@ function loadSentTable($uid)
 	}
 }
 
-function sendMSG($SUB, $SENDER, $TEXT, $RECEIVER)
+function sendMSG($SUB, $SENDER, $TEXT, $ATTACHMENT, $RECEIVER)
 {
 	try
 	{
-		$query = "INSERT INTO `chat`(`DATE`, `SUB`, `SENDER`, `TEXT`, `RECEIVER`, `STATUS`) VALUES(current_timestamp(),'".$SUB."','".$SENDER."','".$TEXT."','".$RECEIVER."','0');";
+		$query = "INSERT INTO `chat`(`DATE`, `SUB`, `SENDER`, `TEXT`, `ATTACHMENT`, `RECEIVER`, `STATUS`) VALUES(current_timestamp(),'".$SUB."','".$SENDER."','".$TEXT."','".$ATTACHMENT."','".$RECEIVER."','0');";
 
 		execute($query);
 	}

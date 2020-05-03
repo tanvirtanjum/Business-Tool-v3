@@ -57,3 +57,19 @@ let saveFile = () =>
 		return false;
 	}
 }
+
+function Download() 
+{
+	var url = document.getElementById('url').value;
+	
+	if(url.length < 10)
+	{
+		return false;
+	}
+	
+	else
+	{
+		return true;
+	}
+	
+}

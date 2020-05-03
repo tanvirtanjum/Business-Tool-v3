@@ -88,6 +88,10 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 	$receivenoteTA="";
 	
 	$loadSentTB="";
+	$attachment="";
+	
+	$attch="";
+	$_FILES['name']="";
 	
 	if(isset($_POST['sendBTN']))
 	{
@@ -126,8 +130,16 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 		
 		if(!$sERR)
 		{
+			if( $_FILES['file']['name'] != "" )
+			{
+				$attachment="Attachments/".$_FILES['file']['name'];
+				copy ( $_FILES['file']['tmp_name'], "C:/xampp/htdocs/Git/trunk/Pages/Attachments/". $_FILES['file']['name'] )
+				/*or die( "Could not copy file" )*/;
+			}
+			else{}
+						
 			$sendnoteTA=$_POST["sendnoteTA"];
-			sendMSG($SsubTB,$uid,$sendnoteTA,$toTB);
+			sendMSG($SsubTB,$uid,$sendnoteTA,$attachment,$toTB);
 		}
 	}
 	
@@ -150,6 +162,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 				$RsubTB=$oTab[0]["SUB"];
 				$receivenoteTA=$oTab[0]["TEXT"];
 				$dateTB=$oTab[0]["DATE"];
+				$attch=$oTab[0]["ATTACHMENT"];
 				
 				if($oTab[0]["STATUS"] == '0')
 				{
