@@ -1,7 +1,7 @@
 <?php
 require_once '../DB Handler/chatDB.php';
 require_once '../DB Handler/employeeDB.php';
-require_once '../Pages/Attachments/rename.php';
+//require_once '../Pages/Attachments/rename.php';
 
 function showUnseenTable($para)
 {
