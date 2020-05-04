@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 03, 2020 at 03:25 PM
+-- Generation Time: May 04, 2020 at 06:51 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.1.33
 
@@ -44,23 +44,8 @@ CREATE TABLE `chat` (
 --
 
 INSERT INTO `chat` (`MSG_ID`, `DATE`, `SUB`, `SENDER`, `TEXT`, `ATTACHMENT`, `RECEIVER`, `STATUS`) VALUES
-(1, '2020-05-02 20:10:19', 'HOLA', 'BT-01AD', 'HELLO', NULL, 'BT-03AD', 1),
-(2, '2020-05-02 20:12:21', 'RE: Hola', 'BT-03AD', 'hello tanvir....', NULL, 'BT-01AD', 1),
-(3, '2020-05-02 20:16:47', 'Add JavaScript', 'BT-01AD', 'Add javascript validation to chat', NULL, 'BT-03AD', 1),
-(4, '2020-05-02 20:17:23', 'Add Functionality', 'BT-01AD', 'Add functionality to chat...\r\nOpen\r\nprint', NULL, 'BT-03AD', 1),
-(5, '2020-05-02 20:17:44', 'Commit', 'BT-01AD', 'After all commit...', NULL, 'BT-03AD', 1),
-(6, '2020-05-02 20:22:16', 'Add BG', 'BT-03AD', 'Add BG to newly added pages..', NULL, 'BT-01MG', 1),
-(7, '2020-05-02 20:23:10', 'Check Chat', 'BT-03AD', 'Check newly added function...', NULL, 'BT-01MG', 1),
-(8, '2020-05-02 20:25:13', 'Check Chat', 'BT-03AD', 'Check newly added function...', NULL, 'BT-01MG', 0),
-(9, '2020-05-02 20:38:00', 'Commit', 'BT-01AD', '', NULL, 'BT-03AD', 1),
-(10, '2020-05-02 20:39:04', 'Sell', 'BT-01AD', '  Try to sell on max profit', NULL, 'BT-01MG', 0),
-(11, '2020-05-02 21:10:24', 'Test', 'BT-03AD', '  Test text....', NULL, 'BT-01AD', 1),
-(12, '2020-05-02 22:06:51', 'Sell', 'BT-01AD', '  Try to sell on max profit', NULL, 'BT-01MG', 0),
-(13, '2020-05-02 22:08:13', 'PASS', 'BT-01MG', 'temp2727hc.', NULL, 'BT-01AD', 0),
-(14, '2020-05-03 16:46:46', 'Attch', 'BT-01AD', 'helllo', NULL, 'BT-03AD', 1),
-(15, '2020-05-03 17:28:39', 'TEST MSG', 'BT-03AD', 'Add file insertion', NULL, 'BT-01AD', 1),
-(16, '2020-05-03 18:25:31', 'PIC', 'BT-01AD', '', 'Attachments/PIC.jpg', 'BT-03AD', 1),
-(17, '2020-05-03 18:26:14', 'PIC', 'BT-01AD', '', 'Attachments/PIC.jpg', 'BT-01MG', 0);
+(1, '2020-05-03 23:27:36', 'Form', 'BT-01AD', 'Fill report', 'Attachments/41012WebTech.docx', 'BT-03AD', 1),
+(2, '2020-05-04 22:23:17', 'Pic', 'BT-01AD', '', 'Attachments/53094PIC.jpg', 'BT-01SM', 0);
 
 -- --------------------------------------------------------
 
@@ -135,8 +120,8 @@ CREATE TABLE `log_in` (
 
 INSERT INTO `log_in` (`LID`, `SID`, `PASS`) VALUES
 ('BT-01AD', 1, '7ba0691b7777b6581397456412a41390'),
-('BT-01MG', 2, '9a415b754803aa4a3af9355a8b8be7e8'),
-('BT-01SM', 3, '94027a80eed73ea5643a283d5973d442'),
+('BT-01MG', 2, '81dc9bdb52d04dc20036dbd8313ed055'),
+('BT-01SM', 3, '81dc9bdb52d04dc20036dbd8313ed055'),
 ('BT-02AD', 1, '01a5480f5021b4d8f231de3489e61c42'),
 ('BT-02MG', 2, '76e9a17937b75b73a8a430acf210feaf'),
 ('BT-02SM', 3, '8073bd4ed0fe0c330290c58056a2cd5e'),
@@ -373,7 +358,7 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT for table `chat`
 --
 ALTER TABLE `chat`
-  MODIFY `MSG_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `MSG_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `note`
