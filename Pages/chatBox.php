@@ -19,7 +19,7 @@ include '../Page Controllers/chatController.php';
 							<table style="width:calc(80%);">
 								<tr align="middle"> 
 									<td class="td1"> <label> To: </label> </td>
-									<td class="td2"> <input type = "text" name="toTB" class="tf" value="<?php echo $toTB; ?>" placeholder="Valid User ID"> </td> 
+									<td class="td2"> <input type = "text" name="toTB" id="toTB" class="tf" value="<?php echo $toTB; ?>" placeholder="Valid User ID"> </td> 
 								</tr>
 								
 								<tr align="middle">
@@ -31,11 +31,11 @@ include '../Page Controllers/chatController.php';
 						
 						<textarea id="sendnoteTA" name="sendnoteTA" class="noteTA" placeholder="Write Here.."><?php echo $sendnoteTA; ?></textarea>
 						<br>
-						<input type="file" name="file" size="45" class="ch">
+						<input type="file" name="file" id="file" size="45" class="ch">
 						<br> <br> 
 							
 						<div align="middle">
-							<button name="sendBTN" class="sendbtn"> Send </button>
+							<button name="sendBTN" class="sendbtn" onclick="return validateSend()"> Send </button>
 						</div>
 					</div>
 				</div>
@@ -64,7 +64,7 @@ include '../Page Controllers/chatController.php';
 						<!--<iframe id="my_iframe" style="display:none;"></iframe>
 						<input type="text" id="do" value="">
 						<button name="down" onclick="Download()">Download</button>-->
-						<label> Download: </label>
+						<label> Attachment Link: </label>
 						<a href="<?php echo $attch;?>" target="_blank" onclick="return Download()"> <input type="text" id="url" value="<?php echo $attch; ?>" readonly class="link"> </a> 
 						<br> <br> 
 							

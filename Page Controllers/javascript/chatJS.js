@@ -73,3 +73,30 @@ function Download()
 	}
 	
 }
+
+function validateSend()
+{
+	var upl = document.getElementById("file");
+	var toTB = document.getElementById("toTB").value;
+	const maxAllowedSize = 10 * 1024 * 1024; //10MB
+	
+	if(toTB.trim() == "" || toTB.trim()== null)
+	{
+		alert("Fill Reciever ID.");
+	    return false;
+	}
+	else
+	{
+		if(upl.files[0].size > maxAllowedSize)
+		{
+		   alert("File too big! \nMax Size: 10MB");
+		   upl.value = "";
+		   return false;
+		}
+		
+		else
+		{
+			return true;
+		}
+	}
+}
