@@ -284,8 +284,8 @@ input[type="submit"].logoutbtn:hover
 
 .btn
 {
-	width:100px;
-	height:50px;
+	width:80px;
+	height:35px;
 	background-color: white;
 	color: black;
 	border-radius: 12px;
@@ -297,8 +297,8 @@ input[type="submit"].logoutbtn:hover
 }
 .btn:hover
 {
-	width:120px;
-	height:60px;
+	width:80px;
+	height:35px;
 	background-color: #008CBA; 
     color: white; 
     border: 2px solid #008CBA;
@@ -307,8 +307,8 @@ input[type="submit"].logoutbtn:hover
 
 .discardbtn
 {
-	width:100px;
-	height:50px;
+	width:80px;
+	height:35px;
 	background-color: white;
 	color: black;
 	border-radius: 12px;
@@ -320,10 +320,33 @@ input[type="submit"].logoutbtn:hover
 }
 input[type="submit"].discardbtn:hover
 {
-	width:120px;
-	height:60px;
+	width:80px;
+	height:35px;
 	background-color: purple; 
     color: white; 
     border: 2px solid purple;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.invoice
+{
+	width:180px;
+	height:35px;
+	background-color: white;
+	color: black;
+	border-radius: 12px;
+	border: 2px solid #008CBA;
+	text-align: center;
+	font-size: 16px;
+	transition-duration: 0.4s;
+    cursor: pointer;
+}
+input[type="submit"].invoice:hover
+{
+	width:180px;
+	height:35px;
+	background-color: #00008B; 
+    color: white; 
+    border: 2px solid #00008B;
 	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }

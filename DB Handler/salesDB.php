@@ -44,11 +44,17 @@ function insertSales($PID, $QUANT, $OB_AMMOUNT, $PROFIT, $C_NAME, $C_MOB, $SOLD_
 		$query = "INSERT INTO `sales`(`PID`, `QUANT`, `OB_AMMOUNT`, `PROFIT`, `C_NAME`, `C_MOB`, `SOLD_BY`, `Sell_SDate`) VALUES('".$PID."','".$QUANT."','".$OB_AMMOUNT."','".$PROFIT."','".strtoupper($C_NAME)."','".$C_MOB."','".$SOLD_BY."', current_timestamp());";
 
 		execute($query);
+		
+		$returner="SELECT MAX(`SLID`), MAX(`Sell_SDate`) FROM `sales`;";
+		$result=get($returner);
+		return $result[0];
+		
 	}
 	
 	catch (Exception $e)
 	{
 		throw $e->getMessage();
+		return "ERROR";
 	}
 }
 

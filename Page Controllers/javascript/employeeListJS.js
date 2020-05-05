@@ -2,7 +2,7 @@ function validateINSERT(id,pass)
 {
 	var sid=document.getElementById('sid').value;
 	
-	if(sid == 2)
+	if(sid == 1)
 	{	
 		var ret = true;
 		

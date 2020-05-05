@@ -77,6 +77,8 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 	$pidTF="";
 	$pnameTF="";
 	
+	$slid="";
+	
 	$quantTF="";
 	
 	$priceTF="";
@@ -86,6 +88,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 	$cusmobTF="";
 	
 	$sidTF="";
+	$date="";
 	
 	$check=array();
 	$check=null;
@@ -97,6 +100,8 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 	$m1="";
 	$m2="";
 	$m3="";
+	
+	$btnName = "Invoice Not Ready";
 	
 	$inERR=false;
 	
@@ -240,8 +245,13 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 			
 			$upq=$check[0]['QUANTITY']-$quantTF;
 			
-			insertSales($pnameTF, $quantTF, $OB_AMMOUNT, $PROFIT, $cusnameTF, $cusmobTF, $uid);
+			$task=insertSales($pnameTF, $quantTF, $OB_AMMOUNT, $PROFIT, $cusnameTF, $cusmobTF, $uid);
+			$slid=$task['MAX(`SLID`)'];
+			$date=$task['MAX(`Sell_SDate`)'];
+			
 			updateOnSell($pnameTF, $upq);
+			
+			$btnName = "Print Invoice";
 		}
 	}
 }

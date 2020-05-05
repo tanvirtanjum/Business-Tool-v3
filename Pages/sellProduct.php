@@ -77,8 +77,9 @@ include '../Page Controllers/sellProductController.php';
 					<table name="input" style="width: 100%;">
 						<tr>
 							<td class="td1"> Purchase ID: </td>
-							<td class="td2"> 
-								<input type="text" class="tf" name="puridTF" id="puridTF" value="<?php echo "$pidTF";?>" placeholder="Auto Generated" readonly> 
+							<td class="td2"> 						
+								<input type="text" class="tf" name="puridTF" id="puridTF" value="" placeholder="Auto Generated" readonly> 
+								<input type="hidden" id="purchaseID" value="<?php echo "$slid";?>" readonly>
 							</td>
 							<td class="td3"> 
 								<span style="color:red; font-size:15px;"> </span>
@@ -89,6 +90,7 @@ include '../Page Controllers/sellProductController.php';
 							<td class="td1"> Product ID: </td>
 							<td class="td2"> 
 								<input type="text" class="tf" name="prodidTF" id="prodidTF" value="<?php echo "$pnameTF";?>"> 
+								<input type="hidden" id="productID" value="<?php echo "$pnameTF";?>"readonly>
 							</td>
 							<td class="td3"> 
 								<span id="prodidTFerr" style="color:red; font-size:15px;"> <?php echo $m1; ?> </span>
@@ -99,6 +101,7 @@ include '../Page Controllers/sellProductController.php';
 							<td class="td1"> Purchase Quantity: </td>
 							<td class="td2"> 
 								<input type="number" class="tf" name="quantTF" id="quantTF" min="0" value="<?php echo "$quantTF";?>"> 
+								<input type="hidden" id="Quant" value="<?php echo "$quantTF";?>" readonly> 
 							</td>
 							<td class="td3"> 
 								<span id="quantTFerr" style="color:red; font-size:15px;"> <?php echo $m2; ?> </span>
@@ -109,6 +112,7 @@ include '../Page Controllers/sellProductController.php';
 							<td class="td1"> Price(/unit): </td>
 							<td class="td2"> 
 								<input type="number" class="tf" name="priceTF" id="priceTF" min="0" value="<?php echo "$priceTF";?>"> 
+								<input type="hidden" id="price" value="<?php echo "$priceTF";?>" readonly> 
 							</td>
 							<td class="td3"> 
 								<span id="priceTFerr" style="color:red; font-size:15px;"> <?php echo $m3; ?> </span>
@@ -119,6 +123,7 @@ include '../Page Controllers/sellProductController.php';
 							<td class="td1"> Customer Name: </td>
 							<td class="td2"> 
 								<input type="text" class="tf" style="text-transform: uppercase;" name="cusnameTF" id="cusnameTF" value="<?php echo "$cusnameTF";?>"> 
+								<input type="hidden" id="cname" style="text-transform: uppercase;" value="<?php echo "$cusnameTF";?>" readonly> 
 							</td>
 							<td class="td3"> 
 								<span id="cusnameTFerr" style="color:red; font-size:15px;"> </span>
@@ -129,6 +134,7 @@ include '../Page Controllers/sellProductController.php';
 							<td class="td1"> Customer Number: </td>
 							<td class="td2"> 
 								<input type="number" class="tf" name="cusmobTF" id="cusmobTF" min="0" placeholder="01XXXXXXXXX" value="<?php echo "$cusmobTF";?>"> 
+								<input type="hidden" id="mob" value="<?php echo "$cusmobTF";?>" readonly>
 							</td>
 							<td class="td3"> 
 								<span id="cusmobTFerr" style="color:red; font-size:15px;"> </span> 
@@ -138,7 +144,8 @@ include '../Page Controllers/sellProductController.php';
 						<tr>
 							<td class="td1"> Seller ID: </td>
 							<td class="td2"> 
-								<input type="text" class="tf" name="sidTF" id="sidTF" placeholder="Auto Generated" value="<?php echo "$uid";?>" readonly> 
+								<input type="text" class="tf" name="sidTF" id="sidTF" placeholder="Auto Generated" value="<?php echo "$uid";?>" readonly>
+								<input type="hidden" id="emp" value="<?php echo "$uid";?>" readonly>
 							</td>
 							<td class="td3"> 
 								<span style="color:red; font-size:15px;"> </span>	
@@ -149,16 +156,20 @@ include '../Page Controllers/sellProductController.php';
 							<td class="td1"> Sell Date: </td>
 							<td class="td2"> 
 								<input type="text" class="tf" placeholder="Auto Generated" name="sellDateTF" id="sellDateTF" value="" readonly> 
+								<input type="hidden" id="date" value="<?php echo "$date";?>" readonly>
 							</td>
 						</tr>
 					
 						<tr>
-							<td colspan="3" align="center" style="height:90px;"> 
+							<td colspan="3" align="center" style="height:50px;"> 
 								<button class="btn" name="sellBTN" onclick="return validate()">Sell</button> 
-				
-								<input type="submit" class="discardbtn" name="discardBTN" value="Discard"> 
+								&nbsp;&nbsp;&nbsp;&nbsp;
+								<input type="submit" class="discardbtn" name="discardBTN" value="Discard">
+								<br>	<br>
+								<input type="submit" class="invoice" name="printInvoiceBTN" id="printInvoiceBTN" value="<?php echo $btnName; ?>" onclick="return saveFile()">
 							</td>
 						</tr>
+						
 					</table>
 				</div>
 			</form>
