@@ -95,7 +95,7 @@ include '../Page Controllers/learnMoreController.php';
 									<span> 
 										Every user have to login with their Organization ID and PASSWORD to use the syetem. Otherwise the rest pages will not appear just by giving the URL of the page.
 										<br>
-										After validation of the user the sytem will take the user to the home page.
+										After validation of the user the system will take the user to the home page.
 										<br>
 										The accesibility pages and the task that can be done by the user further will be dependent on the users DESIGNATION.
 										<br>
@@ -321,7 +321,7 @@ include '../Page Controllers/learnMoreController.php';
 												</li>
 												
 												<li>
-													Update: Deleting saved notes by the user.
+													Delete: Deleting saved notes by the user.
 												</li>
 											</ul>
 										</span>
