@@ -71,87 +71,200 @@ include '../Page Controllers/learnMoreController.php';
 					</tr>
 					<tr>
 						<td>
-							<span class="insheader"> <br> Instructions to be followed for the system~ </span>
-							<span class="insinfo"> <br> <br> 1. Login- User must login with a valid user-id & password. <br> The loggedin User can be an ADMIN, a MANAGER or a SALESMAN. <br> The tasks will be enabled accroding to their designations. <br> After a succesful login user will get access to HOME-PAGE.  </span>
-							<span class="insinfo"> <br> <br> 2. Homepage is containing six features:  <br>
-								<ul> 
-									<li> Emplyee List </li>
-									<li> Product List </li>
-									<li> Sell Product </li>
-									<li> Take Note </li>
-									<li> About Me </li>
-									<li> Learn More </li>
-										
-								</ul>
-							</span>
-							<span class="insinfo">  <br> Description: </span>
-							<span class="insinfo"> <br> <br> Employee List: </span>
-							<span class="insinfo"> 
-								<ul>
-									<li>Search: Accessible for all user.</li>
-									<li>Insert: Accessible for ADMIN only. <ul><li>For every insertion, a random password will be generated for that inserted new user for future login.</li></ul> </li>
-									<li>Update: Accessible for ADMIN & MANAGER.</li>
-									<li>Delete: Accessible for ADMIN only.</li>
-									<li>Refresh: Accessible for all user.</li>
-								</ul>
-							</span>	
-							<span class="insinfo"> <br><br> Product List:</span>
-							<span class="insinfo"> 
-								<ul>
-									<li>Search: Accessible for all user.</li>
-									<li>Insert: Accessible for ADMIN & MANAGER. </li>
-									<li>Update: Accessible for ADMIN & MANAGER.</li>
-									<li>Delete: Accessible for ADMIN only.</li>
-									<li>Refresh: Accessible for all user.</li>
-								</ul>
-							</span>	
-							
-							<span class="insinfo"> <br><br> Sell Product:</span>
-							<span class="insinfo"> 
-								<ul>
-									<li>Search: Accessible for all user.</li>
-									<li>Sell: Accessible for SALESMAN. </li>
-									<li>Discard: Accessible for SALESMAN.</li>
-									<ul>
-										<li>
-											Check SalesHistory: Accessible for all user.
-											<ul>
-												<li>Search: Accessible for all user.</li>
-												<li>Refresh: Accessible for all user.</li>
-											</ul>
-										</li>
-									</ul>
-								</ul>
-							</span>	
-							
-							<span class="insinfo"> <br><br> Take Note:</span>
-							<span class="insinfo"> 
-								<ul>
-									<li>Download: Accessible for all user.</li>
-									<li>Upload: Accessible for all user. </li>
-									<li>Refresh: Accessible for all user.</li>
-									<li>Update: Accessible for all user.</li>
-									<li>Delete: Accessible for all user.</li>
-									<li>Print: Accessible for all user.</li>
-								</ul>
-							</span>	
-							
-							<span class="insinfo"> <br><br> About Me:</span>
-							<span class="insinfo"> 
-								<ul>
-									<li>Logged-In user information.</li>
-									<ul>
-										<li>
-											Settings: Accessible for all user.
-											<ul>
-												<li>Proceed: Accessible for all user.(Requirment followed)</li>
-											</ul>
-										</li>
-									</ul>
-								</ul>
-							</span>	
+							<span class="insheader"> <br> Instructions to be followed for the system~ </span>	
+						</td>
+					</tr>
+				</table>
+				
+				<table>
+					<tr>
+						<td>
+							<div class="cardTable" align="right">
+								<div class="flip-box">
+								  <div class="flip-box-inner">
+									<div class="flip-box-front">
+									<h1> LOGIN </h1> 
+									</div>
+									<div class="flip-box-back">
+										<h1>For All Users</h1>
+										<h3> Login- User must login with a valid user-id & password. 
+										<br> The loggedin User can be an ADMIN, a MANAGER or a SALESMAN. 
+										<br> The tasks will be enabled accroding to their designations. 
+										<br> After a succesful login user will get access to HOME-PAGE. 
+										</h3>
+									</div>
+								  </div>
+								</div>
+							</div>
 						</td>	
 					</tr>
+				</table>
+				
+				<table>
+					<tr>
+						<td>
+							<div class="cardTable">
+								<div class="flip-box">
+								  <div class="flip-box-inner">
+									<div class="flip-box-front">
+									<h1> Home-Page </h1> 
+									</div>
+									<div class="flip-box-back">
+										<h1> Home-Page contains the following </h1>
+										<h3> Emplyee List </h3>
+										<h3> Product List </h3>
+										<h3> Sell Product </h3>
+										<h3> Take Note </h3>
+										<h3> About Me </h3>
+										<h3> Learn More </h3>
+									</div>
+								  </div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="cardTable" align="center">
+								<div class="flip-box">
+									<div class="flip-box-inner">
+									<div class="flip-box-front">
+										<h1> Employee-List </h1> 
+									</div>
+									<div class="flip-box-back">
+											<h1>Employees Informations</h1>
+											<h3>Search: Accessible for all user.</h3>
+											<h3>Insert: Accessible for ADMIN only. </h3>
+											<u> <h3>~ For every insertion, a random password will be generated for that inserted new user for future login. </h3 > </u>
+											<h3>Update: Accessible for ADMIN & MANAGER.</h3>
+											<h3>Delete: Accessible for ADMIN only. </h3>
+											<h3>Refresh: Accessible for all user.</h3>
+									</div>
+								  </div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="cardTable" align="right">
+								<div class="flip-box">
+									<div class="flip-box-inner">
+										<div class="flip-box-front">
+											<h1> Product-List </h1> 
+										</div>
+									<div class="flip-box-back">
+							  
+										<h1>Product Information</h1>
+										<h3>Search: Accessible for all user.</h3>
+										<h3>Insert: Accessible for ADMIN & MANAGER. </h3>
+										<h3>Update: Accessible for ADMIN & MANAGER.</h3>
+										<h3>Delete: Accessible for ADMIN only.</h3>
+										<h3>Refresh: Accessible for all user.</h3>
+									</div>
+								  </div>
+								</div>
+							</div>
+						</td>
+					</tr>		
+				</table>
+				
+				<table>
+					<tr>
+						<td>
+							<div class="cardTable" align="center">
+								<div class="flip-box">
+									<div class="flip-box-inner">
+										<div class="flip-box-front">
+											<h1> Sell-Product </h1> 
+										</div>
+									<div class="flip-box-back">
+									  
+										<h1>Product Sales</h1>
+										<h3>Search: Accessible for all user.</h3>
+										<h3>Sell: Accessible for SALESMAN. </h3>
+										<h3>Discard: Accessible for SALESMAN.</h3>
+										<u> <h2> Sales History </h2> </u>
+										<h3>Search: Accessible for all user. </h3>
+										<h3>Refresh: Accessible for all user.</h3>
+									</div>
+								  </div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="cardTable">
+								<div class="flip-box">
+									<div class="flip-box-inner">
+										<div class="flip-box-front">
+											<h1> Take-Note </h1> 
+										</div>
+									<div class="flip-box-back">
+							  
+										<h1>Notes Saving Cloud</h1>
+										<h3>Download: Accessible for all user.</h3>
+										<h3>Upload: Accessible for all user. </h3>
+										<h3>Refresh: Accessible for all user.</h3>
+										<h3>Update: Accessible for all user.</h3>
+										<h3>Delete: Accessible for all user.</h3>
+										<h3>Print: Accessible for all user.</h3>
+									</div>
+								  </div>
+								</div>
+							</div>
+						</td>
+						
+						<td>
+							<div class="cardTable" align="center">
+								<div class="flip-box">
+									<div class="flip-box-inner">
+										<div class="flip-box-front">
+											<h1> About-me </h1> 
+										</div>
+									<div class="flip-box-back">
+							  
+										<h1> Logged-In user information.</h1>
+										<h3> Settings: Accessible for all user</h3>
+									</div>
+								  </div>
+								</div>
+							</div>
+						</td>
+					</tr>		
+				</table>
+				
+				<table>
+					<tr>
+						<td>
+							<div class="cardTable" align="right">
+								<div class="flip-box">
+								  <div class="flip-box-inner">
+									<div class="flip-box-front">
+									<h1> ChatBox </h1> 
+									</div>
+									<div class="flip-box-back">
+									  
+										<h1>User-Messaging</h1>
+										<u> <h2> Attached with User-Profile </h2> </u>
+										<h3> Sender: Can text within file Attachment.</h3>
+									</div>
+								  </div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="cardTable" align="right">
+								<div class="flip-box">
+								  <div class="flip-box-inner">
+									<div class="flip-box-front">
+									<h1> Advanced Search </h1> 
+									</div>
+									<div class="flip-box-back">
+									  
+										<h1>Searches by ALL-Types</h1>
+										<u> <h2> Available on both Employee-List <br> & Product-List </h2> </u>
+									</div>
+								  </div>
+								</div>
+							</div>
+						</td>
+					</tr>	
 				</table>
 			</div>
 		</form>
