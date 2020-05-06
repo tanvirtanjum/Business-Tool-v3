@@ -76,14 +76,17 @@ include '../Page Controllers/learnMoreController.php';
 					</tr>
 				</table>
 				
-				<table>
+				<table style="width:100%;">
 					<tr>
-						<td>
-							<div class="cardTable" align="right">
+						<td align="middle" style="width: calc(33.333333333333333333333333333333%);"></td>
+						
+						<td align="middle" style="width: calc(33.333333333333333333333333333333%);">
+							<div class="cardTable">
 								<div class="flip-box">
 								  <div class="flip-box-inner">
 									<div class="flip-box-front">
-									<h1> LOGIN </h1> 
+									<h3> Login </h3>
+									<img src="Images/learnLogin.png" alt="Avatar" style="width:70%;height:80%;">
 									</div>
 									<div class="flip-box-back">
 										<h1>For All Users</h1>
@@ -96,18 +99,19 @@ include '../Page Controllers/learnMoreController.php';
 								  </div>
 								</div>
 							</div>
-						</td>	
+						</td>
+						
+						<td align="middle" style="width: calc(33.333333333333333333333333333333%);"></td>
 					</tr>
-				</table>
-				
-				<table>
+			
 					<tr>
-						<td>
+						<td align="middle" style="width: calc(33.333333333333333333333333333333%);">
 							<div class="cardTable">
 								<div class="flip-box">
 								  <div class="flip-box-inner">
 									<div class="flip-box-front">
-									<h1> Home-Page </h1> 
+									<h3> Home-Page </h3> 
+									<img src="Images/learnHome.png" alt="Avatar" style="width:70%;height:80%;">
 									</div>
 									<div class="flip-box-back">
 										<h1> Home-Page contains the following </h1>
@@ -122,12 +126,14 @@ include '../Page Controllers/learnMoreController.php';
 								</div>
 							</div>
 						</td>
-						<td>
-							<div class="cardTable" align="center">
+					
+						<td align="middle" style="width: calc(33.333333333333333333333333333333%);">
+							<div class="cardTable">
 								<div class="flip-box">
 									<div class="flip-box-inner">
 									<div class="flip-box-front">
-										<h1> Employee-List </h1> 
+										<h3> Employee-List </h3>
+										<img src="Images/learnEmployeeList.png" alt="Avatar" style="width:70%;height:80%;">										
 									</div>
 									<div class="flip-box-back">
 											<h1>Employees Informations</h1>
@@ -142,12 +148,14 @@ include '../Page Controllers/learnMoreController.php';
 								</div>
 							</div>
 						</td>
-						<td>
-							<div class="cardTable" align="right">
+					
+						<td align="middle" style="width: calc(33.333333333333333333333333333333%);">
+							<div class="cardTable">
 								<div class="flip-box">
 									<div class="flip-box-inner">
 										<div class="flip-box-front">
-											<h1> Product-List </h1> 
+											<h3> Product-List </h3> 
+											<img src="Images/learnProductList.png" alt="Avatar" style="width:70%;height:80%;">
 										</div>
 									<div class="flip-box-back">
 							  
@@ -163,16 +171,15 @@ include '../Page Controllers/learnMoreController.php';
 							</div>
 						</td>
 					</tr>		
-				</table>
-				
-				<table>
+					
 					<tr>
-						<td>
-							<div class="cardTable" align="center">
+						<td align="middle" style="width: calc(33.333333333333333333333333333333%);">
+							<div class="cardTable">
 								<div class="flip-box">
 									<div class="flip-box-inner">
 										<div class="flip-box-front">
-											<h1> Sell-Product </h1> 
+											<h3> Sell-Product </h3> 
+											<img src="Images/learnSellProduct.png" alt="Avatar" style="width:70%;height:80%;">
 										</div>
 									<div class="flip-box-back">
 									  
@@ -188,12 +195,14 @@ include '../Page Controllers/learnMoreController.php';
 								</div>
 							</div>
 						</td>
-						<td>
+					
+						<td align="middle" style="width: calc(33.333333333333333333333333333333%);">
 							<div class="cardTable">
 								<div class="flip-box">
 									<div class="flip-box-inner">
 										<div class="flip-box-front">
-											<h1> Take-Note </h1> 
+											<h3> Take-Note </h3> 
+											<img src="Images/learnTakeNotes.png" alt="Avatar" style="width:70%;height:80%;">
 										</div>
 									<div class="flip-box-back">
 							  
@@ -209,13 +218,14 @@ include '../Page Controllers/learnMoreController.php';
 								</div>
 							</div>
 						</td>
-						
-						<td>
-							<div class="cardTable" align="center">
+					
+						<td align="middle" style="width: calc(33.333333333333333333333333333333%);">
+							<div class="cardTable">
 								<div class="flip-box">
 									<div class="flip-box-inner">
 										<div class="flip-box-front">
-											<h1> About-me </h1> 
+											<h3> About-me </h3> 
+											<img src="Images/learnAboutMe.png" alt="Avatar" style="width:70%;height:80%;">
 										</div>
 									<div class="flip-box-back">
 							  
@@ -227,44 +237,6 @@ include '../Page Controllers/learnMoreController.php';
 							</div>
 						</td>
 					</tr>		
-				</table>
-				
-				<table>
-					<tr>
-						<td>
-							<div class="cardTable" align="right">
-								<div class="flip-box">
-								  <div class="flip-box-inner">
-									<div class="flip-box-front">
-									<h1> ChatBox </h1> 
-									</div>
-									<div class="flip-box-back">
-									  
-										<h1>User-Messaging</h1>
-										<u> <h2> Attached with User-Profile </h2> </u>
-										<h3> Sender: Can text within file Attachment.</h3>
-									</div>
-								  </div>
-								</div>
-							</div>
-						</td>
-						<td>
-							<div class="cardTable" align="right">
-								<div class="flip-box">
-								  <div class="flip-box-inner">
-									<div class="flip-box-front">
-									<h1> Advanced Search </h1> 
-									</div>
-									<div class="flip-box-back">
-									  
-										<h1>Searches by ALL-Types</h1>
-										<u> <h2> Available on both Employee-List <br> & Product-List </h2> </u>
-									</div>
-								  </div>
-								</div>
-							</div>
-						</td>
-					</tr>	
 				</table>
 			</div>
 		</form>
