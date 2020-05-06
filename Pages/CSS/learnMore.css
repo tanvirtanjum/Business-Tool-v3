@@ -143,11 +143,13 @@ img {
 {
 	width: 33.33%;
 }
+
 .flip-box 
 {
   background-color: transparent;
-  width: calc(90%);
-  height: 370px;
+  width: calc(100%);
+  height: calc(22vw);
+  /*height: 370px;*/
   border: 1px solid #f1f1f1;
   perspective: 1000px;
 }
@@ -155,8 +157,8 @@ img {
 .flip-box-inner 
 {
   position: relative;
-  width: 100%;
-  height: 100%;
+  width: calc(90%);
+  height: calc(22vw);
   font-family: Trebuchet MS;
   transition: transform 0.8s;
   transform-style: preserve-3d;
@@ -170,14 +172,16 @@ img {
 .flip-box-front, .flip-box-back 
 {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: calc(90%);
+  height: calc(22vw);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
 .flip-box-front 
 {
+	padding-left:3.5%;
+	padding-right:3.5%;
 	text-align: center;
   border:2px solid #29B6F6;
   color: black;
@@ -185,12 +189,11 @@ img {
 
 .flip-box-back 
 {
-	text-align: left;
+	padding-left:3.5%;
+	padding-right:3.5%;
+	overflow: scroll;
+	text-align: justify;
   background-color: #263238;
   color: white;
-  transform: rotateY(180deg);
-}
-.flip-box:focus .flip-box-inner 
-{
   transform: rotateY(180deg);
 }

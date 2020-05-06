@@ -50,8 +50,8 @@ input[type="submit"].logout:hover
 }
 input[type="image"].button:hover
 {
-	width: 250px;
-	height: 210px;
+	width: 220px;
+	height: 190px;
 	background-color: #008CBA; 
     color: white;
 	border-radius: 100%;
@@ -67,6 +67,6 @@ input[type="image"].button:hover
 .text
 {
 	font-family: Comic Sans MS;
-	font-size: 22px;
+	font-size: 20px;
 	font-style: bold;
 }
