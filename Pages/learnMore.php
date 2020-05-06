@@ -89,7 +89,7 @@ include '../Page Controllers/learnMoreController.php';
 									<img src="Images/learnLogin.png" alt="Avatar" style="width:70%;height:80%;">
 									</div>
 									<div class="flip-box-back">
-										<h1>For All Users</h1>
+										<h1 align="middle">LOGIN</h1>
 										<h3> Login- User must login with a valid user-id & password. 
 										<br> The loggedin User can be an ADMIN, a MANAGER or a SALESMAN. 
 										<br> The tasks will be enabled accroding to their designations. 
