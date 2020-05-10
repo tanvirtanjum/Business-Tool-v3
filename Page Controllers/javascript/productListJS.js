@@ -1,3 +1,18 @@
+function validateINSERT()
+{
+
+}
+
+function validateUPDATE()
+{
+	
+}
+
+function validateDELETE()
+{
+	
+}
+
 function savePDF() 
 {
 	var con = confirm("Are you sure you want to execute?");
@@ -45,22 +60,3 @@ function savePDF()
 	}
 }
 
-function change()
-{
-	if(document.getElementById("av").value == "UNAVAILABLE")
-	{
-		document.getElementById("DELETE").value="RE-ASSIGN";
-	}
-}
-
-function clear() 
-{
-	alert("ok");
-	/*var rowCount = document.getElementById('prodTable').tBodies[0].rows.length;
-	var i=0;
-	
-	for(i = 0; i<rowCount; i++)
-	{
-		document.getElementById('prodTable').tBodies[0].deleteRow(0);
-	}*/
-}

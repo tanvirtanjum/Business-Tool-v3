@@ -22,6 +22,7 @@ function showTable()
 
 if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']) && ($_COOKIE['sid'] != 1 || $_COOKIE['sid'] != 2))
 {
+	$btnNM="DELETE";
 	$uid = $_COOKIE['uid'];
 	$sid = $_COOKIE['sid'];
 	
@@ -155,6 +156,15 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']) && ($_COOKIE['sid'] != 1 || 
 				$addby=$srcID[0]["MOD_BY"];
 				$adddate=$srcID[0]["Add_PDate"];
 				$av=$srcID[0]["AVAILABILITY"];
+				
+				if($av != "AVAILABLE")
+				{
+					$btnNM="RE-ASSIGN";
+				}
+				else
+				{
+					$btnNM="DELETE";
+				}
 				
 				$srchvalid=true;
 			}

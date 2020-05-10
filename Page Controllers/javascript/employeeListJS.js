@@ -17,44 +17,72 @@ function validateINSERT(id,pass)
 		
 		if(eid.trim().length < 1)
 		{
-			document.getElementById('eidTFErr').innerHTML="&#10033;"
+			document.getElementById('eidTFErr').innerHTML="&#10033;";
 			ret = false;
+		}
+		else
+		{
+			document.getElementById('eidTFErr').innerHTML="";
 		}
 		
 		if(ename.trim().length < 1)
 		{
-			document.getElementById('enameTFErr').innerHTML="&#10033;"
+			document.getElementById('enameTFErr').innerHTML="&#10033;";
 			ret = false;
+		}
+		else
+		{
+			document.getElementById('enameTFErr').innerHTML="";
 		}
 		
 		if(design.trim().length < 1 || design == "4")
 		{
-			document.getElementById('designErr').innerHTML="&#10033;"
+			document.getElementById('designErr').innerHTML="&#10033;";
 			ret = false;
+		}
+		else
+		{
+			document.getElementById('designErr').innerHTML="";
 		}
 		
 		if(sal < 1)
 		{
-			document.getElementById('salTFErr').innerHTML="&#10033;"
+			document.getElementById('salTFErr').innerHTML="&#10033;";
 			ret = false;
 		}
-		if(mob < 1)
+		else
 		{
-			document.getElementById('mobTFErr').innerHTML="&#10033;"
-			ret = false;
+			document.getElementById('salTFErr').innerHTML="";
 		}
 		
-		if(mob.trim().length !== 11)
+		if(mob < 1)
 		{
-			document.getElementById('mobTFErr').innerHTML="&#10033;"
+			document.getElementById('mobTFErr').innerHTML="&#10033;";
 			ret = false;
+		}
+		else
+		{
+			if(mob.trim().length !== 11)
+			{
+				document.getElementById('mobTFErr').innerHTML="&#10033;";
+				ret = false;
+			}
+			
+			else
+			{
+				document.getElementById('mobTFErr').innerHTML="";
+			}				
 		}
 		
 		var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 		if(mail.trim().length < 1 || !mail.match(mailformat))
 		{
-			document.getElementById('mailTFErr').innerHTML="&#10033;"
+			document.getElementById('mailTFErr').innerHTML="&#10033;";
 			ret = false;
+		}
+		else
+		{
+			document.getElementById('mailTFErr').innerHTML="";
 		}
 		
 		if(ret == true)
@@ -66,7 +94,7 @@ function validateINSERT(id,pass)
 			{
 				if(id != "" && pass !="")
 				{
-					alert("User ID: "+id+"\nPassword: "+pass+"");
+					alert("On valid insertion-\nUser ID: "+id+"\nPassword: "+pass+"");
 					return ret;
 				}
 				
@@ -115,44 +143,73 @@ function validateUPDATE()
 		
 		if(eid.trim().length < 1)
 		{
-			document.getElementById('eidTFErr').innerHTML="&#10033;"
+			document.getElementById('eidTFErr').innerHTML="&#10033;";
 			ret = false;
+		}
+		else
+		{
+			document.getElementById('eidTFErr').innerHTML="";
 		}
 		
 		if(ename.trim().length < 1)
 		{
-			document.getElementById('enameTFErr').innerHTML="&#10033;"
+			document.getElementById('enameTFErr').innerHTML="&#10033;";
 			ret = false;
+		}
+		else
+		{
+			document.getElementById('enameTFErr').innerHTML="";
 		}
 		
 		if(design.trim().length < 1 || design == "4")
 		{
-			document.getElementById('designErr').innerHTML="&#10033;"
+			document.getElementById('designErr').innerHTML="&#10033;";
 			ret = false;
+		}
+		else
+		{
+			document.getElementById('designErr').innerHTML="";
 		}
 		
 		if(sal < 1)
 		{
-			document.getElementById('salTFErr').innerHTML="&#10033;"
+			document.getElementById('salTFErr').innerHTML="&#10033;";
 			ret = false;
 		}
+		else
+		{
+			document.getElementById('salTFErr').innerHTML="";
+		}
+		
 		if(mob < 1)
 		{
-			document.getElementById('mobTFErr').innerHTML="&#10033;"
+			document.getElementById('mobTFErr').innerHTML="&#10033;";
 			ret = false;
+		}
+		else
+		{
+			document.getElementById('mobTFErr').innerHTML="";
 		}
 		
 		if(mob.trim().length !== 11)
 		{
-			document.getElementById('mobTFErr').innerHTML="&#10033;"
+			document.getElementById('mobTFErr').innerHTML="&#10033;";
 			ret = false;
+		}
+		else
+		{
+			document.getElementById('mobTFErr').innerHTML="";
 		}
 		
 		var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 		if(mail.trim().length < 1 || !mail.match(mailformat))
 		{
-			document.getElementById('mailTFErr').innerHTML="&#10033;"
+			document.getElementById('mailTFErr').innerHTML="&#10033;";
 			ret = false;
+		}
+		else
+		{
+			document.getElementById('mailTFErr').innerHTML="";
 		}
 		
 		if(ret == true)
@@ -197,7 +254,7 @@ function validateDELETE()
 		
 		if(eid.trim().length < 1)
 		{
-			document.getElementById('eidTFErr').innerHTML="&#10033;"
+			document.getElementById('eidTFErr').innerHTML="&#10033;";
 			ret = false;
 		}
 		

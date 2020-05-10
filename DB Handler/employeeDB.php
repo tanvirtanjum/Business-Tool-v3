@@ -55,6 +55,63 @@ function loadEmployee($EmpID)
 	}	
 }
 
+function checkContact($E_MOB, $EmpID)
+{
+	$result=array();
+	$result=null;
+	try
+	{
+		if($EmpID != "")
+		{
+			$query="SELECT * FROM `employee` WHERE `E_MOB`='".$E_MOB."' AND `EmpID` NOT LIKE '$EmpID';";
+			$result=get($query);
+			return $result;
+		}
+		
+		else
+		{
+			$query="SELECT * FROM `employee` WHERE `E_MOB`='".$E_MOB."';";
+			$result=get($query);
+			return $result;
+		}		
+	}
+	
+	catch (Exception $e)
+	{
+		throw $e->getMessage();
+		return $result;
+	}	
+}
+
+function checkMail($E_MAIL, $EmpID)
+{
+	$result=array();
+	$result=null;
+	try
+	{
+		if($EmpID != "")
+		{
+			$query="SELECT * FROM `employee` WHERE `E_MAIL`='".$E_MAIL."' AND `EmpID` NOT LIKE '$EmpID';";
+			$result=get($query);
+			return $result;
+		}
+		
+		else
+		{
+			$query="SELECT * FROM `employee` WHERE `E_MAIL`='".$E_MAIL."';";
+			$result=get($query);
+			return $result;
+		}
+		
+	}
+	
+	catch (Exception $e)
+	{
+		throw $e->getMessage();
+		return $result;
+	}	
+}
+
 function insertEmployee($EmpID, $name, $did, $sal, $mob, $E_MAIL, $addedby)
 {
 	try

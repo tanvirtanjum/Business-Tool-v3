@@ -296,7 +296,7 @@ input[type="submit"].logoutbtn:hover
 	transition-duration: 0.4s;
     cursor: pointer;
 }
-input[type="submit"].btn:hover
+.btn:hover
 {
 	background-color: #008CBA; 
     color: white; 

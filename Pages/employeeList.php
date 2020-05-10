@@ -120,7 +120,7 @@ include '../Page Controllers/employeeListController.php';
 						<tr>
 							<td class="td1"> E-mail: </td>
 							<td class="td2"> <input type="mail" class="tf" style="text-transform: lowercase;" name="mailTF" id="mailTF" value="<?php echo "$mailTF";?>"> </td>
-							<td class="td3"> <span id="mailTFErr" style="color:red; font-size:15px;"><?php echo $msg1; ?> <?php echo "$mobTFerror"; ?> </span></td>
+							<td class="td3"> <span id="mailTFErr" style="color:red; font-size:15px;"><?php echo $msg1; ?> <?php echo "$mailTFerror"; ?> </span></td>
 						</tr>
 						
 						<tr>

@@ -74,18 +74,18 @@ include '../Page Controllers/productListController.php';
 						<tr>
 							<td class="td1"> Product ID: </td>
 							<td class="td2"> 
-								<input type="text" class="tf" name="pidTF" value="<?php echo "$pidTF";?>" <?php if($srchvalid==true){echo "readonly";}?>>
-								<input type="hidden" class="tf" name="av" id="av" value="<?php echo "$av";?>" readonly>
+								<input type="text" class="tf" name="pidTF" id="pidTF" value="<?php echo "$pidTF";?>" <?php if($srchvalid==true){echo "readonly";}?>>
+								<input type="hidden" class="tf" name="sid" id="sid" value="<?php echo "$sid";?>" readonly>
 							</td>
-							<td class="td3"> <span style="color:red; font-size:15px;"> <?php echo "$pidTFerror";?> </span> </td>
+							<td class="td3"> <span style="color:red; font-size:15px;" id="pErr"> <?php echo "$pidTFerror";?> </span> </td>
 						</tr>
 		
 						<tr>
 							<td class="td1"> Name: </td>
 							<td class="td2"> 
-								<input type="text" class="tf" style="text-transform: uppercase;" name="pnameTF" value="<?php echo "$pnameTF";?>"> 
+								<input type="text" class="tf" style="text-transform: uppercase;" name="pnameTF" id="pnameTF" value="<?php echo "$pnameTF";?>"> 
 							</td>
-							<td class="td3"> <span style="color:red; font-size:15px;"> <?php echo "$pnameTFerror";?> </span> </td>
+							<td class="td3"> <span style="color:red; font-size:15px;" id="nErr"> <?php echo "$pnameTFerror";?> </span> </td>
 						</tr>
 						
 						<tr>
@@ -107,37 +107,37 @@ include '../Page Controllers/productListController.php';
 								</select>
 							</td>
 							<td class="td3"> 
-								<span style="color:red; font-size:15px;"> <?php echo "$typeerror";?> </span> 
+								<span style="color:red; font-size:15px;" id="tErr"> <?php echo "$typeerror";?> </span> 
 							</td>
 						</tr>
 						
 						<tr>
 							<td class="td1"> Quantity: </td>
 							<td class="td2"> 
-								<input type="number" min="0" class="tf" name="quantTF" value="<?php echo "$quantTF"; ?>"> 
+								<input type="number" min="0" class="tf" name="quantTF" id="quantTF" value="<?php echo "$quantTF"; ?>"> 
 							</td>
 							<td class="td3"> 
-								<span style="color:red;font-size:15px;"> <?php echo "$quantTFerror";?> </span>
+								<span style="color:red;font-size:15px;" id="qErr"> <?php echo "$quantTFerror";?> </span>
 							</td>
 						</tr>
 						
 						<tr>
 							<td class="td1"> Buying Price: </td>
 							<td class="td2"> 
-								<input type="number" min="0" class="tf" name="buyPriceTF" value="<?php echo"$buyPriceTF"; ?>"> 
+								<input type="number" min="0" class="tf" name="buyPriceTF" id="buyPriceTF" value="<?php echo"$buyPriceTF"; ?>"> 
 							</td>
 							<td class="td3"> 
-								<span style="color:red;font-size:15px;"> <?php echo "$buyPriceTFerror";?> </span>
+								<span style="color:red;font-size:15px;" id="bErr"> <?php echo "$buyPriceTFerror";?> </span>
 							</td>
 						</tr>
 						
 						<tr>
 							<td class="td1"> Selling Price: </td>
 							<td class="td2"> 
-								<input type="number" min="0" class="tf" name="sellPriceTF" value="<?php echo"$sellPriceTF"; ?>"> 
+								<input type="number" min="0" class="tf" name="sellPriceTF" id="sellPriceTF" value="<?php echo"$sellPriceTF"; ?>"> 
 							</td>
 							<td class="td3"> 
-								<span style="color:red;font-size:15px;"> <?php echo "$sellPriceTFerror";?> </span>
+								<span style="color:red;font-size:15px;" id="sErr"> <?php echo "$sellPriceTFerror";?> </span>
 							</td>
 						</tr>
 						
@@ -157,17 +157,29 @@ include '../Page Controllers/productListController.php';
 					<table>
 				</div>
 				
-				<div class="">
+				<div>
 					<table name="buttons" class="btnTB" align="middle" valign="center">
 						<tr>
-							<td> <input type="submit" class="btn" name="refreshBTN" value="REFRESH"> </td>
-							<td class="col2"></td>
-							<td> <input type="submit" class="btn" name="insertBTN" value="INSERT" <?php if($srchvalid){echo "disabled";} ?>> </td>
-							<td class="col2"></td>
-							<td> <input type="submit" class="btn" name="updateBTN" value="UPDATE" <?php if(!$srchvalid){echo "disabled";} ?>> </td>
-							<td class="col2"></td>
 							<td> 
-								<input type="submit" class="btn" name="deleteBTN" id="DELETE" value="DELETE" <?php if(!$srchvalid){echo "disabled";}?> onmouseover="change()"> 
+								<button class="btn" name="refreshBTN"> REFRESH </button>
+							</td>
+							
+							<td class="col2"></td>
+							
+							<td> 
+								<button class="btn" name="insertBTN" onclick='return validateINSERT()' <?php if($srchvalid){echo "disabled";} ?>> INSERT </button> 
+							</td>
+							
+							<td class="col2"></td>
+							
+							<td> 
+								<button class="btn" name="updateBTN" onclick='return validateUPDATE()' <?php if(!$srchvalid){echo "disabled";} ?>> UPDATE </button> 
+							</td>
+							
+							<td class="col2"></td>
+							
+							<td> 
+								<button class="btn" name="deleteBTN" onclick='return validateDELETE()' <?php if(!$srchvalid){echo "disabled";}?>> <?php echo $btnNM; ?> </button>
 							</td>
 						</tr>
 					</table>

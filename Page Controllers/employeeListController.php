@@ -248,13 +248,24 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']) && ($_COOKIE['sid'] != 1 || 
 			{
 				
 				$mobTF =$_POST["mobTF"];
-				 if(!is_numeric($mobTF)) 
+				if(!is_numeric($mobTF)) 
 				{
 					$msg1 = '<span> Not valid</span>';
 					$insertError=true;
 					$mobTF="";
 					$insertion=false;
 				} 
+				
+				else
+				{
+					$checkContact=checkContact($mobTF,"");
+					if($checkContact != null)
+					{
+						$insertError=true;
+						$insertion=false;
+						$mobTFerror="&#10033;";
+					}
+				}
 					
 			}
 			
@@ -266,10 +277,15 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']) && ($_COOKIE['sid'] != 1 || 
 			}
 			
 			else
-			{
-				
-				$mailTF =$_POST["mailTF"];
-					
+			{	
+				$mailTF =$_POST["mailTF"];	
+				$checkMail=checkMail($mailTF, "");
+				if($checkMail != null)
+				{
+					$insertError=true;
+					$insertion=false;
+					$mailTFerror="&#10033;";
+				}
 			}
 			
 			if(!$insertError)
@@ -428,12 +444,23 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']) && ($_COOKIE['sid'] != 1 || 
 			{
 				
 				$mobTF =$_POST["mobTF"];
-				 if(!is_numeric($mobTF)) 
+				if(!is_numeric($mobTF)) 
 				{
 					$msg1 = '<span> Not valid</span>';
 					$updateError=true;
 					$mobTF="";
 				} 
+				
+				else
+				{
+					$checkContact=checkContact($mobTF, $eidTF);
+					if($checkContact != null)
+					{
+						$updateError=true;
+						$srchvalid= true;
+						$mobTFerror="&#10033;";
+					}
+				}
 					
 			}
 			
@@ -444,10 +471,15 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']) && ($_COOKIE['sid'] != 1 || 
 			}
 			
 			else
-			{
-				
-				$mailTF =$_POST["mailTF"];
-					
+			{	
+				$mailTF =$_POST["mailTF"];	
+				$checkMail=checkMail($mailTF, $eidTF);
+				if($checkMail != null)
+				{
+					$updateError=true;
+					$srchvalid= true;
+					$mailTFerror="&#10033;";
+				}
 			}
 			
 			if(!$updateError)
