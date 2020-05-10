@@ -43,6 +43,13 @@ function validateINSERT(id,pass)
 			document.getElementById('mobTFErr').innerHTML="&#10033;"
 			ret = false;
 		}
+		
+		if(mob.trim().length !== 11)
+		{
+			document.getElementById('mobTFErr').innerHTML="&#10033;"
+			ret = false;
+		}
+		
 		var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 		if(mail.trim().length < 1 || !mail.match(mailformat))
 		{
@@ -91,19 +98,136 @@ function validateINSERT(id,pass)
 	}
 }
 
-function access()
+function validateUPDATE()
 {
 	var sid=document.getElementById('sid').value;
 	
-	if(sid == 2)
-	{
-		alert("Access Denied");
-		return false;
+	if(sid == 1)
+	{	
+		var ret = true;
+		
+		var eid = document.getElementById('eidTF').value;
+		var ename = document.getElementById('enameTF').value;
+		var design = document.getElementById('design').value;
+		var sal = document.getElementById('salTF').value;
+		var mob = document.getElementById('mobTF').value;
+		var mail = document.getElementById('mailTF').value;
+		
+		if(eid.trim().length < 1)
+		{
+			document.getElementById('eidTFErr').innerHTML="&#10033;"
+			ret = false;
+		}
+		
+		if(ename.trim().length < 1)
+		{
+			document.getElementById('enameTFErr').innerHTML="&#10033;"
+			ret = false;
+		}
+		
+		if(design.trim().length < 1 || design == "4")
+		{
+			document.getElementById('designErr').innerHTML="&#10033;"
+			ret = false;
+		}
+		
+		if(sal < 1)
+		{
+			document.getElementById('salTFErr').innerHTML="&#10033;"
+			ret = false;
+		}
+		if(mob < 1)
+		{
+			document.getElementById('mobTFErr').innerHTML="&#10033;"
+			ret = false;
+		}
+		
+		if(mob.trim().length !== 11)
+		{
+			document.getElementById('mobTFErr').innerHTML="&#10033;"
+			ret = false;
+		}
+		
+		var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+		if(mail.trim().length < 1 || !mail.match(mailformat))
+		{
+			document.getElementById('mailTFErr').innerHTML="&#10033;"
+			ret = false;
+		}
+		
+		if(ret == true)
+		{
+			
+			var con = confirm("Update Information?");
+			
+			if(con == true)
+			{
+				return ret;
+			}
+				
+			else
+			{
+				alert("Canceled..");
+				return false;
+			}		
+		}
+		
+		else
+		{
+			return ret;
+		}
 	}
 	
 	else
 	{
-		return true;
+		alert("Access Denied");
+		return false;
+	}
+}
+
+function validateDELETE()
+{
+	var sid=document.getElementById('sid').value;
+	
+	if(sid == 1)
+	{	
+		var ret = true;
+		
+		var eid = document.getElementById('eidTF').value;
+		
+		if(eid.trim().length < 1)
+		{
+			document.getElementById('eidTFErr').innerHTML="&#10033;"
+			ret = false;
+		}
+		
+		if(ret == true)
+		{
+			
+			var con = confirm("Delete Employee?");
+			
+			if(con == true)
+			{
+				return ret;
+			}
+				
+			else
+			{
+				alert("Canceled..");
+				return false;
+			}		
+		}
+		
+		else
+		{
+			return ret;
+		}
+	}
+	
+	else
+	{
+		alert("Access Denied");
+		return false;
 	}
 }
 

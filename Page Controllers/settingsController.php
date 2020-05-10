@@ -36,6 +36,13 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 		header("Location:home.php");
 	}
 	
+	if(isset($_POST["backBTN"]))
+	{
+		setcookie("uid",$uid,time()+600);
+		setcookie("sid",$sid,time()+600);
+		header("Location:aboutMe.php");
+	}
+	
 	if(isset($_POST["ProceedBTN"]))
 	{
 		$haserror=false;

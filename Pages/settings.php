@@ -74,14 +74,20 @@ include '../Page Controllers/settingsController.php';
 					</tr>
 					
 					<tr>
-						<td colspan="3" align="center"  valign="middle" style="height: 50px;"> 
+						<td colspan="3" align="center"  valign="middle" style="height: 25px;"> 
 							<input type="submit" class="proceed" name="ProceedBTN" value="Proceed" onclick='return confirmation()'> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td colspan="3" align="center"  valign="middle" style="height: 25px;"> 
+							<input type="submit" class="home" name="backBTN" value="About Me     <<"> 
 							<input type="submit" class="home" name="gohomebtn" value="Home">
 						</td>
 					</tr>
 
 					<tr>
-						<td colspan="3" align="center"  valign="middle" style="height: 50px;"> <input type="submit" class="logout" name="logoutBTN" value="Logout"> </td>
+						<td colspan="3" align="center"  valign="middle" style="height: 25px;"> <input type="submit" class="logout" name="logoutBTN" value="Logout"> </td>
 					</tr>
 				</table>
 			</form>	

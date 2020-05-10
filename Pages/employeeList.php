@@ -142,9 +142,9 @@ include '../Page Controllers/employeeListController.php';
 							<td class="col2"></td>
 							<td> <button class="btn" name="insertBTN" onclick='return validateINSERT("<?php echo $eidTF;?>","<?php echo $autopass;?>")' <?php if($srchvalid){echo "disabled";} ?>> INSERT </button> </td> 
 							<td class="col2"></td>
-							<td> <button class="btn" name="updateBTN" onclick='return access()' <?php if(!$srchvalid){echo "disabled";} ?>> UPDATE </button> </td>
+							<td> <button class="btn" name="updateBTN" onclick='return validateUPDATE()' <?php if(!$srchvalid){echo "disabled";} ?>> UPDATE </button> </td>
 							<td class="col2"></td>
-							<td> <button class="btn" name="deleteBTN" onclick='return access()' <?php if(!$srchvalid){echo "disabled";} ?>> DELETE </button> </td>
+							<td> <button class="btn" name="deleteBTN" onclick='return validateDELETE()' <?php if(!$srchvalid){echo "disabled";} ?>> DELETE </button> </td>
 						</tr>
 					</table>
 				</div>

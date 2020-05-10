@@ -1,45 +1,104 @@
 function validate()
 {
-	var ret = true;
+	var sid=document.getElementById('sid').value;
 	
-	var pid = document.getElementById('prodidTF').value;
-	var quant = document.getElementById('quantTF').value;
-	var price = document.getElementById('priceTF').value;
-	var cusname = document.getElementById('cusnameTF').value;
-	var cuscon = document.getElementById('cusmobTF').value;
-	
-	
-	
-	if(pid.trim().length < 1)
+	if(sid == 3)
 	{
-		document.getElementById('prodidTFerr').innerHTML="&#10033;"
-		ret = false;
+		var ret = true;
+		
+		var pid = document.getElementById('prodidTF').value;
+		var quant = document.getElementById('quantTF').value;
+		var price = document.getElementById('priceTF').value;
+		var cusname = document.getElementById('cusnameTF').value;
+		var cuscon = document.getElementById('cusmobTF').value;
+		
+		
+		
+		if(pid.trim().length < 1)
+		{
+			document.getElementById('prodidTFerr').innerHTML="&#10033;";
+			ret = false;
+		}
+		
+		else
+		{
+			document.getElementById('prodidTFerr').innerHTML="";
+		}
+		
+		if(quant < 1)
+		{
+			document.getElementById('quantTFerr').innerHTML="&#10033;";
+			ret = false;
+		}
+		else
+		{
+			document.getElementById('quantTFerr').innerHTML="";
+		}
+		
+		if(price < 1)
+		{
+			document.getElementById('priceTFerr').innerHTML="&#10033;";
+			ret = false;
+		}
+		else
+		{
+			document.getElementById('priceTFerr').innerHTML="";
+		}
+		
+		if(cusname.trim().length < 1)
+		{
+			document.getElementById('cusnameTFerr').innerHTML="&#10033;";
+			ret = false;
+		}
+		else
+		{
+			document.getElementById('cusnameTFerr').innerHTML="";
+		}
+		
+		if(cuscon < 1)
+		{
+			document.getElementById('cusmobTFerr').innerHTML="&#10033;";
+			ret = false;
+		}
+		if(cuscon.trim().length !== 11)
+		{
+			document.getElementById('cusmobTFerr').innerHTML="&#10033;";
+			ret = false;
+		}
+		else
+		{
+			document.getElementById('cusmobTFerr').innerHTML="";
+		}
+		
+		if(ret == true)
+		{
+			
+			var con = confirm("Are you sure you want to sell this product?");
+			
+			if(con == true)
+			{
+				alert("On Successful Sell-\nYou will able to print INVOICE");
+				return ret;
+			}
+				
+			else
+			{
+				alert("Canceled..");
+				return false;
+			}		
+		}
+		
+		else
+		{
+			return ret;
+		}
 	}
 	
-	if(quant < 1)
+	else
 	{
-		document.getElementById('quantTFerr').innerHTML="&#10033;"
-		ret = false;
+		alert("Access Denied");
+		return false;
 	}
-	
-	if(price < 1)
-	{
-		document.getElementById('priceTFerr').innerHTML="&#10033;"
-		ret = false;
-	}
-	
-	if(cusname.trim().length < 1)
-	{
-		document.getElementById('cusnameTFerr').innerHTML="&#10033;"
-		ret = false;
-	}
-	if(cuscon < 1)
-	{
-		document.getElementById('cusmobTFerr').innerHTML="&#10033;"
-		ret = false;
-	}
-	
-	return ret;
 }
 
 function srch()

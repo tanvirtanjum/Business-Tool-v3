@@ -19,6 +19,7 @@ include '../Page Controllers/sellProductController.php';
 						<tr>
 							<td>
 								<input type="text" class="srchtf" id="srchProdTypeTF" placeholder="Sort by Product Type" onkeyup="srch()">
+								<input type="hidden" id="sid" value="<?php echo $_COOKIE['sid']; ?>">
 							</td>
 							
 							<td>
