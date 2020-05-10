@@ -43,9 +43,9 @@ include '../Page Controllers/takenoteController.php';
 							</tbody>
 						</table>
 					</div>
-					<div align="center">
+					<!--<div align="center">
 						<input type="text" class="tf" name="loadnotebynameTF" id="loadnotebynameTF" placeholder="Load Table By Note Name" onclick="clear()">
-					</div>
+					</div>-->
 				</div>
 						
 				<div class="floatLeftDown">

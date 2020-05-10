@@ -138,7 +138,7 @@ input[type="mail"].tf:focus
 .openbtn:hover
 {
 	width:140px;
-	background-color: white; 
+	background-color: #FFFFF0; 
     color: black; 
     border: 2px solid black;
 	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
