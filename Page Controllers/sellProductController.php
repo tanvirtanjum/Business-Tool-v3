@@ -249,7 +249,15 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']))
 			$slid=$task['MAX(`SLID`)'];
 			$date=$task['MAX(`Sell_SDate`)'];
 			
-			updateOnSell($pnameTF, $upq);
+			if($upq == 0)
+			{
+				updateOnSell($pnameTF, $upq, "UNAVAILABLE");
+			}
+			
+			else
+			{
+				updateOnSell($pnameTF, $upq, "");
+			}				
 			
 			$btnName = "Print Invoice";
 		}

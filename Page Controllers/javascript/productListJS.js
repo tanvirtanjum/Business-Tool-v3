@@ -1,16 +1,303 @@
 function validateINSERT()
 {
-
+	var sid = document.getElementById("sid").value;
+	var ret = true;
+	
+	if(sid == 1 || sid == 2)
+	{
+		var pid = document.getElementById("pidTF").value;
+		var pname = document.getElementById("pnameTF").value;
+		var type = document.getElementById("type").value;
+		var quant = document.getElementById("quantTF").value;
+		var bp = document.getElementById("buyPriceTF").value;
+		var sp = document.getElementById("sellPriceTF").value;
+		
+		if(pid.trim().length < 1)
+		{
+			document.getElementById("pErr").innerHTML = "&#10033;";
+			ret = false;
+		}
+		else
+		{
+			document.getElementById("pErr").innerHTML = "";
+		}
+		
+		if(pname.trim().length < 1)
+		{
+			document.getElementById("nErr").innerHTML = "&#10033;";
+			ret = false;
+		}
+		else
+		{
+			document.getElementById("nErr").innerHTML = "";
+		}
+		
+		
+		if(type.trim().length < 1 || type == "SELECT")
+		{
+			document.getElementById("tErr").innerHTML = "&#10033;";
+			ret = false;
+		}
+		else
+		{
+			document.getElementById("tErr").innerHTML = "";
+		}
+		
+		if(quant < 1)
+		{
+			document.getElementById("qErr").innerHTML = "&#10033;";
+			ret = false;
+		}
+		else
+		{
+			document.getElementById("qErr").innerHTML = "";
+		}
+		
+		if(bp < 1)
+		{
+			document.getElementById("bErr").innerHTML = "&#10033;";
+			ret = false;
+		}
+		else
+		{
+			document.getElementById("bErr").innerHTML = "";
+		}
+		
+		if(sp < 1 || sp < bp)
+		{
+			document.getElementById("sErr").innerHTML = "&#10033;";
+			ret = false;
+		}
+		else
+		{
+			document.getElementById("sErr").innerHTML = "";
+		}
+		
+		if(ret == true)
+		{
+			var con = confirm("Add Product "+pid+"?");
+			
+			if(con == true)
+			{
+				return ret;
+			}
+			
+			else
+			{
+				alert("Canceled..");
+				return false;
+			}
+		}
+		
+		else
+		{
+			return false;
+		}
+	}
+	
+	else
+	{
+		alert("Access Denied.");
+		return false;
+	}
 }
 
 function validateUPDATE()
 {
+	var sid = document.getElementById("sid").value;
+	var ret = true;
 	
+	if(sid == 1 || sid == 2)
+	{
+		var pid = document.getElementById("pidTF").value;
+		var pname = document.getElementById("pnameTF").value;
+		var type = document.getElementById("type").value;
+		var quant = document.getElementById("quantTF").value;
+		var bp = document.getElementById("buyPriceTF").value;
+		var sp = document.getElementById("sellPriceTF").value;
+		
+		if(pid.trim().length < 1)
+		{
+			document.getElementById("pErr").innerHTML = "&#10033;";
+			ret = false;
+		}
+		else
+		{
+			document.getElementById("pErr").innerHTML = "";
+		}
+		
+		if(pname.trim().length < 1)
+		{
+			document.getElementById("nErr").innerHTML = "&#10033;";
+			ret = false;
+		}
+		else
+		{
+			document.getElementById("nErr").innerHTML = "";
+		}
+		
+		
+		if(type.trim().length < 1 || type == "SELECT")
+		{
+			document.getElementById("tErr").innerHTML = "&#10033;";
+			ret = false;
+		}
+		else
+		{
+			document.getElementById("tErr").innerHTML = "";
+		}
+		
+		if(quant < 1)
+		{
+			document.getElementById("qErr").innerHTML = "&#10033;";
+			ret = false;
+		}
+		else
+		{
+			document.getElementById("qErr").innerHTML = "";
+		}
+		
+		if(bp < 1)
+		{
+			document.getElementById("bErr").innerHTML = "&#10033;";
+			ret = false;
+		}
+		else
+		{
+			document.getElementById("bErr").innerHTML = "";
+		}
+		
+		if(sp < 1 || sp < bp)
+		{
+			document.getElementById("sErr").innerHTML = "&#10033;";
+			ret = false;
+		}
+		else
+		{
+			document.getElementById("sErr").innerHTML = "";
+		}
+		
+		if(ret == true)
+		{
+			var con = confirm("Update Product "+pid+"?");
+			
+			if(con == true)
+			{
+				return ret;
+			}
+			
+			else
+			{
+				alert("Canceled..");
+				return false;
+			}
+		}
+		
+		else
+		{
+			return false;
+		}
+	}
+
+	else
+	{
+		alert("Access Denied.");
+		return false;
+	}
 }
 
 function validateDELETE()
 {
+	var sid = document.getElementById("sid").value;
+	var btn = document.getElementById("btnNM").value;
+	var ret = true;
 	
+	if(sid == 1 || sid == 2)
+	{
+		if(btn == "DELETE")
+		{
+			var pid = document.getElementById("pidTF").value;
+			
+			if(pid.trim().length < 1)
+			{
+				document.getElementById("pErr").innerHTML = "&#10033;";
+				ret = false;
+			}
+			else
+			{
+				document.getElementById("pErr").innerHTML = "";
+			}
+			
+			if(ret == true)
+			{
+				var con = confirm("Delete Product "+pid+"?");
+				
+				if(con == true)
+				{
+					return ret;
+				}
+				
+				else
+				{
+					alert("Canceled..");
+					return false;
+				}
+			}
+			
+			else
+			{
+				return false;
+			}
+		}
+		
+		else if(btn == "RE-AVAIL")
+		{
+			var pid = document.getElementById("pidTF").value;
+			
+			if(pid.trim().length < 1)
+			{
+				document.getElementById("pErr").innerHTML = "&#10033;";
+				ret = false;
+			}
+			else
+			{
+				document.getElementById("pErr").innerHTML = "";
+			}
+			
+			if(ret == true)
+			{
+				var con = confirm("Re-avail Product "+pid+"?");
+				
+				if(con == true)
+				{
+					return ret;
+				}
+				
+				else
+				{
+					alert("Canceled..");
+					return false;
+				}
+			}
+			
+			else
+			{
+				return false;
+			}
+		}
+		
+		else
+		{
+			alert="Something went wrong.";
+			return false;
+		}
+	}
+		
+	else
+	{
+		alert("Access Denied.");
+		return false;
+	}
 }
 
 function savePDF() 

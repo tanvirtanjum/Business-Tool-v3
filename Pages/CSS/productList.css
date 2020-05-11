@@ -124,7 +124,7 @@
 
 .srchtf
 {	
-	width:70px;
+	width:55px;
 	padding: 5px 5px 5px 5px;
 	border: 2px solid #ccc;
 	border-radius: 12px;
@@ -136,7 +136,7 @@
 }
 input[type="text"].srchtf:hover
 {
-	width:250px;
+	width:200px;
 	border: 2px solid #008CBA;
 }
 input[type="text"].srchtf:focus
@@ -328,7 +328,7 @@ input[type="submit"].logoutbtn:hover
 
 .srchbypnametf
 {	
-	width:100px;
+	width:90px;
 	padding: 5px 5px 5px 5px;
 	border: 2px solid #ccc;
 	border-radius: 12px;

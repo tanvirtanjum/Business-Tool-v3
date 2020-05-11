@@ -88,7 +88,7 @@ function validateINSERT(id,pass)
 		if(ret == true)
 		{
 			
-			var con = confirm("Procced?");
+			var con = confirm("Assign User "+id+"?");
 			
 			if(con == true)
 			{
@@ -215,7 +215,7 @@ function validateUPDATE()
 		if(ret == true)
 		{
 			
-			var con = confirm("Update Information?");
+			var con = confirm("Update Information of "+eid+"?");
 			
 			if(con == true)
 			{
@@ -261,7 +261,7 @@ function validateDELETE()
 		if(ret == true)
 		{
 			
-			var con = confirm("Delete Employee?");
+			var con = confirm("Delete Employee "+eid+"?");
 			
 			if(con == true)
 			{

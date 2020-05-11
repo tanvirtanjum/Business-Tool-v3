@@ -159,7 +159,7 @@ if(isset($_COOKIE['uid']) && isset($_COOKIE['sid']) && ($_COOKIE['sid'] != 1 || 
 				
 				if($av != "AVAILABLE")
 				{
-					$btnNM="RE-ASSIGN";
+					$btnNM="RE-AVAIL";
 				}
 				else
 				{

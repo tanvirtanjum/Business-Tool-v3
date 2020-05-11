@@ -103,13 +103,23 @@ function updateProduct($PID, $name, $type, $quantity, $bp, $sp, $mdb)
 	}
 }
 
-function updateOnSell($PID, $quantity)
+function updateOnSell($PID, $quantity, $AV)
 {
 	try
 	{
-		$query = "UPDATE `product` SET `QUANTITY`= '$quantity' WHERE `PID` = '$PID';";
+		if($AV == "")
+		{
+			$query = "UPDATE `product` SET `QUANTITY`= '$quantity' WHERE `PID` = '$PID';";
 
-		execute($query);
+			execute($query);
+		}
+		
+		else
+		{
+			$query = "UPDATE `product` SET `QUANTITY`= '$quantity', `AVAILABILITY` = '$AV' WHERE `PID` = '$PID';";
+
+			execute($query);
+		}
 	}
 	
 	catch (Exception $e)

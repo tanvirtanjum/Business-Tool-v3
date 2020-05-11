@@ -75,7 +75,7 @@ include '../Page Controllers/productListController.php';
 							<td class="td1"> Product ID: </td>
 							<td class="td2"> 
 								<input type="text" class="tf" name="pidTF" id="pidTF" value="<?php echo "$pidTF";?>" <?php if($srchvalid==true){echo "readonly";}?>>
-								<input type="hidden" class="tf" name="sid" id="sid" value="<?php echo "$sid";?>" readonly>
+								<input type="hidden" class="tf" name="sid" id="sid" value="<?php echo $_COOKIE['sid'];?>" readonly>
 							</td>
 							<td class="td3"> <span style="color:red; font-size:15px;" id="pErr"> <?php echo "$pidTFerror";?> </span> </td>
 						</tr>
@@ -179,7 +179,8 @@ include '../Page Controllers/productListController.php';
 							<td class="col2"></td>
 							
 							<td> 
-								<button class="btn" name="deleteBTN" onclick='return validateDELETE()' <?php if(!$srchvalid){echo "disabled";}?>> <?php echo $btnNM; ?> </button>
+								<input type="hidden" id="btnNM" value="<?php echo $btnNM; ?>">
+								<button class="btn" name="deleteBTN" id="deleteBTN" onclick='return validateDELETE()' <?php if(!$srchvalid){echo "disabled";}?>> <?php echo $btnNM; ?> </button>
 							</td>
 						</tr>
 					</table>
