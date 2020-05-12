@@ -74,7 +74,7 @@ include '../Page Controllers/productListController.php';
 						<tr>
 							<td class="td1"> Product ID: </td>
 							<td class="td2"> 
-								<input type="text" class="tf" name="pidTF" id="pidTF" value="<?php echo "$pidTF";?>" <?php if($srchvalid==true){echo "readonly";}?>>
+								<input type="text" class="tf" name="pidTF" id="pidTF" placeholder="Unique" value="<?php echo "$pidTF";?>" <?php if($srchvalid==true){echo "readonly";}?>>
 								<input type="hidden" class="tf" name="sid" id="sid" value="<?php echo $_COOKIE['sid'];?>" readonly>
 							</td>
 							<td class="td3"> <span style="color:red; font-size:15px;" id="pErr"> <?php echo "$pidTFerror";?> </span> </td>
@@ -83,7 +83,7 @@ include '../Page Controllers/productListController.php';
 						<tr>
 							<td class="td1"> Name: </td>
 							<td class="td2"> 
-								<input type="text" class="tf" style="text-transform: uppercase;" name="pnameTF" id="pnameTF" value="<?php echo "$pnameTF";?>"> 
+								<input type="text" class="tf" style="text-transform: uppercase;" name="pnameTF" id="pnameTF" placeholder="Model Name" value="<?php echo "$pnameTF";?>"> 
 							</td>
 							<td class="td3"> <span style="color:red; font-size:15px;" id="nErr"> <?php echo "$pnameTFerror";?> </span> </td>
 						</tr>
@@ -134,7 +134,7 @@ include '../Page Controllers/productListController.php';
 						<tr>
 							<td class="td1"> Selling Price: </td>
 							<td class="td2"> 
-								<input type="number" min="0" class="tf" name="sellPriceTF" id="sellPriceTF" value="<?php echo"$sellPriceTF"; ?>"> 
+								<input type="number" min="0" class="tf" name="sellPriceTF" id="sellPriceTF" placeholder="Greater than Buying Price" value="<?php echo"$sellPriceTF"; ?>"> 
 							</td>
 							<td class="td3"> 
 								<span style="color:red;font-size:15px;" id="sErr"> <?php echo "$sellPriceTFerror";?> </span>

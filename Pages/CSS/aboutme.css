@@ -13,7 +13,7 @@ form
 {
 	position: relative;
 	border-radius: 12px;
-	border: 1px solid #000000;
+	border: 2px solid #008CBA;
 	background-color: #ffffff;
 	padding: 20px 5px 30px 5px;
 	
@@ -25,10 +25,6 @@ form
     text-align: left;
 	
 	transition-duration: 0.2s;
-}
-form:hover
-{
-	border: 4px solid #008CBA;
 }
 
 
@@ -91,27 +87,27 @@ input[type="submit"].logout:hover
 }
 input[type="text"].tf:hover
 {
-	border: 2px solid #008CBA;
+	border: 2px solid red;
 }
 input[type="text"].tf:focus
 {
-	border: 2px solid #008CBA;
+	border: 2px solid red;
 }
 input[type="number"].tf:hover
 {
-	border: 2px solid #008CBA;
+	border: 2px solid red;
 }
 input[type="number"].tf:focus
 {
-	border: 2px solid #008CBA;
+	border: 2px solid red;
 }
 input[type="mail"].tf:hover
 {
-	border: 2px solid #008CBA;
+	border: 2px solid red;
 }
 input[type="mail"].tf:focus
 {
-	border: 2px solid #008CBA;
+	border: 2px solid red;
 }
 
 .text

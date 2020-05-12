@@ -72,7 +72,7 @@ include '../Page Controllers/employeeListController.php';
 						<tr>
 							<td class="td1"> Employee ID: </td>
 							<td class="td2"> 
-								<input type="text" class="tf" name="eidTF" id="eidTF" value="<?php echo "$eidTF";?>" <?php if($srchvalid==true){echo "readonly";}?>>
+								<input type="text" class="tf" name="eidTF" id="eidTF" placeholder="Unique" value="<?php echo "$eidTF";?>" <?php if($srchvalid==true){echo "readonly";}?>>
 								<input type="hidden" name="pass" id="pass" value="<?php echo $autopass; ?>">
 							</td>
 							<td class="td3">
@@ -83,7 +83,7 @@ include '../Page Controllers/employeeListController.php';
 						<tr>
 							<td class="td1"> Name: </td>
 							<td class="td2"> 
-								<input type="text" class="tf" name="enameTF" id="enameTF" style="text-transform: uppercase;" value="<?php echo "$enameTF";?>">
+								<input type="text" class="tf" name="enameTF" id="enameTF" placeholder="Full Name" style="text-transform: uppercase;" value="<?php echo "$enameTF";?>">
 							</td>	
 							<td class="td3">
 								<span id="enameTFErr" style="color:red; font-size:15px;"> <?php echo "$enameTFerror";?> </span>
@@ -113,13 +113,13 @@ include '../Page Controllers/employeeListController.php';
 						
 						<tr>
 							<td class="td1"> Mobile No.: </td>
-							<td class="td2"> <input type="number" min="0" class="tf" name="mobTF" id="mobTF" value="<?php echo "$mobTF";?>"> </td>
+							<td class="td2"> <input type="number" min="0" class="tf" name="mobTF" id="mobTF" placeholder="01XXXXXXXXX" value="<?php echo "$mobTF";?>"> </td>
 							<td class="td3"> <span id="mobTFErr" style="color:red; font-size:15px;"><?php echo $msg1; ?> <?php echo "$mobTFerror"; ?> </span></td>
 						</tr>
 						
 						<tr>
 							<td class="td1"> E-mail: </td>
-							<td class="td2"> <input type="mail" class="tf" style="text-transform: lowercase;" name="mailTF" id="mailTF" value="<?php echo "$mailTF";?>"> </td>
+							<td class="td2"> <input type="mail" class="tf" style="text-transform: lowercase;" name="mailTF" id="mailTF" placeholder="user@domain.com" value="<?php echo "$mailTF";?>"> </td>
 							<td class="td3"> <span id="mailTFErr" style="color:red; font-size:15px;"><?php echo $msg1; ?> <?php echo "$mailTFerror"; ?> </span></td>
 						</tr>
 						

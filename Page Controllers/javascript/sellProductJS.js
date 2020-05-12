@@ -136,7 +136,7 @@ let saveFile = () =>
 		
 		var payable= quant*price;
 	
-		let data = "Invoice ID. "+id+"\nProduct ID. "+pid+"\nBuying Quantity: "+quant+ "\nPrice Per Unit: "+price+"    (BDT)\nBuyer Name: "+cname.toUpperCase() +"\tContact: "+mob+"\n\nAmmount To Pay: "+payable+"\t(PAID__,UNPAID__)"+"    (BDT)\n\nSaller ID. "+emp+"\nSelling Date: "+date+"\n\n\n\n--------------------------\n\tSignature";
+		let data = "Invoice ID. "+id+"\nProduct ID. "+pid+"\nBuying Quantity: "+quant+ "\nPrice Per Unit: "+price+" (BDT)\nBuyer Name: "+cname.toUpperCase() +"\tContact: "+mob+"\n\nAmmount To Pay: "+payable+" (BDT)"+"        [PAID__,UNPAID__]\n\nSaller ID. "+emp+"\nSelling Date: "+date+"\n\n\n\n--------------------------\n\tSignature";
 		
 		var con = confirm("Procced?");
 			

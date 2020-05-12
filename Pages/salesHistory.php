@@ -50,6 +50,12 @@ include '../Page Controllers/salesHistoryController.php';
 								<input type="submit" class="srchbtn" name="gohomebtn" value="Home">
 							</td>
 							
+							<td style="width:10%;"></td>
+							
+							<td>
+								<input type="submit" class="gobtn" name="goBTN" value="Back To Sell <<">
+							</td>
+							
 							<td class="col"></td>
 							
 							<td>

@@ -37,17 +37,17 @@
 	vertical-align: middle;
 	
 	height: 45px;
-	width: calc(32%);
+	width: calc(22%);
 	
-	font-family: "Consolas";
-	font-size: 18px;
+	font-family: Comic Sans MS;
+	font-size: 15px;
 	font-style: bold;
 }
 .td2
 {
 	vertical-align: middle;
 	
-	width: calc(64%);
+	width: calc(74%);
 }
 .td3
 {
