@@ -3,7 +3,7 @@ $serverName="localhost";
 $userName="root";
 $password="";
 $dbName="btweb";
- 
+
 function execute($query)
 {
 	global $serverName,$userName,$password,$dbName;
@@ -30,19 +30,18 @@ function get($query)
 					$entity[$k]=$row[$k];
 				}
 				$data[]=$entity;
-				
+
 			}
 		}
 		return $data;
 		mysqli_close($conn);
 	}
-	
+
 	catch (Exception $e)
 	{
 		throw $e->getMessage();
 		return $data;
 		mysqli_close($conn);
 	}
-}	
+}
 ?>
-
